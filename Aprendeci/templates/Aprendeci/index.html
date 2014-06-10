@@ -1,0 +1,27 @@
+{% extends "_layouts/base.html" %}
+
+{% block title %}Grafo{% endblock %}
+
+{% block scripts %}
+    <script src="{{ STATIC_URL }}js/jquery-2.1.1.js"></script>
+	<script src="{{ STATIC_URL }}js/jquery-ui-1.10.4.js"></script>
+	<script src="{{ STATIC_URL }}js/jquery.jsPlumb-1.6.2.js"></script>
+
+    <script>
+        var conceptos = JSON.parse("{{ concepto_list|escapejs }}");
+
+        $.each(conceptos, function(idx, obj) {
+            obj.fields.imagen = "{{ MEDIA_URL }}" + obj.fields.imagen;
+        });
+    </script>
+
+	<script src="{{ STATIC_URL }}js/graph.js"></script>
+{% endblock %}
+
+{% block content %}
+    <div id="encabezado">
+		<img class="icon" alt="grafo" src="{{ STATIC_URL }}img/icons/grafo.png" />
+		<h1>Grafo de conocimiento</h1>
+	</div>
+	<div id="canvas"></div>
+{% endblock %}

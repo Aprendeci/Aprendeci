@@ -1,0 +1,62 @@
+body {
+    background-image: url('../img/bg.png');
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    color: #FFF;
+    display: inline-block;
+    font-family: "Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+    font-size: 2.75rem;
+    font-style: normal;
+    font-weight: normal;
+    text-shadow: 1px 1px 1px #959595;
+    vertical-align: middle;
+}
+
+img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#encabezado {
+    background-color: #A22F38;
+    padding: 10px;
+}
+
+#canvas {
+    background-image: url('../img/grid.png');
+    box-shadow: 0px 0px 5px 0px #CCC;
+    height: 500px;
+    margin: 10px auto;
+    position: relative;
+    width: 700px;
+}
+
+.concepto {
+    background-color: #A22F38;
+    border: 3px solid white;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+    cursor: move;
+    height: 50px;
+    position: absolute;
+    width: 50px;
+}
+
+.concepto:hover {
+    background-color: #278f44;
+}
+
+.drag {
+    background-color: black;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+}
+
+._jsPlumb_connector {
+    cursor: pointer;
+}
