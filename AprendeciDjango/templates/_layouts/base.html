@@ -2,13 +2,26 @@
 <html>
 <head>
     <meta charset="UTF-8">
+
     <title>{% block title %}{% endblock %} | Aprendeci</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/dependencies/normalize.css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/dependencies/foundation.min.css" />
     <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" />
+
+    <!-- Scripts -->
+    <script src="{{ STATIC_URL }}js/dependencies/modernizr.js"></script>
+    <script src="{{ STATIC_URL }}js/dependencies/foundation.min.js"></script>
+    <script src="{{ STATIC_URL }}js/dependencies/jquery-2.1.1.js"></script>
+	<script src="{{ STATIC_URL }}js/dependencies/jquery-ui-1.10.4.js"></script>
+    <script src="{{ STATIC_URL }}js/dependencies/fastclick.js"></script>
     {% block scripts  %}{% endblock %}
 </head>
 <body>
     <div class="container">
         {% block content %}{% endblock %}
     </div>
+    <script> $(document).foundation(); </script>
 </body>
 </html>

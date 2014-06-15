@@ -3,9 +3,7 @@
 {% block title %}Grafo{% endblock %}
 
 {% block scripts %}
-    <script src="{{ STATIC_URL }}js/jquery-2.1.1.js"></script>
-	<script src="{{ STATIC_URL }}js/jquery-ui-1.10.4.js"></script>
-	<script src="{{ STATIC_URL }}js/jquery.jsPlumb-1.6.2.js"></script>
+	<script src="{{ STATIC_URL }}js/dependencies/jquery.jsPlumb-1.6.2.js"></script>
 
     <script>
         var conceptos = JSON.parse("{{ concepto_list|escapejs }}");
@@ -19,9 +17,22 @@
 {% endblock %}
 
 {% block content %}
-    <div id="encabezado">
-		<img class="icon" alt="grafo" src="{{ STATIC_URL }}img/icons/grafo.png" />
-		<h1>Grafo de conocimiento</h1>
-	</div>
-	<div id="canvas"></div>
+    <div class="row">
+      <div class="large-12 columns">
+        <div id="encabezado">
+            <img class="icon" alt="grafo" src="{{ STATIC_URL }}img/icons/grafo.png" />
+            <h1>Grafo de conocimiento</h1>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+	    <div id="canvas">
+            <div class="botones">
+                <a href="#" class="small button agregarConcepto">Agregar concepto</a>
+                <a href="#" class="small success button guardarGrafo">Guardar</a>
+            </div>
+	    </div>
+      </div>
+    </div>
 {% endblock %}
