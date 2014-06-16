@@ -3,7 +3,7 @@
 }
 
 body {
-    background-image: url('../img/bg.png');
+    background-image: url("../img/bg.png");
     padding: 0;
     margin: 0;
 }
@@ -24,39 +24,90 @@ img {
     vertical-align: middle;
 }
 
+.clear {
+    clear: both;
+}
+
 #encabezado {
     background-color: #A22F38;
     padding: 10px;
 }
 
-#canvas {
-    background-image: url('../img/grid.png');
-    box-shadow: 0px 0px 5px 0px #CCC;
-    height: 500px;
+.grafo {
+    background-image: url("../img/maze.png");
     margin: 10px auto;
-    position: relative;
-    width: 100%;
+    padding: 10px;
 }
 
-    #canvas .botones {
-        position: absolute;
-        right: 5px;
-        top: 5px;
+    .grafo .canvas {
+        background-image: url("../img/grid.png");
+        height: 500px;
     }
 
-        #canvas .botones a {
+        .grafo .canvas #conceptos {
+            height: 100%;
+            position: relative;
+        }
+
+    .grafo .acciones {
+        width: 100%;
+    }
+
+        .grafo .acciones a {
             background-position: 10px center;
             background-repeat: no-repeat;
             background-size: 20px;
+            float: right;
+            margin-bottom: 0px;
             padding-left: 40px;
         }
 
-            #canvas .botones .agregarConcepto {
-                background-image: url('../img/icons/add.png');
+            .grafo .acciones a.agregarConcepto {
+                background-image: url("../img/icons/add.png");
             }
 
-            #canvas .botones .guardarGrafo {
-                background-image: url('../img/icons/save.png');
+            .grafo .acciones a.guardarGrafo {
+                background-image: url("../img/icons/save.png");
+            }
+
+    .grafo .btnCanvas {
+        clear: both;
+        width: 100%;
+    }
+
+        .grafo .btnCanvas a {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 20px;
+            float: right;
+            height: 20px;
+            margin-bottom: 0px;
+        }
+
+            .grafo .btnCanvas a.zoomIn {
+                background-image: url("../img/icons/zoomIn.png");
+            }
+
+            .grafo .btnCanvas a.zoomOut {
+                background-image: url("../img/icons/zoomOut.png");
+            }
+
+        .grafo .btnCanvas .zoom {
+            background-color: #008CBA;
+            color: white;
+            display: inline-block;
+            float: left;
+            height: 50px;
+            line-height: 50px;
+            margin: 0px;
+            text-align: center;
+            width: 100px;
+        }
+
+            .grafo .btnCanvas .zoom span {
+                display: inline-block;
+                line-height: normal;
+                vertical-align: middle;
             }
 
 .concepto {

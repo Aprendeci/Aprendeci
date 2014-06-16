@@ -2,8 +2,12 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>{% block title %}{% endblock %} | Aprendeci</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ STATIC_URL }}img/favicon.ico">
 
     <!-- Estilos -->
     <link rel="stylesheet" href="{{ STATIC_URL }}css/dependencies/normalize.css" />
@@ -12,9 +16,9 @@
 
     <!-- Scripts -->
     <script src="{{ STATIC_URL }}js/dependencies/modernizr.js"></script>
-    <script src="{{ STATIC_URL }}js/dependencies/foundation.min.js"></script>
     <script src="{{ STATIC_URL }}js/dependencies/jquery-2.1.1.js"></script>
 	<script src="{{ STATIC_URL }}js/dependencies/jquery-ui-1.10.4.js"></script>
+    <script src="{{ STATIC_URL }}js/dependencies/foundation.min.js"></script>
     <script src="{{ STATIC_URL }}js/dependencies/fastclick.js"></script>
     {% block scripts  %}{% endblock %}
 </head>
