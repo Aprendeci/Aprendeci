@@ -110,8 +110,44 @@ $(document).ready(function() {
         $(".zoom span").text(zoom + "%");
     };
 
+    // Proteccion CSRF
+    function csrfSafeMethod(method) {
+        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+    }
+
     // Guardar grafo
     $(".guardarGrafo").click(function() {
-        var dependencias = jsPlumb.getConnections();
+        var conexiones = jsPlumb.getConnections();
+        var dependencias = [];
+
+        $.each(conexiones, function(index, value) {
+            var sourceId = value.sourceId.substr(8);
+            var targetId = value.targetId.substr(8);
+
+            dependencias.push([sourceId, targetId]);
+        });
+
+        // Seguridad de CSRF
+        var csrftoken = $.cookie('csrftoken');
+        $.ajaxSetup({
+            crossDomain: false,
+            beforeSend: function(xhr, settings) {
+                if (!csrfSafeMethod(settings.type)) {
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                }
+            }
+        });
+
+        // Envio al backend de los datos
+        $.post("", { "dependencias[]" : dependencias })
+        .done(function (data) {
+            $.growl.notice({ title: "Éxito", message: data });
+        })
+        .fail(function(jqXHR, textStatus, errorThrown) {
+                $.growl.error({ title:"Error", message: "No se ha podido guardar el grafo"});
+                console.log("jqXHR : " + jqXHR);
+                console.log("textStatus : " + textStatus);
+                console.log("errorThrown : " + errorThrown);
+        });
     });
 });
