@@ -136,3 +136,10 @@ img {
 ._jsPlumb_connector {
     cursor: pointer;
 }
+
+/* SECCION | Login */
+.loginForm {
+    background-color: #A22F38;
+    margin: 0 auto;
+    width: 50%;
+}
