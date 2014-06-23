@@ -95,4 +95,5 @@ MEDIA_URL = '/media/'
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'AprendeciDjango/templates'),
+    os.path.join(BASE_DIR, 'Aprendeci/templates'),
 )

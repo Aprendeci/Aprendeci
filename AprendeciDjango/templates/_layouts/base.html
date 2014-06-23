@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ STATIC_URL }}css/dependencies/normalize.css" />
     <link rel="stylesheet" href="{{ STATIC_URL }}css/dependencies/foundation.min.css" />
     <link rel="stylesheet" href="{{ STATIC_URL }}css/dependencies/jquery.growl.css" />
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" />
+    {% block styles %}{% endblock %}
 
     <!-- Scripts -->
     <script src="{{ STATIC_URL }}js/dependencies/modernizr.js"></script>

@@ -1,0 +1,44 @@
+/* ================================
+    CSS Aprendeci | Login
+   ================================ */
+
+/* SECCION | Generales */
+body {
+    background: url("../img/eci.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+hr {
+    background-image: -webkit-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0));
+    background-image: -moz-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0));
+    background-image: -ms-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0));
+    background-image: -o-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0));
+    background-image: -o-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0));
+    border: 0;
+    height: 2px;
+}
+
+label {
+    color: white;
+}
+
+/* SECCION | Login */
+.loginForm {
+    background-image: url("../img/mazeRed.png");
+    box-shadow: 0px 0px 3px 2px black;
+    height: 425px;
+    left: 50%;
+    margin-left: -320px;
+    margin-top: -232px;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    width: 600px;
+}
+
+    .loginForm img.logo {
+        width: 300px;
+    }

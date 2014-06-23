@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+    var objConceptos = [];
+
     // Conexiones
     jsPlumb.ready(function() {
         var zoom = 100;
@@ -26,20 +28,24 @@ $(document).ready(function() {
                 containment: "parent"
             });
 
-            jsPlumb.makeSource(drag, {
+            jsPlumb.makeSource(concepto, {
                 anchor:[ "Perimeter", { shape:"Circle" } ],
-                connector: ["Bezier", { curviness: "25" } ],
+                //anchor:"Continuous",
+                //connector: ["Bezier", { curviness: "150" } ],
+                connector: ["Flowchart", { cornerRadius: "25" } ],
                 connectorOverlays: [ [ "Arrow", { location:1 } ] ],
                 connectorStyle : { lineWidth:5, strokeStyle:"#690F16" },
                 deleteEndpointsOnDetach : false,
-                paintStyle:{ radius:5, fillStyle:"#690F16" },
-                parent: concepto
+                paintStyle:{ radius:5, fillStyle:"#690F16" }
             });
 
             jsPlumb.makeTarget(concepto, {
                 anchor:[ "Perimeter", { shape:"Circle" } ],
+                //anchor:"Continuous",
                 paintStyle: { fillStyle: "#690F16", radius:5 }
             });
+
+            objConceptos.push(concepto);
         });
 
         // Hacer las conexiones
@@ -87,6 +93,23 @@ $(document).ready(function() {
             }
         });
 
+    });
+
+    // Cambio de modo
+    $("input:radio").change(function() {
+        if (this.id == "mover") {
+            // Habilita el arrastre
+            $.each(objConceptos, function(index, value) {
+                jsPlumb.toggleDraggable(value);
+                value.css("cursor", "move");
+            });
+        } else if (this.id == "unir") {
+            // Deshabilita el arrastre
+            $.each(objConceptos, function(index, value) {
+                jsPlumb.toggleDraggable(value);
+                value.css("cursor", "pointer");
+            });
+        }
     });
 
     // Cambiar zoom
