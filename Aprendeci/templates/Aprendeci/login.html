@@ -10,14 +10,14 @@
     <div class="loginForm">
         <div class="row">
             <div class="large-12 columns text-center">
-                <img alt="logo" class="logo" src="{{ STATIC_URL }}img/logo.jpg" />
+                <img alt="logo" class="logo" src="{{ STATIC_URL }}img/logo.png" />
             </div>
         </div>
         <hr />
         <div class="row">
             <div class="large-12 columns">
                 {% if form.errors %}
-                <p>Usuario o contraseña incorrecta. Intenta de nuevo.</p>
+                    <p class="error">Usuario o contraseña incorrecta. Intenta de nuevo.</p>
                 {% endif %}
 
                 <form method="post" action="{% url 'django.contrib.auth.views.login' %}">

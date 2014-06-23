@@ -35,7 +35,7 @@ class IndexView(JSONResponseMixin, ListView):
             concepto.requisitos.add(preRequisito)
 
         # Guardar el grafo
-        grafoMat = "{(" + "),(".join(dependencias) + ")}"
+        grafoMat = "{{" + "},{".join(dependencias) + "}}"
         with open('uploads/txt/grafo.txt', 'w+') as f:
             file = File(f)
             file.write(grafoMat)
