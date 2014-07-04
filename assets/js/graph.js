@@ -29,19 +29,16 @@ $(document).ready(function() {
             });
 
             jsPlumb.makeSource(concepto, {
-                anchor:[ "Perimeter", { shape:"Circle" } ],
-                //anchor:"Continuous",
-                //connector: ["Bezier", { curviness: "150" } ],
+                anchor: [ "Perimeter", { shape:"Circle" } ],
                 connector: ["Flowchart", { cornerRadius: "25" } ],
                 connectorOverlays: [ [ "Arrow", { location:1 } ] ],
                 connectorStyle : { lineWidth:5, strokeStyle:"#690F16" },
                 deleteEndpointsOnDetach : false,
-                paintStyle:{ radius:5, fillStyle:"#690F16" }
+                paintStyle: { radius:5, fillStyle:"#690F16" }
             });
 
             jsPlumb.makeTarget(concepto, {
-                anchor:[ "Perimeter", { shape:"Circle" } ],
-                //anchor:"Continuous",
+                anchor: [ "Perimeter", { shape:"Circle" } ],
                 paintStyle: { fillStyle: "#690F16", radius:5 }
             });
 
@@ -93,23 +90,30 @@ $(document).ready(function() {
             }
         });
 
+        // Deshabilita incialmente el modo de union
+        $.each(objConceptos, function(index, value) {
+            jsPlumb.setTargetEnabled(value);
+            jsPlumb.setSourceEnabled(value);
+        });
     });
 
     // Cambio de modo
     $("input:radio").change(function() {
-        if (this.id == "mover") {
-            // Habilita el arrastre
-            $.each(objConceptos, function(index, value) {
-                jsPlumb.toggleDraggable(value);
+        var modo = this;
+
+        $.each(objConceptos, function(index, value) {
+            // Cambia el modo de arrastre
+            jsPlumb.toggleDraggable(value);
+
+            // Cambia el puntero y el modo de union
+            if (modo.id == "mover") {
                 value.css("cursor", "move");
-            });
-        } else if (this.id == "unir") {
-            // Deshabilita el arrastre
-            $.each(objConceptos, function(index, value) {
-                jsPlumb.toggleDraggable(value);
+                jsPlumb.setTargetEnabled(value, false).setSourceEnabled(value, false);
+            } else if (modo.id == "unir") {
                 value.css("cursor", "pointer");
-            });
-        }
+                jsPlumb.setTargetEnabled(value, true).setSourceEnabled(value, true);
+            }
+        });
     });
 
     // Cambiar zoom
