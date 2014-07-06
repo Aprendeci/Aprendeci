@@ -29,6 +29,13 @@ img {
     vertical-align: middle;
 }
 
+/* SECCION | Contenedores */
+.content {
+    background-color: white;
+    margin: 10px auto;
+    padding: 20px;
+}
+
 /* SECCION | Edicion del grafo */
 #encabezado {
     background-color: #A22F38;
@@ -74,7 +81,7 @@ img {
             .grafo .opciones .modo input[type="radio"]#unir + label {
                 background-image: url("../img/icons/arrow.png");
             }
-        
+
             .grafo .opciones .modo input[type="radio"]:checked + label {
                 background-color: #A22F38;
                 font-weight: bold;
@@ -154,3 +161,18 @@ img {
 ._jsPlumb_connector {
     cursor: pointer;
 }
+
+/* SECCION | Lista de grafos */
+.grafos {
+    border: 2px dashed gray;
+    padding: 20px;
+}
+
+    .grafos .grafoItem {
+        background-color: #A22F38;
+        display: inline-block;
+        height: 150px;
+        margin: 0px ;
+        text-align: center;
+        width: 150px;
+    }

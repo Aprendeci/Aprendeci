@@ -1,0 +1,37 @@
+{% extends "_layouts/base.html" %}
+{% load staticfiles %}
+
+{% block title %}Grafos{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static "css/style.css" %}" />
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="large-12 columns">
+            <div id="encabezado">
+                <img class="icon" alt="grafo" src="{% static "img/icons/grafo.png" %}" />
+                <h1>Grafos</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <div class="content">
+                <div class="grafos">
+                    {% for grafo in grafo_list %}
+                        <div class="grafoItem">
+                            <p>{{ grafo.numeroDeConceptos }}</p>
+                            <p>{{ grafo.nombre }}</p>
+                            <a href="#" class="button small">Modificar</a>
+                        </div>
+                    {% endfor %}
+                    <div class="grafoItem">
+                        <a href="#" class="button small">Agregar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

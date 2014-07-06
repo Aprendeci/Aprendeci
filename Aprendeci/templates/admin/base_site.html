@@ -1,7 +1,12 @@
 {% extends "admin/base.html" %}
 {% load i18n %}
+{% load staticfiles %}
 
 {% block title %}{{ title }} | Aprendeci{% endblock %}
+
+{% block extrastyle %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/admin.css" %}" />
+{% endblock %}
 
 {% block branding %}
 <h1 id="site-name">Administración de Aprendeci</h1>

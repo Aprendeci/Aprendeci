@@ -1,0 +1,26 @@
+/* ================================
+    CSS Aprendeci | Admin
+   ================================ */
+
+/* SECCION | Generales */
+body {
+    background: url("../img/bg.png");
+}
+
+a:link, a:visited {
+    color: #A22F38;
+}
+
+a:hover {
+    color: #690F16;
+}
+
+/* SECCION | Admin */
+#header, .module caption {
+    background-image: url("../img/mazeRed.png");
+    color: white;
+}
+
+#branding h1 {
+    color: white;
+}
