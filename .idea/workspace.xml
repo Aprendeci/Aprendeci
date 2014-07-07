@@ -1,22 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a0090422-e86b-4f77-aa46-55222ee4e0ab" name="Default" comment="[Develop] Lista de grafos">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/img/mazeWhite.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Aprendeci.iml" afterPath="$PROJECT_DIR$/.idea/Aprendeci.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AprendeciDjango/templates/_layouts/base.html" afterPath="$PROJECT_DIR$/AprendeciDjango/templates/_layouts/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aprendeci/templates/admin/base_site.html" afterPath="$PROJECT_DIR$/Aprendeci/templates/admin/base_site.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uploads/txt/grafo.txt" afterPath="$PROJECT_DIR$/uploads/txt/grafo.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aprendeci/templates/Aprendeci/grafo/lista.html" afterPath="$PROJECT_DIR$/Aprendeci/templates/Aprendeci/grafo/lista.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aprendeci/templates/Aprendeci/login.html" afterPath="$PROJECT_DIR$/Aprendeci/templates/Aprendeci/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aprendeci/models.py" afterPath="$PROJECT_DIR$/Aprendeci/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/style.css" afterPath="$PROJECT_DIR$/assets/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aprendeci/urls.py" afterPath="$PROJECT_DIR$/Aprendeci/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aprendeci/views.py" afterPath="$PROJECT_DIR$/Aprendeci/views.py" />
+    <list default="true" id="a0090422-e86b-4f77-aa46-55222ee4e0ab" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\Desarrollo\Proyectos\Universidad\Aprendeci\Aprendeci\Aprendeci\templates\Aprendeci\index.html" afterPath="$PROJECT_DIR$/Aprendeci/templates/Aprendeci/grafo/grafo.html" />
     </list>
     <ignored path="Aprendeci.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -557,7 +543,11 @@
       <created>1404437144249</created>
       <updated>1404437144249</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="[Develop] Lista de grafos completa">
+      <created>1404699531886</created>
+      <updated>1404699531886</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -581,16 +571,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30162162" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32792208" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30162162" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756758" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3270925" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26486486" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24972972" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22867803" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22867803" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3091892" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13006397" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32819384" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
@@ -599,7 +590,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32843137" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -629,7 +619,8 @@
     <MESSAGE value="[Develop] Estilos del login y ajustes a la lista de Mathematica" />
     <MESSAGE value="[Develop] Actualizacion de Django y soporte de migraciones nativo" />
     <MESSAGE value="[Develop] Trabajo inicial para la lista de grafos" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Develop] Trabajo inicial para la lista de grafos" />
+    <MESSAGE value="[Develop] Lista de grafos completa" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Develop] Lista de grafos completa" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
