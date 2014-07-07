@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+here = lambda * x: os.path.join(os.path.abspath(os.path.dirname(__file__)), *x)
+PROJECT_ROOT = here("..")
+root = lambda * x: os.path.join(os.path.abspath(PROJECT_ROOT), *x)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -59,7 +62,7 @@ WSGI_APPLICATION = 'AprendeciDjango.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': root('db.sqlite3'),
     }
 }
 
@@ -80,19 +83,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = root('static')
 
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'assets'),
+    root('assets'),
 )
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+MEDIA_ROOT = root('uploads')
 
 MEDIA_URL = '/media/'
 
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'AprendeciDjango/templates'),
-    os.path.join(BASE_DIR, 'Aprendeci/templates'),
+    root('AprendeciDjango/templates'),
+    root('Aprendeci/templates'),
 )
