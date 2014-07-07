@@ -96,6 +96,6 @@ MEDIA_ROOT = root('uploads')
 MEDIA_URL = '/media/'
 
 TEMPLATE_DIRS = (
-    root('../AprendeciDjango/templates'),
-    root('../Aprendeci/templates'),
+    root('AprendeciDjango/templates'),
+    root('Aprendeci/templates'),
 )
