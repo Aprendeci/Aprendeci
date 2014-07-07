@@ -15,7 +15,7 @@ class JSONResponseMixin(object):
 class GrafoView(JSONResponseMixin, ListView):
     context_object_name = "concepto_list"
     model = Concepto
-    template_name = "aprendeci/grafo/grafo.html"
+    template_name = "aprendeci/grafo.html"
 
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
@@ -47,4 +47,4 @@ class GrafoView(JSONResponseMixin, ListView):
 
 class GrafosView(ListView):
     model = Grafo
-    template_name = "aprendeci/grafo/lista.html"
+    template_name = "aprendeci/lista.html"
