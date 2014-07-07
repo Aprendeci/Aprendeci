@@ -3,10 +3,6 @@
    ================================ */
 
 /* SECCION | Generales */
-* {
-    box-sizing: content-box;
-}
-
 body {
     background-image: url("../img/bg.png");
     padding: 0;
@@ -33,12 +29,13 @@ img {
 .content {
     background-color: white;
     margin: 10px auto;
-    padding: 20px;
+    padding: 20px 0px;
 }
 
 /* SECCION | Edicion del grafo */
 #encabezado {
     background-color: #A22F38;
+    background-image: url("../img/mazeRed.png");
     padding: 10px;
 }
 
@@ -71,7 +68,7 @@ img {
             background-repeat: no-repeat;
             background-size: 20px;
             margin: 0;
-            width: 100px;
+            width: 150px;
         }
 
             .grafo .opciones .modo input[type="radio"]#mover + label {
@@ -113,7 +110,7 @@ img {
             background-repeat: no-repeat;
             background-size: 20px;
             float: right;
-            height: 20px;
+            height: 50px;
             margin-bottom: 0px;
         }
 
@@ -148,6 +145,7 @@ img {
     border: 3px solid white;
     border-radius: 50%;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+    box-sizing: content-box;
     cursor: move;
     height: 50px;
     position: absolute;
@@ -163,16 +161,32 @@ img {
 }
 
 /* SECCION | Lista de grafos */
-.grafos {
-    border: 2px dashed gray;
-    padding: 20px;
+.grafoItem {
+    background-color: #A22F38;
+    background-image: url("../img/mazeRed.png");
+    box-shadow: 0px 8px 5px -7px #000;
+    height: 150px;
+    margin: 0px 0px 20px;
+    text-align: center;
 }
 
-    .grafos .grafoItem {
-        background-color: #A22F38;
-        display: inline-block;
-        height: 150px;
-        margin: 0px ;
-        text-align: center;
-        width: 150px;
+    .grafoItem .nombre {
+        background-color: #FFF;
+        background-image: url("../img/mazeWhite.png");
+        box-shadow: 0px 8px 5px -7px #000;
+        font-weight: bold;
+        padding: 10px 0px;
+    }
+
+    .grafoItem .conceptos {
+        color: white;
+        margin: 20px 0px;
+    }
+
+        .grafoItem .conceptos span {
+            font-weight: bold;
+        }
+
+    .grafoItem .agregar {
+        margin-top: 50px;
     }

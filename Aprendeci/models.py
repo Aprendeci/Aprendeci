@@ -5,8 +5,9 @@ class Grafo(models.Model):
     descripcion = models.CharField(max_length=500)
     grafoPadre = models.ForeignKey("self", blank=True, null=True)
 
-    def numeroDeConceptos(self):
-        return 5
+    def numero_de_conceptos(self):
+        numConceptos = self.concepto_set.all().count()
+        return numConceptos
 
     def __str__(self):
         return self.nombre

@@ -1,16 +1,17 @@
 {% extends "_layouts/base.html" %}
+{% load staticfiles %}
 
 {% block title %}Entrar{% endblock %}
 
 {% block styles %}
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/login.css" />
+    <link rel="stylesheet" href="{% static "css/login.css" %}" />
 {% endblock %}
 
 {% block content %}
     <div class="loginForm">
         <div class="row">
             <div class="large-12 columns text-center">
-                <img alt="logo" class="logo" src="{{ STATIC_URL }}img/logo.png" />
+                <img alt="logo" class="logo" src="{% static "img/logo.png" %}" />
             </div>
         </div>
         <hr />
@@ -38,7 +39,7 @@
                     </div>
 
                     <input class="button small right" type="submit" value="Iniciar sesión" />
-                    <input type="hidden" name="next" value="aprendeci" />
+                    <input type="hidden" name="next" value="aprendeci/grafos" />
                 </form>
             </div>
         </div>

@@ -1,0 +1,62 @@
+{% extends "_layouts/base.html" %}
+{% load staticfiles %}
+
+{% block title %}Grafo{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static "css/style.css" %}" />
+{% endblock %}
+
+{% block scripts %}
+	<script src="{% static "js/dependencies/jquery.jsPlumb-1.6.2.js" %}"></script>
+
+    <script>
+        var conceptos = JSON.parse("{{ concepto_list|escapejs }}");
+
+        $.each(conceptos, function(idx, obj) {
+            obj.fields.imagen = "{{ MEDIA_URL }}" + obj.fields.imagen;
+        });
+    </script>
+
+	<script src="{% static "js/graph.js" %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+      <div class="large-12 columns">
+        <div id="encabezado">
+            <img class="icon" alt="grafo" src="{% static "img/icons/grafo.png" %}" />
+            <h1>Grafo de conocimiento</h1>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+	    <div class="grafo">
+            <div class="opciones clearfix">
+                <div class="modo left">
+                    <input type="radio" id="mover" name="radio" checked="checked"><label class="button small" for="mover">Mover</label>
+                    <input type="radio" id="unir" name="radio"><label class="button small" for="unir">Unir</label>
+                </div>
+                <div class="acciones right">
+                    <a class="small success button guardarGrafo">Guardar</a>
+                    <a class="small button agregarConcepto" href="{% url "admin:Aprendeci_concepto_add" %}">Agregar concepto</a>
+                </div>
+            </div>
+            <div class="canvas">
+                <div id="conceptos"></div>
+            </div>
+            <div class="btnCanvas clearfix">
+                <div class="zoom"><span>100 %</span></div>
+                <a class="small button zoomIn"></a>
+                <a class="small button zoomOut"></a>
+            </div>
+	    </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="large-3 large-centered columns">
+            <a href="{{ MEDIA_URL }}txt/grafo.txt" class="button">Lista en Mathematica</a>
+        </div>
+    </div>
+{% endblock %}

@@ -9,22 +9,24 @@ from Aprendeci.models import *
 
 class JSONResponseMixin(object):
     def get_queryset(self):
-        return serializers.serialize("json", self.model.objects.all())
+        grafo_id = self.kwargs['id']
+        return serializers.serialize("json", self.model.objects.filter(grafo=grafo_id))
 
-class IndexView(JSONResponseMixin, ListView):
+class GrafoView(JSONResponseMixin, ListView):
     context_object_name = "concepto_list"
     model = Concepto
-    template_name = "aprendeci/index.html"
+    template_name = "aprendeci/grafo/grafo.html"
 
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
-        return super(IndexView, self).dispatch(*args, **kwargs)
+        return super(GrafoView, self).dispatch(*args, **kwargs)
 
     def post(self, request, *args, **kwargs):
         dependencias = request.POST.getlist("dependencias[]")
 
         # Limpiar dependencias
-        for concepto in self.model.objects.all():
+        grafo_id = self.kwargs['id']
+        for concepto in self.model.objects.filter(grafo=grafo_id):
             concepto.requisitos.clear()
 
         # Crear dependencias
@@ -43,6 +45,6 @@ class IndexView(JSONResponseMixin, ListView):
 
         return HttpResponse("Se ha guardado exitosamente")
 
-class GrafoView(ListView):
+class GrafosView(ListView):
     model = Grafo
     template_name = "aprendeci/grafo/lista.html"

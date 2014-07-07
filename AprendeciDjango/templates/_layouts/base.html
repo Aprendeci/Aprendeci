@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,22 +9,22 @@
     <title>{% block title %}{% endblock %} | Aprendeci</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ STATIC_URL }}img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static "img/favicon.ico" %}">
 
     <!-- Estilos -->
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/dependencies/normalize.css" />
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/dependencies/foundation.min.css" />
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/dependencies/jquery.growl.css" />
+    <link rel="stylesheet" href="{% static "css/dependencies/normalize.css" %}" />
+    <link rel="stylesheet" href="{% static "css/dependencies/foundation.min.css" %}" />
+    <link rel="stylesheet" href="{% static "css/dependencies/jquery.growl.css" %}" />
     {% block styles %}{% endblock %}
 
     <!-- Scripts -->
-    <script src="{{ STATIC_URL }}js/dependencies/modernizr.js"></script>
-    <script src="{{ STATIC_URL }}js/dependencies/jquery-2.1.1.js"></script>
-	<script src="{{ STATIC_URL }}js/dependencies/jquery-ui-1.10.4.js"></script>
-    <script src="{{ STATIC_URL }}js/dependencies/jquery.cookie.js"></script>
-    <script src="{{ STATIC_URL }}js/dependencies/jquery.growl.js"></script>
-    <script src="{{ STATIC_URL }}js/dependencies/foundation.min.js"></script>
-    <script src="{{ STATIC_URL }}js/dependencies/fastclick.js"></script>
+    <script src="{% static "js/dependencies/modernizr.js" %}"></script>
+    <script src="{% static "js/dependencies/jquery-2.1.1.js" %}"></script>
+	<script src="{% static "js/dependencies/jquery-ui-1.10.4.js" %}"></script>
+    <script src="{% static "js/dependencies/jquery.cookie.js" %}"></script>
+    <script src="{% static "js/dependencies/jquery.growl.js" %}"></script>
+    <script src="{% static "js/dependencies/foundation.min.js" %}"></script>
+    <script src="{% static "js/dependencies/fastclick.js" %}"></script>
     {% block scripts  %}{% endblock %}
 </head>
 <body>
