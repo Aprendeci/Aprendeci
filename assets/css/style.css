@@ -3,42 +3,99 @@
    ================================ */
 
 /* SECCION | Generales */
+html, body {
+    height: 100%;
+}
+
 body {
     background-image: url("../img/bg.png");
     padding: 0;
     margin: 0;
 }
 
-h1 {
-    color: #FFF;
+h1, h2, h3, h4, h5, h6 {
     display: inline-block;
-    font-family: "Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
-    font-size: 2.75rem;
-    font-style: normal;
-    font-weight: normal;
-    text-shadow: 1px 1px 1px #959595;
+    margin: 0;
     vertical-align: middle;
 }
+
+    h1, h4 {
+        color: #FFF;
+    }
 
 img {
     display: inline-block;
     vertical-align: middle;
 }
 
-/* SECCION | Contenedores */
-.content {
-    background-color: white;
-    margin: 10px auto;
-    padding: 20px 0px;
+.centrar {
+    text-align: center;
 }
 
-/* SECCION | Edicion del grafo */
-#encabezado {
-    background-color: #A22F38;
-    background-image: url("../img/mazeRed.png");
+/* SECCION | Contenedores */
+#wrapper {
+    min-height: 100%;
+}
+
+    #wrapper #container {
+        overflow: auto;
+        padding-bottom: 140px;
+    }
+
+#footer {
+    margin-top: -137px;
+    position: relative;
+}
+
+    #footer .footerContent {
+        background: #A22F38 url("../img/maze.png");
+        clear: both;
+        margin-top: 20px;
+        padding: 10px;
+    }
+
+    #footer .footerContent .logo {
+        width: 200px;
+    }
+
+.encabezado {
+    background: #A22F38 url("../img/mazeRed.png");
     padding: 10px;
 }
 
+.title {
+    background-image: url("../img/mazeGray.png");
+    box-shadow: 0 8px 5px -7px #000;
+    margin-bottom: 1.25rem;
+    padding: 5px 20px;
+}
+
+/* SECCION | Breadcrumbs */
+ul.breadcrumbs {
+    background-image: url("../img/mazeGray.png");
+    border: 0;
+    border-radius: 0;
+    box-shadow: 0 8px 5px -7px #000;
+}
+
+/* SECCION | Botones */
+.button.small {
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    margin: 0;
+    padding-left: 45px;
+}
+
+.modificar {
+    background-image: url("../img/icons/edit.png");
+}
+
+.ver {
+    background-image: url("../img/icons/eye.png");
+}
+
+/* SECCION | Edicion del grafo */
 .grafo {
     background-image: url("../img/maze.png");
     margin: 10px auto;
@@ -54,6 +111,22 @@ img {
             height: 100%;
             position: relative;
         }
+
+            .grafo .canvas #conceptos .concepto {
+                background-color: #A22F38;
+                border: 3px solid white;
+                border-radius: 50%;
+                box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+                box-sizing: content-box;
+                cursor: move;
+                height: 50px;
+                position: absolute;
+                width: 50px;
+            }
+
+            .grafo .canvas #conceptos .concepto:hover {
+                background-color: #278f44;
+            }
 
     .grafo .opciones {
         width: 100%;
@@ -88,7 +161,7 @@ img {
             background-position: 10px center;
             background-repeat: no-repeat;
             background-size: 20px;
-            margin-bottom: 0px;
+            margin-bottom: 0;
             padding-left: 40px;
         }
 
@@ -111,7 +184,7 @@ img {
             background-size: 20px;
             float: right;
             height: 50px;
-            margin-bottom: 0px;
+            margin-bottom: 0;
         }
 
             .grafo .btnCanvas a.zoomIn {
@@ -129,7 +202,7 @@ img {
             float: left;
             height: 50px;
             line-height: 50px;
-            margin: 0px;
+            margin: 0;
             text-align: center;
             width: 100px;
         }
@@ -140,53 +213,129 @@ img {
                 vertical-align: middle;
             }
 
-.concepto {
-    background-color: #A22F38;
-    border: 3px solid white;
-    border-radius: 50%;
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
-    box-sizing: content-box;
-    cursor: move;
-    height: 50px;
-    position: absolute;
-    width: 50px;
-}
-
-.concepto:hover {
-    background-color: #278f44;
-}
-
 ._jsPlumb_connector {
     cursor: pointer;
 }
 
 /* SECCION | Lista de grafos */
 .grafoItem {
-    background-color: #A22F38;
-    background-image: url("../img/mazeRed.png");
-    box-shadow: 0px 8px 5px -7px #000;
-    height: 150px;
-    margin: 0px 0px 20px;
+    background: #A22F38 url("../img/mazeRed.png");
+    box-shadow: 0 8px 5px -7px #000;
+    margin: 0 0 20px;
     text-align: center;
 }
 
     .grafoItem .nombre {
-        background-color: #FFF;
-        background-image: url("../img/mazeWhite.png");
-        box-shadow: 0px 8px 5px -7px #000;
+        background: #FFF url("../img/mazeGray.png");
+        box-shadow: 0 8px 5px -7px #000;
         font-weight: bold;
-        padding: 10px 0px;
+        padding: 10px 0;
     }
 
     .grafoItem .conceptos {
-        color: white;
-        margin: 20px 0px;
+        color: #FFF;
+        margin: 20px 0;
     }
 
         .grafoItem .conceptos span {
             font-weight: bold;
         }
 
+    .grafoItem .button {
+        background-position: 10px center;
+        background-repeat: no-repeat;
+        background-size: 20px;
+        margin: 0;
+        width: 100%;
+    }
+
     .grafoItem .agregar {
-        margin-top: 50px;
+        background-image: url("../img/icons/add.png");
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+/* SECCION | Lista de conceptos */
+.tablaConceptos {
+    background-color: #A22F38;
+    border: 0;
+    box-shadow: 0 8px 5px -7px #000;
+    width: 100%;
+}
+
+    .tablaConceptos tr td {
+        color: #FFF;
+    }
+
+        .tablaConceptos tr td.concepto {
+            width: 80%;
+        }
+
+        .tablaConceptos tr td.acciones {
+            text-align: center;
+            width: 20%;
+        }
+
+    .tablaConceptos tr:nth-of-type(2n) {
+        background: rgba(0, 0, 0, 0.3);
+    }
+
+/* SECCION | Detalle de un concepto */
+.descripcionConcepto {
+    height: 350px;
+    margin-bottom: 1.25rem;
+}
+
+    .descripcionConcepto .lateral {
+        background: #A22F38 url("../img/maze.png");
+        box-shadow: 0 8px 5px -7px #000;
+        height: 350px;
+    }
+
+        .descripcionConcepto .lateral .header {
+            background: #A22F38 url("../img/mazeRed.png");
+            height: 100px;
+            padding-top: 70px;
+        }
+
+            .descripcionConcepto .lateral .header .concepto {
+                background-color: #A22F38;
+                border: 3px solid white;
+                border-radius: 50%;
+                box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+                box-sizing: content-box;
+                height: 50px;
+                margin: 0 auto;
+                width: 50px;
+            }
+
+        .descripcionConcepto .lateral .acciones {
+            margin-top: 60px;
+        }
+
+            .descripcionConcepto .lateral .acciones a {
+                margin: 10px 0;
+                width: 100%;
+            }
+
+    .descripcionConcepto .contenido {
+        background: #A22F38 url("../img/mazeRed.png");
+        box-shadow: 0 8px 5px -7px #000;
+        color: #FFF;
+        height: 350px;
+        padding: 20px;
+    }
+
+        .descripcionConcepto .contenido h3 {
+            color: #FFF;
+        }
+
+.recursosConcepto {
+    background: #A22F38 url("../img/mazeRed.png");
+    box-shadow: 0 8px 5px -7px #000;
+}
+
+    .recursosConcepto .header {
+        background: #A22F38 url("../img/mazeGray.png");
+        padding: 5px 20px;
     }

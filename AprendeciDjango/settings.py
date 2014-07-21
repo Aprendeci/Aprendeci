@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_bootstrap_breadcrumbs',
     'Aprendeci',
 )
 
@@ -49,6 +50,17 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.core.context_processors.tz",
+    "django.contrib.messages.context_processors.messages",
+    'django.core.context_processors.request',
 )
 
 ROOT_URLCONF = 'AprendeciDjango.urls'
@@ -63,7 +75,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': root('db.sqlite3'),
-    }
+        }
 }
 
 # Internationalization
@@ -99,3 +111,47 @@ TEMPLATE_DIRS = (
     root('AprendeciDjango/templates'),
     root('Aprendeci/templates'),
 )
+
+# Logging
+LOGGING = {
+    'version': 1,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+        'simple': {
+            'format': '[%(asctime)s] %(levelname)s %(message)s',
+            'datefmt' : "%d/%b/%Y %H:%M:%S"
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+            },
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': root('logs') + '/logs.log',
+            'formatter': 'simple'
+            },
+        'fileAprendeci': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': root('logs') + '/aprendeci.log',
+            'formatter': 'simple'
+            }
+        },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+            },
+        'aprendeci': {
+            'handlers': ['fileAprendeci'],
+            'level': 'DEBUG'
+            },
+        },
+    }

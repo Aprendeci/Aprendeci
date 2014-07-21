@@ -1,0 +1,74 @@
+{% extends "aprendeci/grafo/conceptos.html" %}
+{% load staticfiles %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block title %}Conceptos{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static "css/style.css" %}" />
+{% endblock %}
+
+{% block header %}
+    <div class="encabezado">
+        <img class="icon" alt="grafo" src="{% static "img/icons/grafo.png" %}" />
+        <h1>Concepto</h1>
+    </div>
+{% endblock %}
+
+{% block breadcrumbs %}
+    {% clear_breadcrumbs %}
+
+    {{ block.super }}
+    {% breadcrumb "Concepto" "" %}
+{% endblock %}
+
+{% block content %}
+    <div class="title">
+        <h2>{{ concepto.nombre }}</h2>
+    </div>
+    <div class="descripcionConcepto">
+        <div class="row">
+            <div class="small-3 columns">
+                <div class="lateral">
+                    <div class="header">
+                        <div class="concepto">
+                            <img alt="{{ concepto.nombre }}" src="{{ MEDIA_URL }}{{ concepto.imagen }}" />
+                        </div>
+                    </div>
+                    <div class="acciones">
+                        <a href="{% url 'admin:Aprendeci_concepto_change' concepto.id %}" class="small button modificar">Modificar</a>
+                        <a href="#" class="small button ver">Ver recursos</a>
+                    </div>
+                </div>
+            </div>
+            <div class="small-9 columns">
+                <div class="contenido">
+                    <h3>Descripcion</h3>
+                    <p>{{ concepto.descripcion }}</p>
+
+                    <h3>Requisitos</h3>
+                    <ul>
+                        {% for requisito in concepto.requisitos.all %}
+                            <li>{{ requisito.nombre }}</li>
+                        {% empty %}
+                            <li>No tiene requisitos</li>
+                        {% endfor %}
+                    </ul>
+
+                    <h3>Grafo</h3>
+                    <p>{{ concepto.grafo.nombre }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="recursosConcepto">
+        <div class="row">
+            <div class="small-12 columns">
+                <div class="header">
+                    <img class="icon" alt="grafo" src="{% static "img/icons/enlaces.png" %}" />
+                    <h2>Recursos</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

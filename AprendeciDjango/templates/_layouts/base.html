@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load django_bootstrap_breadcrumbs %}
 
 <!DOCTYPE html>
 <html>
@@ -20,7 +21,7 @@
     <!-- Scripts -->
     <script src="{% static "js/dependencies/modernizr.js" %}"></script>
     <script src="{% static "js/dependencies/jquery-2.1.1.js" %}"></script>
-	<script src="{% static "js/dependencies/jquery-ui-1.10.4.js" %}"></script>
+    <script src="{% static "js/dependencies/jquery-ui-1.10.4.js" %}"></script>
     <script src="{% static "js/dependencies/jquery.cookie.js" %}"></script>
     <script src="{% static "js/dependencies/jquery.growl.js" %}"></script>
     <script src="{% static "js/dependencies/foundation.min.js" %}"></script>
@@ -28,9 +29,47 @@
     {% block scripts  %}{% endblock %}
 </head>
 <body>
-    <div class="container">
-        {% block content %}{% endblock %}
+    <div id="wrapper">
+        <div id="header">
+            <div class="row">
+                <div class="small-12 columns">
+                    {% block header %}{% endblock %}
+                </div>
+            </div>
+
+            {% block breadcrumbs %}
+                {% clear_breadcrumbs %}
+                {% breadcrumb "Inicio" "/" %}
+            {% endblock %}
+
+            <div class="row">
+                <div class="small-12 columns">
+                    {% render_breadcrumbs "aprendeci/breadcrumb.html" %}
+                </div>
+            </div>
+        </div>
+        <div id="container">
+            {% block extraContent %}
+                <div class="row">
+                    <div class="small-12 columns">
+                        {% block content %}{% endblock %}
+                    </div>
+                </div>
+            {% endblock %}
+        </div>
     </div>
+    <div id="footer">
+        {% block footer %}
+            <div class="footerContent">
+                <div class="row">
+                    <div class="small-12 columns centrar">
+                        <img alt="logo" class="logo" src="{% static "img/logo.png" %}" />
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+    </div>
+
     <script> $(document).foundation(); </script>
 </body>
 </html>

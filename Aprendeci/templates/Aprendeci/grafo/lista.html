@@ -1,5 +1,6 @@
 {% extends "_layouts/base.html" %}
 {% load staticfiles %}
+{% load django_bootstrap_breadcrumbs %}
 
 {% block title %}Grafos{% endblock %}
 
@@ -7,62 +8,59 @@
     <link rel="stylesheet" href="{% static "css/style.css" %}" />
 {% endblock %}
 
-{% block content %}
-    <div class="row">
-        <div class="small-12 columns">
-            <div id="encabezado">
-                <img class="icon" alt="grafo" src="{% static "img/icons/grafo.png" %}" />
-                <h1>Grafos</h1>
-            </div>
-        </div>
+{% block header %}
+    <div class="encabezado">
+        <img class="icon" alt="grafo" src="{% static "img/icons/grafo.png" %}" />
+        <h1>Grafos</h1>
     </div>
-    <div class="row">
-        <div class="small-12 columns">
-            <div class="content">
-                <div class="row">
-                    <div class="small-10 small-centered columns">
-                        {% for grafo in grafo_list %}
-                            {% if forloop.counter0|divisibleby:"3" %}
-                                {% if forloop.counter0 > 0 %}
-                                    </div>
-                                {% endif %}
-                                <div class="row">
-                            {% endif %}
+{% endblock %}
 
-                            <!-- Mostrar item grafo -->
-                            <div class="small-4 columns">
-                                <div class="grafoItem">
-                                    <div class="nombre">{{ grafo.nombre }}</div>
-                                    <div class="conceptos"><span># Conceptos: </span>{{ grafo.numero_de_conceptos }}</div>
-                                    <a href="{% url "Aprendeci:grafo" grafo.id %}" class="button small">Modificar</a>
-                                </div>
-                            </div>
+{% block breadcrumbs %}
+    {{ block.super }}
+    {% breadcrumb "Grafos" "Aprendeci:grafos" %}
+{% endblock %}
 
-                            <!-- Acomodar el ultimo item de agregar -->
-                            {% if forloop.last %}
-                                {% if forloop.counter|divisibleby:"3" %}
-                                    </div>
-                                    <div class="row">
-                                        <div class="small-4 columns">
-                                            <div class="grafoItem">
-                                                <a href="{% url "admin:Aprendeci_grafo_add" %}" class="button small agregar">Agregar</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                {% else %}
-                                    <div class="small-4 columns">
-                                        <div class="grafoItem">
-                                            <a href="{% url "admin:Aprendeci_grafo_add" %}" class="button small agregar">Agregar</a>
-                                        </div>
-                                    </div>
-                                    </div>
-                                {% endif %}
-                            {% endif %}
-                        {% endfor %}
+{% block content %}
+    {% for grafo in grafo_list %}
+        {# Crear una fila cada 3 elementos #}
+        {% if forloop.counter0|divisibleby:"3" %}
+            {% if forloop.counter0 > 0 %}
+                </div>
+            {% endif %}
+            <div class="row">
+        {% endif %}
 
-                    </div>
+        {# Crear contenido de un grafo #}
+        <div class="small-4 columns">
+            <div class="grafoItem">
+                <div class="nombre">{{ grafo.nombre }}</div>
+                <div class="conceptos"><span># Conceptos: </span>{{ grafo.numero_de_conceptos }}</div>
+                <div class="botones">
+                    <a href="{% url "Aprendeci:grafo" grafo.id %}" class="button small modificar">Modificar</a>
+                    <a href="{% url "Aprendeci:conceptos" grafo.id %}" class="button small ver">Ver conceptos</a>
                 </div>
             </div>
         </div>
-    </div>
+
+        {# Crear el item de agregar nuevo grafo #}
+        {% if forloop.last %}
+            {% if forloop.counter|divisibleby:"3" %}
+                </div>
+                <div class="row">
+                    <div class="small-4 columns">
+                        <div class="grafoItem">
+                            <a href="{% url "admin:Aprendeci_grafo_add" %}" class="button small agregar">Agregar</a>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <div class="small-4 columns end">
+                    <div class="grafoItem">
+                        <a href="{% url "admin:Aprendeci_grafo_add" %}" class="button small agregar">Agregar</a>
+                    </div>
+                </div>
+                </div>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
 {% endblock %}

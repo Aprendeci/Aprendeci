@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="{% static "css/login.css" %}" />
 {% endblock %}
 
-{% block content %}
+{% block breadcrumbs %}
+{% endblock %}
+
+{% block extraContent %}
     <div class="loginForm">
         <div class="row">
             <div class="large-12 columns text-center">
@@ -44,4 +47,7 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block footer %}
 {% endblock %}

@@ -7,6 +7,6 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', 'django.contrib.auth.views.login', { 'template_name': 'Aprendeci/login.html' }),
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', include(admin.site.urls), name='admin'),
     url(r'^aprendeci/', include('Aprendeci.urls', namespace='Aprendeci'))
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
