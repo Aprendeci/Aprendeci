@@ -6,3 +6,4 @@ class ConceptoAdmin(admin.ModelAdmin):
 
 admin.site.register(Concepto, ConceptoAdmin)
 admin.site.register(Grafo)
+admin.site.register(Recurso)

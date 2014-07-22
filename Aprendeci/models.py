@@ -24,3 +24,23 @@ class Concepto(models.Model):
 
     def __str__(self):
         return self.nombre
+
+class Recurso(models.Model):
+    DOCUMENTO = 'D'
+    ENLACE = 'E'
+    VIDEO = 'V'
+    TIPOS_RECURSO = (
+        (ENLACE, 'Enlace'),
+        (DOCUMENTO, 'Documento'),
+        (VIDEO, 'Video'),
+    )
+
+    nombre = models.CharField(max_length=100)
+    descripcion = models.CharField(max_length=500)
+    fecha_creacion = models.DateTimeField(auto_now_add=True, editable=False)
+    tipo = models.CharField(max_length=1, choices=TIPOS_RECURSO)
+    direccion = models.CharField(max_length=100)
+    concepto = models.ForeignKey(Concepto)
+
+    def __str__(self):
+        return self.nombre

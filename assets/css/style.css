@@ -339,3 +339,37 @@ ul.breadcrumbs {
         background: #A22F38 url("../img/mazeGray.png");
         padding: 5px 20px;
     }
+
+    .recursosConcepto .contenido {
+        padding: 20px;
+    }
+
+        .recursosConcepto .contenido .recursoItem {
+            background: #A22F38 url("../img/mazeGray.png");
+            box-shadow: 0 8px 5px -7px #000;
+            height: 150px;
+            margin: 0 0 20px;
+            padding: 10px;
+            position: relative;
+            text-align: center;
+        }
+
+            .recursosConcepto .contenido .recursoItem hr {
+                border-color: #999;
+                margin: 10px 0 20px;
+            }
+
+            .recursosConcepto .contenido .recursoItem .nombre {
+                font-weight: bold;
+            }
+
+            .recursosConcepto .contenido .recursoItem .enlace {
+                bottom: 0;
+                left: 0;
+                position: absolute;
+                width: 100%;
+            }
+
+                .recursosConcepto .contenido .recursoItem .enlace a {
+                    width: 100%;
+                }

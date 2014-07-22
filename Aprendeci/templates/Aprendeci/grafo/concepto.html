@@ -68,6 +68,34 @@
                     <img class="icon" alt="grafo" src="{% static "img/icons/enlaces.png" %}" />
                     <h2>Recursos</h2>
                 </div>
+                <div class="contenido">
+                    {% for recurso in concepto.recurso_set.all %}
+                        {# Crear una fila cada 3 elementos #}
+                        {% if forloop.counter0|divisibleby:"3" %}
+                            {% if forloop.counter0 > 0 %}
+                                </div>
+                            {% endif %}
+                            <div class="row">
+                        {% endif %}
+
+                        {# Crear contenido de un recurso #}
+                        <div class="small-4 columns">
+                            <div class="recursoItem">
+                                <div class="nombre">{{ recurso.nombre }}</div>
+                                <hr />
+                                <div class="descripcion">{{ recurso.descripcion }}</div>
+                                <div class="enlace"><a href="{{ recurso.direccion }}" class="small button ver">Ir</a></div>
+                            </div>
+                        </div>
+
+                        {# Cierra la fila para el ultimo item #}
+                        {% if forloop.last %}
+                            </div>
+                        {% endif %}
+                    {% empty %}
+                        <h4>No hay recursos para este concepto</h4>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>
