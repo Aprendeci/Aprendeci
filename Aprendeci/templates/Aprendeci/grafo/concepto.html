@@ -1,6 +1,7 @@
 {% extends "Aprendeci/grafo/conceptos.html" %}
 {% load staticfiles %}
 {% load django_bootstrap_breadcrumbs %}
+{% load youtube_embed_url %}
 
 {% block title %}Conceptos{% endblock %}
 
@@ -78,24 +79,27 @@
                             <div class="row">
                         {% endif %}
 
-                        {# Crear contenido de un recurso #}
-                        <div class="small-4 columns">
-                            <div class="recursoItem">
-                                <div class="nombre">{{ recurso.nombre }}</div>
-                                <hr />
+                    {# Crear contenido de un recurso #}
+                    <div class="small-4 columns">
+                        <div class="recursoItem">
+                            <div class="nombre">{{ recurso.nombre }}</div>
+                            <hr />
+                            {% if recurso.tipo == 'V' %}
+                                <div class="enlace">{{ recurso.direccion|youtube_embed_url|safe }}</div>
+                            {% else %}
                                 <div class="descripcion">{{ recurso.descripcion }}</div>
                                 <div class="enlace"><a href="{{ recurso.direccion }}" class="small button ver">Ir</a></div>
-                            </div>
+                            {% endif %}
                         </div>
+                    </div>
 
-                        {# Cierra la fila para el ultimo item #}
-                        {% if forloop.last %}
-                            </div>
-                        {% endif %}
+                    {# Cierra la fila para el ultimo item #}
+                    {% if forloop.last %}
+                        </div>
+                    {% endif %}
                     {% empty %}
                         <h4>No hay recursos para este concepto</h4>
                     {% endfor %}
-                </div>
             </div>
         </div>
     </div>

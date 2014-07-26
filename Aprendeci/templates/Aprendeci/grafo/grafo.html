@@ -14,8 +14,8 @@
     <script>
         var conceptos = JSON.parse("{{ concepto_list|escapejs }}");
 
-        $.each(conceptos, function(idx, obj) {
-            obj.fields.imagen = "{{ MEDIA_URL }}" + obj.fields.imagen;
+        $.each(conceptos, function(index, value) {
+            value.fields.imagen = "{{ MEDIA_URL }}" + value.fields.imagen;
         });
     </script>
 

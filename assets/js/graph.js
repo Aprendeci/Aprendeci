@@ -24,6 +24,7 @@ $(document).ready(function() {
             concepto.append(drag);
             $("#conceptos").append(concepto);
 
+            // Hacer el elemento draggable
             jsPlumb.draggable(concepto, {
                 containment: "parent"
             });
@@ -146,12 +147,25 @@ $(document).ready(function() {
     $(".guardarGrafo").click(function() {
         var conexiones = jsPlumb.getConnections();
         var dependencias = [];
+        var posiciones = [];
 
+        // Estructura de las dependencias
         $.each(conexiones, function(index, value) {
             var sourceId = value.sourceId.substr(8);
             var targetId = value.targetId.substr(8);
 
             dependencias.push([sourceId, targetId]);
+        });
+
+        // Estructura de las posiciones
+        $.each(objConceptos, function(index, value) {
+            var posicion = {
+                concepto: value.attr("id").substr(8),
+                x: value.position().left,
+                y: value.position().top
+            };
+
+            posiciones.push(JSON.stringify(posicion));
         });
 
         // Seguridad de CSRF
@@ -166,7 +180,7 @@ $(document).ready(function() {
         });
 
         // Envio al backend de los datos
-        $.post("", { "dependencias[]" : dependencias })
+        $.post("", { "dependencias[]" : dependencias, "posiciones[]" : posiciones })
         .done(function (data) {
             $.growl.notice({ title: "Éxito", message: data });
         })

@@ -4,6 +4,7 @@ from django.core.files import File
 from django.http import HttpResponse
 from django.views.generic import ListView, DetailView
 from Aprendeci.models import *
+import json
 import logging
 
 '''
@@ -43,6 +44,7 @@ class GrafoView(ListView, LoginRequiredMixin):
 
     def post(self, request, *args, **kwargs):
         dependencias = request.POST.getlist("dependencias[]")
+        posiciones = request.POST.getlist("posiciones[]")
 
         # Limpiar dependencias
         grafo_id = self.kwargs['id']
@@ -56,6 +58,15 @@ class GrafoView(ListView, LoginRequiredMixin):
             concepto = self.model.objects.get(pk=tupla[2])
 
             concepto.requisitos.add(preRequisito)
+
+        # Actualizar posiciones
+        for posicion in posiciones:
+            posicionDict = json.loads(posicion)
+            concepto = self.model.objects.get(pk=posicionDict['concepto'])
+            concepto.x = round(posicionDict['x'])
+            concepto.y = round(posicionDict['y'])
+
+            concepto.save()
 
         # Guardar el grafo
         grafoMat = "{{" + "},{".join(dependencias) + "}}"
