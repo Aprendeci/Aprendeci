@@ -1,4 +1,4 @@
-{% extends "Aprendeci/grafo/lista.html" %}
+{% extends "Aprendeci/grafo/grafos.html" %}
 {% load staticfiles %}
 {% load django_bootstrap_breadcrumbs %}
 
@@ -19,7 +19,7 @@
         });
     </script>
 
-    <script src="{% static "js/graph.js" %}"></script>
+    <script src="{% static "js/grafo.js" %}"></script>
 {% endblock %}
 
 {% block header %}
@@ -44,8 +44,8 @@
                 <input type="radio" id="unir" name="radio"><label class="button small" for="unir">Unir</label>
             </div>
             <div class="acciones right">
-                <a class="small success button guardarGrafo">Guardar</a>
-                <a class="small button agregarConcepto" href="{% url "admin:Aprendeci_concepto_add" %}">Agregar concepto</a>
+                <a class="small success button guardar">Guardar</a>
+                <a class="small button agregar" href="{% url "admin:Aprendeci_concepto_add" %}">Agregar concepto</a>
             </div>
         </div>
         <div class="canvas">

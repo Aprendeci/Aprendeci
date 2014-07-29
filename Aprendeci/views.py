@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.core import serializers
 from django.core.files import File
+from django.db.models import Q
 from django.http import HttpResponse
 from django.views.generic import ListView, DetailView
 from Aprendeci.models import *
@@ -30,7 +31,7 @@ Class based views
 # Vista de la lista de grafos
 class GrafosView(ListView, LoginRequiredMixin):
     model = Grafo
-    template_name = "Aprendeci/grafo/lista.html"
+    template_name = "Aprendeci/grafo/grafos.html"
 
 # Vista del grafo
 class GrafoView(ListView, LoginRequiredMixin):
@@ -102,3 +103,91 @@ class ConceptoView(DetailView):
         context = super(ConceptoView, self).get_context_data(**kwargs)
         context['grafo_id'] = Concepto.objects.get(pk=self.kwargs['pk']).grafo.id
         return context
+
+class UnirGrafosView(ListView):
+    conexiones = []
+    context_object_name = "grafo_list"
+    model = Grafo
+    template_name = "Aprendeci/grafo/unirGrafos.html"
+
+    def dispatch(self, request, *args, **kwargs):
+        # Obtener relaciones entre grafos
+        self.conexiones = []
+        for concepto in Concepto.objects.filter(Q(grafo=self.request.GET.get("grafo1")) | Q(grafo=self.request.GET.get("grafo2"))):
+            for requisito in concepto.requisitos.all():
+                if requisito.grafo_id != concepto.grafo_id:
+                    self.conexiones.append([requisito.id, concepto.id])
+
+        return super(UnirGrafosView, self).dispatch(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super(UnirGrafosView, self).get_context_data(**kwargs)
+        try:
+            grafo1 = Grafo.objects.get(pk=self.request.GET.get("grafo1"))
+            grafo2 = Grafo.objects.get(pk=self.request.GET.get("grafo2"))
+
+            if not grafo1.grafoPadre is None and not grafo2.grafoPadre is None and grafo1.grafoPadre == grafo2.grafoPadre:
+                context['conexiones'] = json.dumps(self.conexiones)
+                context['modificacion'] = True
+            else:
+                context['conexiones'] = json.dumps([])
+                context['modificacion'] = False
+        except:
+            context['modificacion'] = False
+        return context
+
+    def get_queryset(self):
+        try:
+            grafo1 = Grafo.objects.get(pk=self.request.GET.get("grafo1"))
+            grafo2 = Grafo.objects.get(pk=self.request.GET.get("grafo2"))
+            lista = {grafo1, grafo2}
+        except:
+            lista = {}
+        return lista
+
+    def post(self, request, *args, **kwargs):
+        dependencias = request.POST.getlist("dependencias[]")
+        nombreGrafo = request.POST.get("nombreGrafo")
+
+        # Obtener relaciones entre grafos y limpiarlas
+        for conexion in self.conexiones:
+            preRequisito = Concepto.objects.get(pk=conexion[0])
+            concepto = Concepto.objects.get(pk=conexion[1])
+
+            concepto.requisitos.remove(preRequisito)
+
+        # Crear dependencias
+        for dependencia in dependencias:
+            tupla = dependencia.partition(",")
+            preRequisito = Concepto.objects.get(pk=tupla[0])
+            concepto = Concepto.objects.get(pk=tupla[2])
+
+            concepto.requisitos.add(preRequisito)
+
+        # Manipular el grafo padre
+        grafo1 = Grafo.objects.get(pk=self.request.GET.get("grafo1"))
+        grafo2 = Grafo.objects.get(pk=self.request.GET.get("grafo2"))
+        if len(dependencias) > 0:
+            # Crear nuevo grafo si no existe
+            if grafo1.grafoPadre is None:
+                nuevoGrafo = Grafo(nombre=nombreGrafo)
+                nuevoGrafo.save()
+
+                grafo1.grafoPadre = nuevoGrafo
+                grafo2.grafoPadre = nuevoGrafo
+
+                grafo1.save()
+                grafo2.save()
+        else:
+            # Eliminar el grafo padre
+            grafoPadre = grafo1.grafoPadre
+
+            grafo1.grafoPadre = None
+            grafo2.grafoPadre = None
+
+            grafo1.save()
+            grafo2.save()
+
+            grafoPadre.delete()
+
+        return HttpResponse("Se ha guardado exitosamente")

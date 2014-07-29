@@ -28,6 +28,10 @@ img {
     vertical-align: middle;
 }
 
+p {
+    display: inline;
+}
+
 .centrar {
     text-align: center;
 }
@@ -70,6 +74,15 @@ img {
     padding: 5px 20px;
 }
 
+    .title img {
+        margin-right: 10px;
+    }
+
+    .title p {
+        font-size: 1.1rem;
+        margin: 0;
+    }
+
 /* SECCION | Breadcrumbs */
 ul.breadcrumbs {
     background-image: url("../img/mazeGray.png");
@@ -87,12 +100,29 @@ ul.breadcrumbs {
     padding-left: 45px;
 }
 
+.button.small.inactivo {
+    background-color: #808080;
+    cursor: not-allowed;
+}
+
+.agregar {
+    background-image: url("../img/icons/add.png");
+}
+
 .modificar {
     background-image: url("../img/icons/edit.png");
 }
 
+.unir {
+    background-image: url("../img/icons/union.png");
+}
+
 .ver {
     background-image: url("../img/icons/eye.png");
+}
+
+.guardar {
+    background-image: url("../img/icons/save.png");
 }
 
 /* SECCION | Edicion del grafo */
@@ -165,14 +195,6 @@ ul.breadcrumbs {
             padding-left: 40px;
         }
 
-            .grafo .acciones a.agregarConcepto {
-                background-image: url("../img/icons/add.png");
-            }
-
-            .grafo .acciones a.guardarGrafo {
-                background-image: url("../img/icons/save.png");
-            }
-
     .grafo .btnCanvas {
         clear: both;
         width: 100%;
@@ -225,12 +247,40 @@ ul.breadcrumbs {
     text-align: center;
 }
 
-    .grafoItem .nombre {
+    .grafoItem .header {
         background: #FFF url("../img/mazeGray.png");
         box-shadow: 0 8px 5px -7px #000;
-        font-weight: bold;
         padding: 10px 0;
     }
+
+        .grafoItem .header .nombre {
+            display: inline;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .grafoItem .header .grafoCheck {
+            display: none;
+        }
+
+            .grafoItem .header .grafoCheck + label {
+                margin: 0px;
+                position: absolute;
+                right: 35px;
+            }
+
+                .grafoItem .header .grafoCheck + label span {
+                    background: url("../img/checkSheet.png") left top no-repeat;
+                    cursor: pointer;
+                    display: inline-block;
+                    height: 19px;
+                    width: 19px;
+                    vertical-align: bottom;
+                }
+
+                .grafoItem .header .grafoCheck:checked + label span {
+                    background: url("../img/checkSheet.png") -19px top no-repeat;
+                }
 
     .grafoItem .conceptos {
         color: #FFF;
@@ -242,17 +292,16 @@ ul.breadcrumbs {
         }
 
     .grafoItem .button {
-        background-position: 10px center;
-        background-repeat: no-repeat;
-        background-size: 20px;
-        margin: 0;
         width: 100%;
     }
 
     .grafoItem .agregar {
-        background-image: url("../img/icons/add.png");
         margin-bottom: 20px;
         margin-top: 20px;
+    }
+
+    .grafoItem .unir {
+        margin-bottom: 20px;
     }
 
 /* SECCION | Lista de conceptos */
@@ -326,6 +375,10 @@ ul.breadcrumbs {
         padding: 20px;
     }
 
+        .descripcionConcepto .contenido p {
+            display: block;
+        }
+
         .descripcionConcepto .contenido h3 {
             color: #FFF;
         }
@@ -376,3 +429,67 @@ ul.breadcrumbs {
                 .recursosConcepto .contenido .recursoItem .enlace iframe {
                     margin: 10px;
                 }
+
+/* SECCION | Unir grafos */
+.unionGrafos {
+    position: relative;
+}
+
+    .unionGrafos .contenedorGrafo {
+        background: #A22F38 url("../img/mazeRed.png");
+        box-shadow: 0 8px 5px -7px #000;
+        position: relative;
+    }
+
+        .unionGrafos .contenedorGrafo .nombre {
+            background: #A22F38 url("../img/mazeGray.png");
+            padding: 5px 20px;
+        }
+
+        .unionGrafos .contenedorGrafo .contenido {
+            padding: 20px;
+        }
+
+            .unionGrafos .contenedorGrafo .contenido .concepto {
+                background-image: url("../img/mazeGray.png");
+                box-shadow: 0 8px 5px -7px #000;
+                display: block;
+                margin: 5px 0;
+                padding: 5px;
+            }
+
+                .unionGrafos .contenedorGrafo.izq .contenido .concepto {
+                    text-align: left;
+                }
+
+                .unionGrafos .contenedorGrafo.der .contenido .concepto {
+                    text-align: right;
+                }
+
+                .unionGrafos .contenedorGrafo .contenido .concepto .conector {
+                    margin-top: 7px;
+                    position: absolute;
+                }
+
+                    .unionGrafos .contenedorGrafo.izq .contenido .concepto .conector {
+                        right: 40px;
+                    }
+
+                    .unionGrafos .contenedorGrafo.der .contenido .concepto .conector {
+                        left: 40px;
+                    }
+
+    .unionGrafos .acciones {
+        background: #A22F38 url("../img/mazeRed.png");
+        box-shadow: 0 8px 5px -7px #000;
+        margin-top: 1.25rem;
+        padding: 10px;
+    }
+
+        .unionGrafos .acciones input[type="text"] {
+            margin: 4px 0;
+        }
+
+        .unionGrafos .acciones .unir, .unionGrafos .acciones .guardar {
+            width: 100%;
+        }

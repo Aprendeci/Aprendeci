@@ -7,6 +7,8 @@ class Grafo(models.Model):
 
     def numero_de_conceptos(self):
         numConceptos = self.concepto_set.all().count()
+        for grafo in self.grafo_set.all():
+            numConceptos += grafo.concepto_set.all().count()
         return numConceptos
 
     def __str__(self):

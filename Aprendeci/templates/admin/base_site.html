@@ -10,10 +10,17 @@
 
 {% block extrahead %}
     <link rel="shortcut icon" type="image/x-icon" href="{% static "img/favicon.ico" %}">
+
+    <script>
+        function volver() {
+            window.history.back();
+        }
+    </script>
 {% endblock %}
 
 {% block branding %}
-    <h1 id="site-name">Administración de Aprendeci</h1>
+    <a id="volverBtn" onclick="volver()">Volver</a>
+    <h1 id="site-name"><a href="{% url 'admin:index' %}">Administración de Aprendeci</a></h1>
 {% endblock %}
 
 {% block nav-global %}{% endblock %}
