@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a0090422-e86b-4f77-aa46-55222ee4e0ab" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/img/icons/back.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/img/checkSheet.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/img/icons/conceptos/derivadas.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/img/icons/info.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/img/icons/conceptos/lhopital.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/img/icons/conceptos/limites.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/img/icons/conceptos/segundaDerivada.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/img/icons/conceptos/teoremaDelValorMedio.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/img/icons/union.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/js/grafosUnion.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/js/unirGrafos.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/admin.css" afterPath="$PROJECT_DIR$/assets/css/admin.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aprendeci/templates/admin/base_site.html" afterPath="$PROJECT_DIR$/Aprendeci/templates/admin/base_site.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/logs.log" afterPath="$PROJECT_DIR$/logs/logs.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aprendeci/models.py" afterPath="$PROJECT_DIR$/Aprendeci/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/style.css" afterPath="$PROJECT_DIR$/assets/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aprendeci/urls.py" afterPath="$PROJECT_DIR$/Aprendeci/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aprendeci/views.py" afterPath="$PROJECT_DIR$/Aprendeci/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\Desarrollo\Proyectos\Universidad\Aprendeci\Aprendeci\assets\js\graph.js" afterPath="$PROJECT_DIR$/assets/js/grafo.js" />
-    </list>
+    <list default="true" id="a0090422-e86b-4f77-aa46-55222ee4e0ab" name="Default" comment="" />
     <ignored path="Aprendeci.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
