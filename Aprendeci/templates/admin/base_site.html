@@ -19,7 +19,7 @@
 {% endblock %}
 
 {% block branding %}
-    <a id="volverBtn" onclick="volver()">Volver</a>
+    <a id="volverBtn" href="{% url 'login' %}">Volver</a>
     <h1 id="site-name"><a href="{% url 'admin:index' %}">Administración de Aprendeci</a></h1>
 {% endblock %}
 

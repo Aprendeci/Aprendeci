@@ -1,4 +1,4 @@
-{% extends "Aprendeci/grafo/conceptos.html" %}
+{% extends "Aprendeci/estudiante/perfil.html" %}
 {% load staticfiles %}
 {% load django_bootstrap_breadcrumbs %}
 {% load youtube_embed_url %}
@@ -7,6 +7,10 @@
 
 {% block styles %}
     <link rel="stylesheet" href="{% static "css/style.css" %}" />
+{% endblock %}
+
+{% block preheader %}
+    {% include "Aprendeci/estudiante/topbar.html" %}
 {% endblock %}
 
 {% block header %}

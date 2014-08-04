@@ -55,7 +55,9 @@ $(document).ready(function() {
                 conexion["source"] = "concepto" + objr.toString();
                 conexion["target"] = "concepto" + obj.pk.toString();
 
-                jsPlumb.connect(conexion);
+                if (document.getElementById(conexion["source"]) != null && document.getElementById(conexion["target"]) != null) {
+                    jsPlumb.connect(conexion);
+                }
             });
         });
 

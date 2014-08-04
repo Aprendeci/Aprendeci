@@ -2,11 +2,12 @@ from django.conf import settings
 from django.conf.urls import patterns, include, url
 from django.conf.urls.static import static
 from django.contrib import admin
-
-admin.autodiscover()
+from Aprendeci import views
 
 urlpatterns = patterns('',
-    url(r'^$', 'django.contrib.auth.views.login', { 'template_name': 'Aprendeci/login.html' }),
+    url(r'^$', views.acceder, name='acceder'),
+    url(r'^logout/$', views.logoutView, name='logout'),
+    url(r'^acceder/$', 'django.contrib.auth.views.login', { 'template_name': 'Aprendeci/login.html' }, name='login'),
     url(r'^admin/', include(admin.site.urls), name='admin'),
-    url(r'^aprendeci/', include('Aprendeci.urls', namespace='Aprendeci'))
+    url(r'^aprendeci/', include('Aprendeci.urls', namespace='Aprendeci')),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

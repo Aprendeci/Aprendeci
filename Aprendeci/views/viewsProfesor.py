@@ -1,40 +1,28 @@
-from django.contrib.auth.decorators import login_required
 from django.core import serializers
 from django.core.files import File
 from django.db.models import Q
 from django.http import HttpResponse
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 from Aprendeci.models import *
+from .viewsGeneral import *
 import json
-import logging
 
-'''
-Configuracion general
-'''
-logger = logging.getLogger('aprendeci')
 
-'''
-Mixins
-'''
+# Class based views
 
-# Mixin para la autenticacion
-class LoginRequiredMixin(object):
-    @classmethod
-    def as_view(self, **kwargs):
-        view = super(LoginRequiredMixin, self).as_view(**kwargs)
-        return login_required(view)
+# Vista principal
+class PerfilProfesorView(LoginRequiredMixin, TemplateView):
+    template_name = 'Aprendeci/profesor/perfil.html'
 
-'''
-Class based views
-'''
 
 # Vista de la lista de grafos
-class GrafosView(ListView, LoginRequiredMixin):
+class GrafosView(LoginRequiredMixin, ListView):
     model = Grafo
     template_name = "Aprendeci/grafo/grafos.html"
 
+
 # Vista del grafo
-class GrafoView(ListView, LoginRequiredMixin):
+class GrafoView(LoginRequiredMixin, ListView):
     context_object_name = "concepto_list"
     model = Concepto
     template_name = "Aprendeci/grafo/grafo.html"
@@ -77,8 +65,9 @@ class GrafoView(ListView, LoginRequiredMixin):
 
         return HttpResponse("Se ha guardado exitosamente")
 
+
 # Vista de la lista de conceptos de un grafo
-class ConceptosGrafoView(ListView, LoginRequiredMixin):
+class ConceptosGrafoView(LoginRequiredMixin, ListView):
     context_object_name = "concepto_list"
     model = Concepto
     template_name = "Aprendeci/grafo/conceptos.html"
@@ -93,8 +82,9 @@ class ConceptosGrafoView(ListView, LoginRequiredMixin):
         grafo_id = self.kwargs['id']
         return Concepto.objects.filter(grafo=grafo_id)
 
+
 # Vista en detalle de un concepto
-class ConceptoView(DetailView):
+class ConceptoView(LoginRequiredMixin, DetailView):
     context_object_name = "concepto"
     model = Concepto
     template_name = "Aprendeci/grafo/concepto.html"
@@ -104,7 +94,8 @@ class ConceptoView(DetailView):
         context['grafo_id'] = Concepto.objects.get(pk=self.kwargs['pk']).grafo.id
         return context
 
-class UnirGrafosView(ListView):
+
+class UnirGrafosView(LoginRequiredMixin, ListView):
     conexiones = []
     context_object_name = "grafo_list"
     model = Grafo

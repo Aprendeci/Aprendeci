@@ -1,0 +1,80 @@
+{% extends "_layouts/base.html" %}
+{% load staticfiles %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block title %}Perfil del estudiante{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static "css/style.css" %}" />
+{% endblock %}
+
+{% block preheader %}
+    {% include "Aprendeci/estudiante/topbar.html" with active_tab="miPerfil" %}
+{% endblock %}
+
+{% block header %}
+    <div class="encabezado">
+        <img class="icon" alt="grafo" src="{% static "img/icons/perfil.png" %}" />
+        <h1>Perfil del estudiante</h1>
+    </div>
+{% endblock %}
+
+{% block breadcrumbs %}
+    {{ block.super }}
+    {% breadcrumb "Perfil" "Aprendeci:perfilEstudiante" %}
+{% endblock %}
+
+{% block content %}
+    <div class="perfil">
+        <div class="infoPerfil">
+            <div class="row">
+                <div class="small-5 columns">
+                    <h4>@{{ user.username }}</h4>
+                    <br />
+                    <p>{{ user.first_name }} {{ user.last_name }}</p>
+                </div>
+                <div class="small-5 columns">
+                    <h4>Fecha de la última conexión: </h4>
+                    <br />
+                    <p>{{ user.last_login }}</p>
+                </div>
+                <div class="small-2 columns">
+                    <a href="#" class="small button modificar">Modificar</a>
+                </div>
+            </div>
+        </div>
+        <div class="acciones">
+            <div class="row">
+                <div class="small-4 columns">
+                    <div class="componente">
+                        <div class="containerImg">
+                            <img alt="grafo" src="{% static 'img/stock/graph-theory.jpg' %}" />
+                        </div>
+                        <h4>Mi grafo</h4>
+                        <a href="{% url 'Aprendeci:grafoEstudiante' %}" class="small button ver">Ir</a>
+                    </div>
+                </div>
+
+                <div class="small-4 columns">
+                    <div class="componente">
+                        <div class="containerImg">
+                            <img alt="idea" src="{% static 'img/stock/idea.jpg' %}" />
+                        </div>
+                        <h4>Sugerencias</h4>
+                        <a href="#" class="small button ver">Ir</a>
+                    </div>
+                </div>
+
+                <div class="small-4 columns">
+                    <div class="componente">
+                        <div class="containerImg">
+                            <img alt="progress" src="{% static 'img/stock/progress.jpg' %}" />
+                        </div>
+                        <h4>Mi progreso</h4>
+                        <a href="#" class="small button ver">Ir</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
