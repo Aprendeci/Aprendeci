@@ -14,4 +14,4 @@ admin.site.register(Grafo)
 admin.site.register(Recurso)
 
 # Configuracion del admin
-admin.site.login = login_required(admin.site.login)
+#admin.site.login = login_required(admin.site.login)
