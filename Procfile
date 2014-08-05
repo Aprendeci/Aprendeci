@@ -1,1 +1,1 @@
-web: waitress-serve --port=$PORT AprendeciDjango.wsgi:application
+web: python manage.py runserver 0.0.0.0:$PORT --noreload
