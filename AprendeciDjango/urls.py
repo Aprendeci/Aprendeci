@@ -4,6 +4,8 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from Aprendeci import views
 
+admin.autodiscover()
+
 urlpatterns = patterns('',
     url(r'^$', views.acceder, name='acceder'),
     url(r'^logout/$', views.logoutView, name='logout'),
