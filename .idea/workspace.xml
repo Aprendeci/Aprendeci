@@ -2,10 +2,57 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0090422-e86b-4f77-aa46-55222ee4e0ab" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/img/menu/Comparaciones.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/img/menu/Cursos.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/img/cursos/Defecto.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/img/menu/EstadoCurso.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/img/menu/Grafos.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/img/menu/Progreso.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/img/menu/Sugerencias.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/img/icons/cursos.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/img/icons/share.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Aprendeci/migrations/0007_curso.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Aprendeci/migrations/0008_curso_grafo.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Aprendeci/migrations/0009_curso_clave.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Aprendeci/migrations/0010_curso_sigla.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Aprendeci/migrations/0011_curso_imagen.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Aprendeci/migrations/0012_auto_20140810_1721.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Aprendeci/migrations/0013_auto_20140810_1726.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Aprendeci/migrations/0014_auto_20140810_1823.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Aprendeci/templates/aprendeci/profesor/grafo/concepto.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Aprendeci/templates/aprendeci/profesor/grafo/conceptos.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Aprendeci/templates/aprendeci/estudiante/cursos.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Aprendeci/templates/aprendeci/profesor/cursos.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Aprendeci/templates/aprendeci/profesor/grafo/grafo.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Aprendeci/templates/aprendeci/profesor/grafo/grafos.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Aprendeci/templates/aprendeci/profesor/grafo/unirGrafos.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Aprendeci/templates/aprendeci/estudiante/unirseAlCurso.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/js/unirseAlCurso.js" />
+      <change type="DELETED" beforePath="D:\Desarrollo\Proyectos\Universidad\Aprendeci\Aprendeci\Aprendeci\templates\Aprendeci\grafo\concepto.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Desarrollo\Proyectos\Universidad\Aprendeci\Aprendeci\Aprendeci\templates\Aprendeci\grafo\conceptos.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Desarrollo\Proyectos\Universidad\Aprendeci\Aprendeci\Aprendeci\templates\Aprendeci\grafo\grafo.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Desarrollo\Proyectos\Universidad\Aprendeci\Aprendeci\Aprendeci\templates\Aprendeci\grafo\grafos.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Desarrollo\Proyectos\Universidad\Aprendeci\Aprendeci\Aprendeci\templates\Aprendeci\grafo\unirGrafos.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Desarrollo\Proyectos\Universidad\Aprendeci\Aprendeci\assets\img\stock\comparison.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\Desarrollo\Proyectos\Universidad\Aprendeci\Aprendeci\assets\img\stock\estudiantes.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\Desarrollo\Proyectos\Universidad\Aprendeci\Aprendeci\assets\img\stock\graph-theory.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\Desarrollo\Proyectos\Universidad\Aprendeci\Aprendeci\assets\img\stock\idea.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\Desarrollo\Proyectos\Universidad\Aprendeci\Aprendeci\assets\img\stock\progress.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aprendeci/admin.py" afterPath="$PROJECT_DIR$/Aprendeci/admin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/logs.log" afterPath="$PROJECT_DIR$/logs/logs.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aprendeci/models.py" afterPath="$PROJECT_DIR$/Aprendeci/models.py" />
+      <change type="MODIFICATION" beforePath="D:\Desarrollo\Proyectos\Universidad\Aprendeci\Aprendeci\Aprendeci\templates\aprendeci\estudiante\perfil.html" afterPath="$PROJECT_DIR$/Aprendeci/templates/aprendeci/estudiante/perfil.html" />
+      <change type="MODIFICATION" beforePath="D:\Desarrollo\Proyectos\Universidad\Aprendeci\Aprendeci\Aprendeci\templates\aprendeci\profesor\perfil.html" afterPath="$PROJECT_DIR$/Aprendeci/templates/aprendeci/profesor/perfil.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/requirementsAux.txt" afterPath="$PROJECT_DIR$/requirementsAux.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/style.css" afterPath="$PROJECT_DIR$/assets/css/style.css" />
+      <change type="MODIFICATION" beforePath="D:\Desarrollo\Proyectos\Universidad\Aprendeci\Aprendeci\Aprendeci\templates\aprendeci\profesor\topbar.html" afterPath="$PROJECT_DIR$/Aprendeci/templates/aprendeci/profesor/topbar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aprendeci/urls.py" afterPath="$PROJECT_DIR$/Aprendeci/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aprendeci/views/viewsEstudiante.py" afterPath="$PROJECT_DIR$/Aprendeci/views/viewsEstudiante.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aprendeci/views/viewsGeneral.py" afterPath="$PROJECT_DIR$/Aprendeci/views/viewsGeneral.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aprendeci/views/viewsProfesor.py" afterPath="$PROJECT_DIR$/Aprendeci/views/viewsProfesor.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Aprendeci.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,30 +78,28 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Aprendeci/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="374">
-              <caret line="7" column="90" selection-start-line="7" selection-start-column="75" selection-end-line="7" selection-end-column="90" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
+              <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="viewsEstudiante.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Aprendeci/views/viewsEstudiante.py">
+      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Aprendeci/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1021021" vertical-offset="0" max-vertical-offset="666">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.6526138" vertical-offset="905" max-vertical-offset="1802">
+              <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="concepto.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Aprendeci/templates/aprendeci/estudiante/concepto.html">
+      <file leaf-file-name="viewsEstudiante.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Aprendeci/views/viewsEstudiante.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1955">
-              <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1343">
+              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -63,8 +108,8 @@
       <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="7587" max-vertical-offset="9809">
-              <caret line="473" column="23" selection-start-line="473" selection-start-column="23" selection-end-line="473" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2718" max-vertical-offset="10693">
+              <caret line="168" column="0" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -83,12 +128,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/assets/css/login.css" />
-        <option value="$PROJECT_DIR$/Aprendeci/templates/Aprendeci/index.html" />
-        <option value="$PROJECT_DIR$/Aprendeci/migrations/0007_set_default_graph.py" />
-        <option value="$PROJECT_DIR$/Aprendeci/templates/admin/aprendeci/grafo/change_list.html" />
-        <option value="$PROJECT_DIR$/Aprendeci/templates/Aprendeci/login.html" />
-        <option value="$PROJECT_DIR$/Aprendeci/templates/Aprendeci/grafo/grafo.html" />
         <option value="$PROJECT_DIR$/Aprendeci/templates/Aprendeci/grafo/lista.html" />
         <option value="$PROJECT_DIR$/Aprendeci/templatetags/breadcrumb.py" />
         <option value="$PROJECT_DIR$/Aprendeci/templatetags/breadcrumbs.py" />
@@ -103,15 +142,10 @@
         <option value="$PROJECT_DIR$/Aprendeci/templates/aprendeci/grafo/grafo.html" />
         <option value="$PROJECT_DIR$/Aprendeci/templates/aprendeci/grafo/unirGrafos.html" />
         <option value="$PROJECT_DIR$/assets/js/unirGrafos.js" />
-        <option value="$PROJECT_DIR$/Aprendeci/models.py" />
         <option value="$PROJECT_DIR$/assets/css/admin.css" />
-        <option value="$PROJECT_DIR$/requirements.txt" />
-        <option value="$PROJECT_DIR$/requirementsAux.txt" />
         <option value="$PROJECT_DIR$/Aprendeci/views.py" />
         <option value="$PROJECT_DIR$/Aprendeci/views/__init__.py" />
         <option value="$PROJECT_DIR$/Aprendeci/templates/aprendeci/login.html" />
-        <option value="$PROJECT_DIR$/Aprendeci/views/viewsProfesor.py" />
-        <option value="$PROJECT_DIR$/Aprendeci/admin.py" />
         <option value="$PROJECT_DIR$/Aprendeci/templates/admin/base_site.html" />
         <option value="$PROJECT_DIR$/AprendeciDjango/templates/_layouts/base.html" />
         <option value="$PROJECT_DIR$/AprendeciDjango/settings.py" />
@@ -119,21 +153,32 @@
         <option value="$PROJECT_DIR$/Aprendeci/templates/aprendeci/profesor/baseProfesor.html" />
         <option value="$PROJECT_DIR$/Aprendeci/templates/aprendeci/profesor/topbarProfesor.html" />
         <option value="$PROJECT_DIR$/Aprendeci/templates/aprendeci/estudiante/topbarEstudiante.html" />
-        <option value="$PROJECT_DIR$/Aprendeci/templates/aprendeci/profesor/topbar.html" />
-        <option value="$PROJECT_DIR$/Aprendeci/views/viewsGeneral.py" />
         <option value="$PROJECT_DIR$/AprendeciDjango/urls.py" />
         <option value="$PROJECT_DIR$/Aprendeci/templates/aprendeci/grafo/grafos.html" />
-        <option value="$PROJECT_DIR$/Aprendeci/templates/aprendeci/estudiante/perfil.html" />
-        <option value="$PROJECT_DIR$/Aprendeci/templates/aprendeci/profesor/perfil.html" />
         <option value="$PROJECT_DIR$/assets/js/grafo.js" />
-        <option value="$PROJECT_DIR$/assets/css/style.css" />
         <option value="$PROJECT_DIR$/Aprendeci/templates/aprendeci/grafo/concepto.html" />
-        <option value="$PROJECT_DIR$/Aprendeci/urls.py" />
         <option value="$PROJECT_DIR$/assets/js/grafoEstudiante.js" />
         <option value="$PROJECT_DIR$/Aprendeci/templates/aprendeci/estudiante/topbar.html" />
         <option value="$PROJECT_DIR$/Aprendeci/templates/aprendeci/estudiante/grafo.html" />
         <option value="$PROJECT_DIR$/Aprendeci/templates/aprendeci/estudiante/concepto.html" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/requirementsAux.txt" />
+        <option value="$PROJECT_DIR$/Aprendeci/templates/aprendeci/profesor/topbar.html" />
+        <option value="$PROJECT_DIR$/Aprendeci/templates/aprendeci/profesor/grafo/grafos.html" />
+        <option value="$PROJECT_DIR$/Aprendeci/templates/aprendeci/profesor/cursos.html" />
+        <option value="$PROJECT_DIR$/Aprendeci/views/viewsProfesor.py" />
+        <option value="$PROJECT_DIR$/Aprendeci/templates/aprendeci/estudiante/perfil.html" />
+        <option value="$PROJECT_DIR$/Aprendeci/templates/aprendeci/profesor/perfil.html" />
+        <option value="$PROJECT_DIR$/Aprendeci/templates/aprendeci/estudiante/enrolarse.html" />
+        <option value="$PROJECT_DIR$/Aprendeci/templates/aprendeci/estudiante/cursos.html" />
+        <option value="$PROJECT_DIR$/Aprendeci/urls.py" />
+        <option value="$PROJECT_DIR$/Aprendeci/views/viewsGeneral.py" />
+        <option value="$PROJECT_DIR$/assets/css/style.css" />
+        <option value="$PROJECT_DIR$/assets/js/unirseAlCurso.js" />
+        <option value="$PROJECT_DIR$/Aprendeci/admin.py" />
         <option value="$PROJECT_DIR$/Aprendeci/views/viewsEstudiante.py" />
+        <option value="$PROJECT_DIR$/Aprendeci/models.py" />
+        <option value="$PROJECT_DIR$/Aprendeci/templates/aprendeci/estudiante/unirseAlCurso.html" />
       </list>
     </option>
   </component>
@@ -217,7 +262,133 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="uploads" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Aprendeci" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Aprendeci" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Aprendeci" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Aprendeci" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Aprendeci" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Aprendeci" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AprendeciDjango" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Aprendeci" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Aprendeci" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Aprendeci" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Aprendeci" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Aprendeci" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Aprendeci" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aprendeci" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Aprendeci" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Aprendeci" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Aprendeci" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aprendeci" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="estudiante" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Aprendeci" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Aprendeci" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Aprendeci" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -244,18 +415,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Desarrollo\Proyectos\Universidad\Aprendeci\Aprendeci\uploads\img\icons\cursos" />
+      <recent name="D:\Desarrollo\Proyectos\Universidad\Aprendeci\Aprendeci\assets\img\icons" />
+      <recent name="D:\Desarrollo\Proyectos\Universidad\Aprendeci\Aprendeci\assets\img\menu" />
       <recent name="D:\Desarrollo\Proyectos\Universidad\Aprendeci\Aprendeci\Aprendeci\templates\aprendeci\estudiante" />
       <recent name="D:\Desarrollo\Proyectos\Universidad\Aprendeci\Aprendeci\assets\img" />
-      <recent name="D:\Desarrollo\Proyectos\Universidad\Aprendeci\Aprendeci\assets\img\icons" />
-      <recent name="D:\Desarrollo\Proyectos\Universidad\Aprendeci\Aprendeci\Aprendeci\views" />
-      <recent name="D:\Desarrollo\Proyectos\Universidad\Aprendeci\Aprendeci\Aprendeci\templatetags" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Desarrollo\Proyectos\Universidad\Aprendeci\Aprendeci\uploads\img" />
+      <recent name="D:\Desarrollo\Proyectos\Universidad\Aprendeci\Aprendeci\Aprendeci\templates\aprendeci\profesor" />
       <recent name="D:\Desarrollo\Proyectos\Universidad\Aprendeci\Aprendeci\Aprendeci\templates\aprendeci" />
       <recent name="D:\Desarrollo\Proyectos\Universidad\Aprendeci\Aprendeci\Aprendeci\templates\aprendeci\grafo" />
       <recent name="D:\Desarrollo\Proyectos\Universidad\Aprendeci\Aprendeci\Aprendeci\templates\Aprendeci\grafo" />
-      <recent name="C:\Users\Daniel\Desarrollo\Proyectos\Aprendeci\Aprendeci\Aprendeci\templates" />
-      <recent name="C:\Users\Daniel\Desarrollo\Proyectos\Aprendeci\Aprendeci\AprendeciDjango\templates\admin" />
     </key>
   </component>
   <component name="RunManager" selected="Django server.aprendeci">
@@ -569,22 +740,22 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32792208" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19135135" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756758" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3264865" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21945946" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24972972" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15778251" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12846482" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30810812" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13006397" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32819384" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24972972" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26162162" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24339207" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21945946" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32792208" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -623,63 +794,15 @@
     <MESSAGE value="[Develop] Guardar posiciones del grafo" />
     <MESSAGE value="[Develop] Union de grafos" />
     <MESSAGE value="[Develop] Creacion de grupos e inicio del modulo de autenticacion" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Develop] Creacion de grupos e inicio del modulo de autenticacion" />
+    <MESSAGE value="[Develop] Creación de cursos y proceso de union de estudiantes" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Develop] Creación de cursos y proceso de union de estudiantes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="47" />
+      <option name="time" value="63" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Aprendeci/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="153">
-          <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AprendeciDjango/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1564">
-          <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AprendeciDjango/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="306">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AprendeciDjango/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1564">
-          <caret line="86" column="1" selection-start-line="86" selection-start-column="1" selection-end-line="86" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AprendeciDjango/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="306">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python34/Lib/wsgiref/handlers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2105" max-vertical-offset="9350">
-          <caret line="136" column="0" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python34/Lib/socketserver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3326226" vertical-offset="11081" max-vertical-offset="12699">
-          <caret line="665" column="0" selection-start-line="665" selection-start-column="0" selection-end-line="665" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python34/Lib/wsgiref/simple_server.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3326226" vertical-offset="1901" max-vertical-offset="2720">
@@ -737,21 +860,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Envs/env_aprendeci/Lib/site-packages/django/core/handlers/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="1496" max-vertical-offset="4148">
-          <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/env_aprendeci/Lib/site-packages/django/views/generic/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="1088" max-vertical-offset="3655">
-          <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/unirGrafos.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1342" max-vertical-offset="2754">
@@ -759,31 +867,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Aprendeci/templates/aprendeci/grafo/conceptos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6375" vertical-offset="255" max-vertical-offset="969">
-          <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/admin.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="99" max-vertical-offset="765">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirementsAux.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
-          <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="136">
-          <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -801,38 +888,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Aprendeci/templates/aprendeci/grafo/unirGrafos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.0" vertical-offset="864" max-vertical-offset="1530">
-          <caret line="60" column="50" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Aprendeci/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35735735" vertical-offset="0" max-vertical-offset="666">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Aprendeci/templates/admin/base_site.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6375" vertical-offset="0" max-vertical-offset="640">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Aprendeci/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="901">
-          <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/env_aprendeci/Lib/site-packages/django/contrib/auth/decorators.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="34" max-vertical-offset="1275">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -863,13 +922,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Aprendeci/templates/aprendeci/profesor/topbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="459">
-          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3465649" vertical-offset="3343" max-vertical-offset="21862">
@@ -877,59 +929,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Aprendeci/templates/aprendeci/grafo/grafos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58532935" vertical-offset="0" max-vertical-offset="1496">
-          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AprendeciDjango/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.211838" vertical-offset="0" max-vertical-offset="642">
-          <caret line="8" column="55" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Aprendeci/templates/aprendeci/grafo/grafo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7775974" vertical-offset="524" max-vertical-offset="1190">
-          <caret line="59" column="6" selection-start-line="0" selection-start-column="0" selection-end-line="64" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Aprendeci/views/viewsGeneral.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.259542" vertical-offset="0" max-vertical-offset="714">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Aprendeci/templates/aprendeci/profesor/perfil.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="1632">
-          <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/grafo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="3400">
-          <caret line="54" column="66" selection-start-line="0" selection-start-column="0" selection-end-line="194" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Aprendeci/templates/aprendeci/grafo/concepto.html">
+    <entry file="file://$PROJECT_DIR$/Aprendeci/templates/aprendeci/profesor/grafo/concepto.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09730539" vertical-offset="20" max-vertical-offset="1887">
           <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Aprendeci/views/viewsProfesor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3573487" vertical-offset="1078" max-vertical-offset="3094">
-          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="94" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -940,21 +943,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Aprendeci/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
-          <caret line="7" column="90" selection-start-line="7" selection-start-column="75" selection-end-line="7" selection-end-column="90" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Aprendeci/templates/aprendeci/estudiante/perfil.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25449103" vertical-offset="0" max-vertical-offset="1445">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="12" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Aprendeci/templates/aprendeci/estudiante/topbar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33083832" vertical-offset="0" max-vertical-offset="668">
@@ -962,36 +950,242 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Aprendeci/templates/aprendeci/estudiante/grafo.html">
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63622755" vertical-offset="0" max-vertical-offset="918">
-          <caret line="25" column="74" selection-start-line="25" selection-start-column="74" selection-end-line="25" selection-end-column="74" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="897">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirementsAux.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="897">
+          <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Aprendeci/templates/aprendeci/estudiante/concepto.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1955">
+        <state vertical-scroll-proportion="-0.31875" vertical-offset="408" max-vertical-offset="1955">
           <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Aprendeci/templates/aprendeci/profesor/topbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3984375" vertical-offset="0" max-vertical-offset="640">
+          <caret line="15" column="13" selection-start-line="14" selection-start-column="106" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Aprendeci/templates/aprendeci/profesor/grafo/grafos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37275448" vertical-offset="550" max-vertical-offset="1632">
+          <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Aprendeci/templates/aprendeci/estudiante/grafo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0254491" vertical-offset="0" max-vertical-offset="918">
+          <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AprendeciDjango/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09798271" vertical-offset="0" max-vertical-offset="694">
+          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Aprendeci/templates/aprendeci/profesor/cursos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.76347303" vertical-offset="714" max-vertical-offset="1462">
+          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Aprendeci/templates/aprendeci/profesor/grafo/conceptos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.884615" vertical-offset="301" max-vertical-offset="969">
+          <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Aprendeci/templates/aprendeci/estudiante/perfil.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15" vertical-offset="805" max-vertical-offset="1445">
+          <caret line="53" column="63" selection-start-line="53" selection-start-column="63" selection-end-line="53" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Aprendeci/templates/aprendeci/profesor/perfil.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4421875" vertical-offset="448" max-vertical-offset="1802">
+          <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Aprendeci/templates/aprendeci/estudiante/cursos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.846154" vertical-offset="91" max-vertical-offset="748">
+          <caret line="25" column="44" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Aprendeci/templates/aprendeci/profesor/grafo/unirGrafos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.0" vertical-offset="201" max-vertical-offset="1530">
+          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Aprendeci/templates/aprendeci/profesor/grafo/grafo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26962456" vertical-offset="12" max-vertical-offset="1190">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="22" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Aprendeci/views/viewsProfesor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8888889" vertical-offset="578" max-vertical-offset="3230">
+          <caret line="73" column="43" selection-start-line="73" selection-start-column="35" selection-end-line="73" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Aprendeci/views/viewsGeneral.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Aprendeci/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
+          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/grafo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2788" max-vertical-offset="3400">
+          <caret line="188" column="16" selection-start-line="188" selection-start-column="16" selection-end-line="188" selection-end-column="93" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="7587" max-vertical-offset="9809">
-          <caret line="473" column="23" selection-start-line="473" selection-start-column="23" selection-end-line="473" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2718" max-vertical-offset="10693">
+          <caret line="168" column="0" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/unirseAlCurso.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2172524" vertical-offset="0" max-vertical-offset="646">
+          <caret line="8" column="54" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Aprendeci/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40522134" vertical-offset="0" max-vertical-offset="881">
+          <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/env_aprendeci/Lib/site-packages/django/utils/functional.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3476" max-vertical-offset="7497">
+          <caret line="224" column="0" selection-start-line="224" selection-start-column="0" selection-end-line="224" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/env_aprendeci/Lib/site-packages/django/contrib/auth/decorators.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54336286" vertical-offset="50" max-vertical-offset="1275">
+          <caret line="28" column="56" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/env_aprendeci/Lib/site-packages/django/core/handlers/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="1504" max-vertical-offset="4148">
+          <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/env_aprendeci/Lib/site-packages/django/views/generic/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33214286" vertical-offset="1106" max-vertical-offset="3655">
+          <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/env_aprendeci/Lib/site-packages/django/views/generic/edit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3327616" vertical-offset="2577" max-vertical-offset="4743">
+          <caret line="172" column="0" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Aprendeci/templates/aprendeci/estudiante/unirseAlCurso.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.63734293" vertical-offset="240" max-vertical-offset="850">
+          <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/env_aprendeci/Lib/site-packages/django/db/models/fields/related.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="8799" max-vertical-offset="38760">
+          <caret line="551" column="0" selection-start-line="551" selection-start-column="0" selection-end-line="551" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Aprendeci/views/viewsEstudiante.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1021021" vertical-offset="0" max-vertical-offset="666">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1343">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Aprendeci/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6526138" vertical-offset="905" max-vertical-offset="1802">
+          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

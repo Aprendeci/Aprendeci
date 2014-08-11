@@ -1,0 +1,52 @@
+{% extends "Aprendeci/profesor/grafo/grafos.html" %}
+{% load staticfiles %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block title %}Conceptos{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static "css/style.css" %}" />
+{% endblock %}
+
+{% block header %}
+    <div class="encabezado">
+        <img class="icon" alt="grafo" src="{% static "img/icons/grafo.png" %}" />
+        <h1>Conceptos</h1>
+    </div>
+{% endblock %}
+
+{% block breadcrumbs %}
+    {% clear_breadcrumbs %}
+
+    {{ block.super }}
+    {% breadcrumb "Conceptos" "Aprendeci:conceptos" id=grafo_id %}
+{% endblock %}
+
+{% block content %}
+    {% if concepto_list %}
+        <div class="title">
+            <h2>{{ grafo_nombre }}</h2>
+        </div>
+        <table class="tablaConceptos">
+            <tbody>
+            {% for concepto in concepto_list %}
+                <tr>
+                    <td class="concepto">
+                        <img alt="{{ concepto.nombre }}" src="{{ MEDIA_URL }}{{ concepto.imagen }}" />
+                        <h4>{{ concepto.nombre }}</h4>
+                    </td>
+                    <td class="acciones">
+                        <a href="{% url 'Aprendeci:concepto' concepto.id %}" class="button small ver">Ver</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <div class="title">
+            <h2>{{ grafo_nombre }}</h2>
+            <br />
+            <h3>No hay conceptos en el grafo</h3>
+        </div>
+    {% endif %}
+{% endblock %}

@@ -12,6 +12,7 @@
     <section class="top-bar-section">
         <ul class="left">
             <li {% if active_tab == 'grafos' %}class="active"{% endif %}><a href="{% url 'Aprendeci:grafos' %}">Grafos</a></li>
+            <li {% if active_tab == 'cursos' %}class="active"{% endif %}><a href="{% url 'Aprendeci:cursos' %}">Cursos</a></li>
         </ul>
 
         <ul class="right">

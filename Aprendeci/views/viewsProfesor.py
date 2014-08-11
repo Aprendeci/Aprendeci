@@ -15,17 +15,25 @@ class PerfilProfesorView(LoginRequiredMixin, TemplateView):
     template_name = 'Aprendeci/profesor/perfil.html'
 
 
+class CursosProfesorView(LoginRequiredMixin, ListView):
+    model = Curso
+    template_name = "Aprendeci/profesor/cursos.html"
+
+    def get_queryset(self):
+        return self.model.objects.filter(profesor=self.request.user)
+
+
 # Vista de la lista de grafos
 class GrafosView(LoginRequiredMixin, ListView):
     model = Grafo
-    template_name = "Aprendeci/grafo/grafos.html"
+    template_name = "Aprendeci/profesor/grafo/grafos.html"
 
 
 # Vista del grafo
 class GrafoView(LoginRequiredMixin, ListView):
     context_object_name = "concepto_list"
     model = Concepto
-    template_name = "Aprendeci/grafo/grafo.html"
+    template_name = "Aprendeci/profesor/grafo/grafo.html"
 
     def get_queryset(self):
         grafo_id = self.kwargs['id']
@@ -70,7 +78,7 @@ class GrafoView(LoginRequiredMixin, ListView):
 class ConceptosGrafoView(LoginRequiredMixin, ListView):
     context_object_name = "concepto_list"
     model = Concepto
-    template_name = "Aprendeci/grafo/conceptos.html"
+    template_name = "Aprendeci/profesor/grafo/conceptos.html"
 
     def get_context_data(self, **kwargs):
         context = super(ConceptosGrafoView, self).get_context_data(**kwargs)
@@ -87,7 +95,7 @@ class ConceptosGrafoView(LoginRequiredMixin, ListView):
 class ConceptoView(LoginRequiredMixin, DetailView):
     context_object_name = "concepto"
     model = Concepto
-    template_name = "Aprendeci/grafo/concepto.html"
+    template_name = "Aprendeci/profesor/grafo/concepto.html"
 
     def get_context_data(self, **kwargs):
         context = super(ConceptoView, self).get_context_data(**kwargs)
@@ -99,7 +107,7 @@ class UnirGrafosView(LoginRequiredMixin, ListView):
     conexiones = []
     context_object_name = "grafo_list"
     model = Grafo
-    template_name = "Aprendeci/grafo/unirGrafos.html"
+    template_name = "Aprendeci/profesor/grafo/unirGrafos.html"
 
     def dispatch(self, request, *args, **kwargs):
         # Obtener relaciones entre grafos

@@ -100,7 +100,7 @@ nav.top-bar {
     }
 
         nav.top-bar section.top-bar-section ul li a:hover {
-            background: #A22F38 url("../img/mazeGray.png") !important;
+            background: #D4D4D4 url("../img/mazeGray.png") !important;
             color: #000;
         }
 
@@ -155,6 +155,10 @@ ul.breadcrumbs {
     background-image: url("../img/icons/save.png");
 }
 
+.conectar {
+    background-image: url("../img/icons/share.png");
+}
+
 /* SECCION | Perfil */
 .perfil .infoPerfil {
     background-image: url("../img/mazeGray.png");
@@ -175,8 +179,6 @@ ul.breadcrumbs {
 }
 
     .perfil .acciones .componente .containerImg {
-        box-shadow: 0 8px 5px -7px #000;
-        max-height: 100px;
         overflow: hidden;
     }
 
@@ -308,21 +310,21 @@ ul.breadcrumbs {
     cursor: pointer;
 }
 
-/* SECCION | Lista de grafos */
-.grafoItem {
+/* SECCION | Lista de grafos y cursos */
+.grafoItem, .cursoItem {
     background: #A22F38 url("../img/mazeRed.png");
     box-shadow: 0 8px 5px -7px #000;
     margin: 0 0 20px;
     text-align: center;
 }
 
-    .grafoItem .header {
-        background: #FFF url("../img/mazeGray.png");
+    .grafoItem .header, .cursoItem .header {
+        background: #D4D4D4 url("../img/mazeGray.png");
         box-shadow: 0 8px 5px -7px #000;
         padding: 10px 0;
     }
 
-        .grafoItem .header .nombre {
+        .grafoItem .header .nombre, .cursoItem .header .nombre {
             display: inline;
             font-weight: bold;
             margin: 0;
@@ -351,20 +353,20 @@ ul.breadcrumbs {
                     background: url("../img/checkSheet.png") -19px top no-repeat;
                 }
 
-    .grafoItem .conceptos {
+    .grafoItem .conceptos, .cursoItem .estudiantes {
         color: #FFF;
         margin: 20px 0;
     }
 
-        .grafoItem .conceptos span {
+        .grafoItem .conceptos span, .cursoItem .estudiantes span {
             font-weight: bold;
         }
 
-    .grafoItem .button {
+    .grafoItem .button, .cursoItem .button {
         width: 100%;
     }
 
-    .grafoItem .agregar {
+    .grafoItem .agregar, .cursoItem .agregar {
         margin-bottom: 20px;
         margin-top: 20px;
     }
@@ -462,7 +464,7 @@ ul.breadcrumbs {
 }
 
     .recursosConcepto .header {
-        background: #A22F38 url("../img/mazeGray.png");
+        background: #D4D4D4 url("../img/mazeGray.png");
         padding: 5px 20px;
     }
 
@@ -475,7 +477,7 @@ ul.breadcrumbs {
         }
 
         .recursosConcepto .contenido .recursoItem {
-            background: #A22F38 url("../img/mazeGray.png");
+            background: #D4D4D4 url("../img/mazeGray.png");
             box-shadow: 0 8px 5px -7px #000;
             height: 225px;
             margin: 0 0 20px;
@@ -519,7 +521,7 @@ ul.breadcrumbs {
     }
 
         .unionGrafos .contenedorGrafo .nombre {
-            background: #A22F38 url("../img/mazeGray.png");
+            background: #D4D4D4 url("../img/mazeGray.png");
             padding: 5px 20px;
         }
 
@@ -570,3 +572,53 @@ ul.breadcrumbs {
         .unionGrafos .acciones .unir, .unionGrafos .acciones .guardar {
             width: 100%;
         }
+
+/* SECCION | Lista de cursos */
+ul.cursos {
+    list-style: none;
+}
+
+    ul.cursos li {
+        background: #A22F38 url("../img/mazeRed.png");
+        box-shadow: 0 8px 5px -7px #000;
+        display: inline-block;
+        width: 250px;
+    }
+
+        ul.cursos li h3 {
+            color: #FFF;
+            display: block;
+            padding: 5px;
+            text-align: center;
+        }
+        
+        ul.cursos li a {
+            width: 100%;
+        }
+
+/* SECCION | Unirse al curso */
+.unirseAlCurso {
+    background: #D4D4D4 url("../img/mazeGray.png");
+    box-shadow: 0 8px 5px -7px #000;
+    padding: 10px 50px;
+}
+
+    .unirseAlCurso label {
+        color: #000;
+        display: inline-block;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .unirseAlCurso input[type="submit"] {
+        width: 100%;
+    }
+
+    .unirseAlCurso ul.errorlist {
+        background: #A22F38 url("../img/mazeRed.png");
+        color: #FFF;
+        float: right;
+        list-style: none;
+        margin: 0px 1px 0 0;
+        padding: 0px 10px;
+    }
