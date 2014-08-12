@@ -69,7 +69,7 @@ p {
     }
 
 .title {
-    background-image: url("../img/mazeGray.png");
+    background: #D4D4D4 url("../img/mazeGray.png");
     box-shadow: 0 8px 5px -7px #000;
     margin-bottom: 1.25rem;
     padding: 5px 20px;
@@ -83,6 +83,11 @@ p {
         font-size: 1.1rem;
         margin: 0;
     }
+
+.subtitle {
+    background: #D4D4D4 url("../img/mazeGray.png");
+    padding: 5px 20px;
+}
 
 /* SECCION | TopBar */
 nav.top-bar {
@@ -115,7 +120,7 @@ nav.top-bar {
 
 /* SECCION | Breadcrumbs */
 ul.breadcrumbs {
-    background-image: url("../img/mazeGray.png");
+    background: #D4D4D4 url("../img/mazeGray.png");
     border: 0;
     border-radius: 0;
     box-shadow: 0 8px 5px -7px #000;
@@ -161,7 +166,7 @@ ul.breadcrumbs {
 
 /* SECCION | Perfil */
 .perfil .infoPerfil {
-    background-image: url("../img/mazeGray.png");
+    background: #D4D4D4 url("../img/mazeGray.png");
     box-shadow: 0 8px 5px -7px #000;
     margin-bottom: 1.25rem;
     padding: 10px 20px;
@@ -375,32 +380,32 @@ ul.breadcrumbs {
         margin-bottom: 20px;
     }
 
-/* SECCION | Lista de conceptos */
-.tablaConceptos {
+/* SECCION | Lista de conceptos y lista de cursos */
+.tablaConceptos, .tablaCursos {
     background-color: #A22F38;
     border: 0;
     box-shadow: 0 8px 5px -7px #000;
     width: 100%;
 }
 
-    .tablaConceptos tr td {
+    .tablaConceptos tr td, .tablaCursos tr td {
         color: #FFF;
     }
 
-        .tablaConceptos tr td.concepto {
+        .tablaConceptos tr td.concepto, .tablaCursos tr td.curso {
             width: 80%;
         }
 
-            .tablaConceptos tr td.concepto h4 {
+            .tablaConceptos tr td.concepto h4, .tablaCursos tr td.curso h4 {
                 color: #FFF;
             }
 
-        .tablaConceptos tr td.acciones {
+        .tablaConceptos tr td.acciones, .tablaCursos tr td.acciones {
             text-align: center;
             width: 20%;
         }
 
-    .tablaConceptos tr:nth-of-type(2n) {
+    .tablaConceptos tr:nth-of-type(2n), .tablaCursos tr:nth-of-type(2n) {
         background: rgba(0, 0, 0, 0.3);
     }
 
@@ -530,7 +535,7 @@ ul.breadcrumbs {
         }
 
             .unionGrafos .contenedorGrafo .contenido .concepto {
-                background-image: url("../img/mazeGray.png");
+                background: #D4D4D4 url("../img/mazeGray.png");
                 box-shadow: 0 8px 5px -7px #000;
                 display: block;
                 margin: 5px 0;

@@ -7,7 +7,7 @@ urlpatterns = [
     url(r'^perfilEstudiante/$', views.PerfilEstudianteView.as_view(), name='perfilEstudiante'),
     url(r'^cursos/$', views.CursosEstudianteView.as_view(), name='listaCursos'),
     url(r'^unirse/(?P<id>[0-9]+)/$', views.UnirseAlCursoEstudianteView.as_view(), name='unirseCurso'),
-    url(r'^estudiante/grafo/$', views.GrafoEstudianteView.as_view(), name='grafoEstudiante'),
+    url(r'^estudiante/curso/(?P<id>[0-9]+)/$', views.CursoEstudianteView.as_view(), name='cursoEstudiante'),
     url(r'^estudiante/concepto/(?P<pk>[0-9]+)/$', views.ConceptoEstudianteView.as_view(), name='conceptoEstudiante'),
     # Profesor
     url(r'^perfilProfesor/$', views.PerfilProfesorView.as_view(), name='perfilProfesor'),

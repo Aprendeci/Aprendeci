@@ -76,5 +76,24 @@
                 </div>
             </div>
         </div>
+        <div class="misCursos">
+            <div class="subtitle">
+                <h3>Mis cursos</h3>
+            </div>
+            <table class="tablaCursos">
+                <tbody>
+                {% for curso in curso_list %}
+                    <tr>
+                        <td class="curso">:
+                            <h4>{{ curso.nombre }}</h4>
+                        </td>
+                        <td class="acciones">
+                            <a href="{% url 'Aprendeci:cursoEstudiante' curso.id %}" class="button small ver">Ver</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
 {% endblock %}

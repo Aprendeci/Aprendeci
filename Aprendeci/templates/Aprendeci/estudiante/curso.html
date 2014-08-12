@@ -1,0 +1,49 @@
+{% extends "Aprendeci/estudiante/perfil.html" %}
+{% load staticfiles %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block title %}{{ curso_nombre }}{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static "css/style.css" %}" />
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static "js/dependencies/jquery.jsPlumb-1.6.2.js" %}"></script>
+
+    <script>
+        var conceptos = JSON.parse("{{ concepto_list|escapejs }}");
+
+        $.each(conceptos, function(index, value) {
+            value.fields.imagen = "{{ MEDIA_URL }}" + value.fields.imagen;
+        });
+    </script>
+
+    <script src="{% static "js/grafoEstudiante.js" %}"></script>
+{% endblock %}
+
+{% block preheader %}
+    {% include "Aprendeci/estudiante/topbar.html" with active_tab="cursos" %}
+{% endblock %}
+
+{% block header %}
+    <div class="encabezado">
+        <img class="icon" alt="cursos" src="{% static "img/icons/cursos.png" %}" />
+        <h1>{{ curso_nombre }}</h1>
+    </div>
+{% endblock %}
+
+{% block breadcrumbs %}
+    {% clear_breadcrumbs %}
+
+    {{ block.super }}
+    {% breadcrumb "Curso" "" %}
+{% endblock %}
+
+{% block content %}
+    <div class="grafo">
+        <div class="canvas">
+            <div id="conceptos"></div>
+        </div>
+    </div>
+{% endblock %}

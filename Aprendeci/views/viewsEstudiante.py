@@ -2,15 +2,19 @@ from django import forms
 from django.core import serializers
 from django.http import HttpResponse
 from django.views.generic import DetailView, ListView, TemplateView, FormView
-from Aprendeci.models import Concepto, Curso
+from Aprendeci.models import Concepto, Curso, Grafo
 from .viewsGeneral import *
 
 
 # Class based views
 
 # Vista principal
-class PerfilEstudianteView(LoginRequiredMixin, TemplateView):
+class PerfilEstudianteView(LoginRequiredMixin, ListView):
+    model = Curso
     template_name = 'Aprendeci/estudiante/perfil.html'
+
+    def get_queryset(self):
+        return self.model.objects.filter(estudiantes__pk=self.request.user.estudiante.pk)
 
 
 # Vista con el listado de cursos
@@ -56,15 +60,16 @@ class UnirseAlCursoEstudianteView(LoginRequiredMixin, FormView):
             return super(UnirseAlCursoEstudianteView, self).form_valid(form)
 
 
-# Vista del grafo
-class GrafoEstudianteView(LoginRequiredMixin, ListView):
-    context_object_name = "concepto_list"
-    model = Concepto
-    template_name = "Aprendeci/estudiante/grafo.html"
+# Vista de un curso del estudiante
+class CursoEstudianteView(LoginRequiredMixin, TemplateView):
+    template_name = "Aprendeci/estudiante/curso.html"
 
-    def get_queryset(self):
-        # TODO
-        return serializers.serialize("json", self.model.objects.filter(grafo=2))
+    def get_context_data(self, **kwargs):
+        context = super(CursoEstudianteView, self).get_context_data(**kwargs)
+        curso = Curso.objects.get(pk=self.kwargs['id'])
+        context['curso_nombre'] = curso.nombre
+        context['concepto_list'] = serializers.serialize("json", curso.grafo.obtener_conceptos())
+        return context
 
 
 # Vista en detalle de un concepto
