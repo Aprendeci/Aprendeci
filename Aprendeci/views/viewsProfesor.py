@@ -21,7 +21,7 @@ class CursosProfesorView(LoginRequiredMixin, ListView):
     template_name = "Aprendeci/profesor/cursos.html"
 
     def get_queryset(self):
-        return self.model.objects.filter(profesor=self.request.user)
+        return self.model.objects.filter(profesor=self.request.user.profesor)
 
 
 # Vista de los estudiantes de un curso

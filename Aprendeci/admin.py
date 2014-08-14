@@ -14,7 +14,7 @@ class CursoAdmin(admin.ModelAdmin):
     exclude = ("profesor", "estudiantes",)
 
     def save_model(self, request, obj, form, change):
-        obj.profesor = request.user
+        obj.profesor = request.user.profesor
         obj.save()
 
 
