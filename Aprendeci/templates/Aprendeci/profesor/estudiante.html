@@ -2,10 +2,14 @@
 {% load staticfiles %}
 {% load django_bootstrap_breadcrumbs %}
 
-{% block title %}{{ curso_nombre }}{% endblock %}
+{% block title %}{{ curso.nombre }}{% endblock %}
 
 {% block styles %}
     <link rel="stylesheet" href="{% static "css/style.css" %}" />
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static "js/actualizarCalificaciones.js" %}"></script>
 {% endblock %}
 
 {% block preheader %}
@@ -15,7 +19,7 @@
 {% block header %}
     <div class="encabezado">
         <img class="icon" alt="cursos" src="{% static "img/icons/cursos.png" %}" />
-        <h1>{{ curso_nombre }}</h1>
+        <h1>{{ curso.nombre }}</h1>
     </div>
 {% endblock %}
 
@@ -27,23 +31,39 @@
 {% endblock %}
 
 {% block content %}
-    <div class="subtitle">
+    <div class="title">
         <h3>{{ estudiante.usuario.first_name }} {{ estudiante.usuario.last_name }}</h3>
     </div>
-    <table class="tablaConceptos">
-        <tbody>
-        {% for concepto in estudiante.conceptos.all %}
+    <table>
+        <thead>
             <tr>
-                <td class="concepto">
-                    <img alt="{{ concepto.nombre }}" src="{{ MEDIA_URL }}{{ concepto.imagen }}" />
-                    <h4>{{ concepto.nombre }}</h4>
-                    <h2>{{ concepto.calificaciones.calificacion }}</h2>
+                <th>
+                    <h4>Concepto</h4>
+                </th>
+                <th>
+                    <h4>Calificación</h4>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for calificacion in calificaciones_set %}
+            <tr>
+                <td class="principal">
+                    <img alt="{{ calificacion.concepto.nombre }}" src="{{ MEDIA_URL }}{{ calificacion.concepto.imagen }}" />
+                    <h4>{{ calificacion.concepto.nombre }}</h4>
                 </td>
                 <td class="acciones">
-                    <a href="{% url 'Aprendeci:concepto' concepto.id %}" class="button small ver">Ver</a>
+                    <input id="calificacion{{ calificacion.id }}" name="calificacion{{ calificacion.id }}" type="number" value="{{ calificacion.calificacion }}" min="0" max="100" />
                 </td>
             </tr>
         {% endfor %}
         </tbody>
+        <tfoot>
+            <tr>
+                <td class="" colspan="2">
+                    <a class="small success button guardar">Actualizar</a>
+                </td>
+            </tr>
+        </tfoot>
     </table>
 {% endblock %}

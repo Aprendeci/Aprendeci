@@ -164,6 +164,44 @@ ul.breadcrumbs {
     background-image: url("../img/icons/share.png");
 }
 
+/* SECCION | Tablas */
+table {
+    background-color: #A22F38;
+    border: 0;
+    box-shadow: 0 8px 5px -7px #000;
+    empty-cells: hide;
+    width: 100%;
+}
+
+    table thead, table tfoot {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    table tr td, table tr th h4, table tr td.principal h4 {
+        color: #FFF;
+    }
+
+        table tr td.principal {
+            width: 80%;
+        }
+
+        table tr td.acciones {
+            text-align: center;
+            width: 20%;
+        }
+
+            table tr td.acciones input {
+                margin: 0;
+            }
+
+    table tr:nth-of-type(2n) {
+        background: rgba(0, 0, 0, 0.3);
+    }
+
+    table tfoot a {
+        width: 100%;
+    }
+
 /* SECCION | Perfil */
 .perfil .infoPerfil {
     background: #D4D4D4 url("../img/mazeGray.png");
@@ -230,7 +268,7 @@ ul.breadcrumbs {
                 width: 50px;
             }
 
-            .grafo .canvas #conceptos .concepto:hover {
+            .grafo .canvas #conceptos .concepto.positivo {
                 background-color: #278f44;
             }
 
@@ -378,35 +416,6 @@ ul.breadcrumbs {
 
     .grafoItem .unir {
         margin-bottom: 20px;
-    }
-
-/* SECCION | Lista de conceptos y lista de cursos */
-.tablaConceptos, .tablaCursos, .tablaEstudiantes {
-    background-color: #A22F38;
-    border: 0;
-    box-shadow: 0 8px 5px -7px #000;
-    width: 100%;
-}
-
-    .tablaConceptos tr td, .tablaCursos tr td, .tablaEstudiantes tr td {
-        color: #FFF;
-    }
-
-        .tablaConceptos tr td.concepto, .tablaCursos tr td.curso, .tablaEstudiantes tr td.estudiante {
-            width: 80%;
-        }
-
-            .tablaConceptos tr td.concepto h4, .tablaCursos tr td.curso h4, .tablaEstudiantes tr td.estudiante h4 {
-                color: #FFF;
-            }
-
-        .tablaConceptos tr td.acciones, .tablaCursos tr td.acciones, .tablaEstudiantes tr td.acciones {
-            text-align: center;
-            width: 20%;
-        }
-
-    .tablaConceptos tr:nth-of-type(2n), .tablaCursos tr:nth-of-type(2n), .tablaEstudiantes tr:nth-of-type(2n) {
-        background: rgba(0, 0, 0, 0.3);
     }
 
 /* SECCION | Detalle de un concepto */

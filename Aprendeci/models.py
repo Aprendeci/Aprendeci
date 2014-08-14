@@ -92,6 +92,9 @@ class Estudiante(models.Model):
             calificacion = Calificaciones(estudiante=self, concepto=c, calificacion=0)
             calificacion.save()
 
+    def __str__(self):
+        return self.usuario.first_name + " " + self.usuario.last_name
+
 
 class Calificaciones(models.Model):
     estudiante = models.ForeignKey(Estudiante)

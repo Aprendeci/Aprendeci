@@ -40,16 +40,34 @@ class EstudiantesView(LoginRequiredMixin, ListView):
 
 
 # Vista de los conceptos de un estudiante
-class EstudianteView(LoginRequiredMixin, DetailView):
-    context_object_name = "estudiante"
-    model = Estudiante
+class EstudianteView(LoginRequiredMixin, ListView):
+    context_object_name = "calificaciones_set"
+    model = Calificaciones
     template_name = "Aprendeci/profesor/estudiante.html"
 
     def get_context_data(self, **kwargs):
         context = super(EstudianteView, self).get_context_data(**kwargs)
-        context['curso_nombre'] = Curso.objects.get(pk=self.kwargs['cursoId']).nombre
-        context['curso_id'] = self.kwargs['cursoId']
+        context['curso'] = Curso.objects.get(pk=self.kwargs['cursoId'])
+        context['estudiante'] = Estudiante.objects.get(pk=self.kwargs['estudianteId'])
         return context
+
+    def get_queryset(self):
+        calificaciones = list()
+        calEstudiante = self.model.objects.filter(estudiante__pk=self.kwargs['estudianteId'])
+        for cal in calEstudiante.all():
+            if (cal.concepto.pertenece_al_curso(self.kwargs['cursoId'])):
+                calificaciones.append(cal)
+        return calificaciones
+
+    def post(self, request, *args, **kwargs):
+        calificaciones = json.loads(request.POST.get("calificaciones"))
+
+        for key, value in calificaciones.items():
+            calificacion = Calificaciones.objects.get(pk=key[12:])
+            calificacion.calificacion = value
+            calificacion.save()
+
+        return HttpResponse("Se ha guardado exitosamente")
 
 
 # Vista de la lista de grafos

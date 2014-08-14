@@ -13,6 +13,7 @@
 
     <script>
         var conceptos = JSON.parse("{{ concepto_list|escapejs }}");
+        var estados = JSON.parse("{{ estado_list|escapejs }}");
 
         $.each(conceptos, function(index, value) {
             value.fields.imagen = "{{ MEDIA_URL }}" + value.fields.imagen;

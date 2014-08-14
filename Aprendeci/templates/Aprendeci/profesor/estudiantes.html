@@ -30,11 +30,11 @@
     <div class="subtitle">
         <h3>Estudiantes</h3>
     </div>
-    <table class="tablaEstudiantes">
+    <table>
         <tbody>
         {% for estudiante in estudiante_list %}
             <tr>
-                <td class="estudiante">
+                <td class="principal">
                     <h4>{{ estudiante.usuario.first_name }} {{ estudiante.usuario.last_name }}</h4>
                 </td>
                 <td class="acciones">

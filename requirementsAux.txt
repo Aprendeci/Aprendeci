@@ -1,3 +1,0 @@
-Django==1.6.5
-Pillow==2.4.0
-django-bootstrap-breadcrumbs==0.6.3

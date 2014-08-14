@@ -27,11 +27,11 @@
         <div class="title">
             <h2>{{ grafo_nombre }}</h2>
         </div>
-        <table class="tablaConceptos">
+        <table>
             <tbody>
             {% for concepto in concepto_list %}
                 <tr>
-                    <td class="concepto">
+                    <td class="principal">
                         <img alt="{{ concepto.nombre }}" src="{{ MEDIA_URL }}{{ concepto.imagen }}" />
                         <h4>{{ concepto.nombre }}</h4>
                     </td>

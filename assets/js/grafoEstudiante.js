@@ -19,6 +19,10 @@ $(document).ready(function() {
                 "top": obj.fields.y
             });
 
+            if (estados[idx]) {
+                concepto.addClass("positivo");
+            }
+
             concepto.click(function() {
                 location.href = "http://" + location.host + "/aprendeci/estudiante/concepto/" + obj.pk;
             });

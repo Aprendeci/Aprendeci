@@ -2,8 +2,9 @@ from django import forms
 from django.core import serializers
 from django.http import HttpResponse
 from django.views.generic import DetailView, ListView, TemplateView, FormView
-from Aprendeci.models import Concepto, Curso, Grafo
+from Aprendeci.models import Concepto, Curso, Grafo, Calificaciones
 from .viewsGeneral import *
+import json
 
 
 # Class based views
@@ -66,9 +67,23 @@ class CursoEstudianteView(LoginRequiredMixin, TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(CursoEstudianteView, self).get_context_data(**kwargs)
+
         curso = Curso.objects.get(pk=self.kwargs['id'])
+
+        conceptos = curso.grafo.obtener_conceptos()
+        estados = list()
+
+        for c in conceptos:
+            calificacion = Calificaciones.objects.filter(estudiante__usuario=self.request.user).filter(concepto=c)
+            if calificacion[0].calificacion > 65:
+                estados.append(True)
+            else:
+                estados.append(False)
+
         context['curso_nombre'] = curso.nombre
-        context['concepto_list'] = serializers.serialize("json", curso.grafo.obtener_conceptos())
+        context['concepto_list'] = serializers.serialize("json", conceptos)
+        context['estado_list'] = json.dumps(estados)
+
         return context
 
 
