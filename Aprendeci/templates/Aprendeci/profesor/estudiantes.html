@@ -38,7 +38,7 @@
                     <h4>{{ estudiante.usuario.first_name }} {{ estudiante.usuario.last_name }}</h4>
                 </td>
                 <td class="acciones">
-                    <a href="{% url 'Aprendeci:estudiante' cursoId=curso_id pk=estudiante.id %}" class="button small ver">Ver</a>
+                    <a href="{% url 'Aprendeci:estudiante' cursoId=curso_id estudianteId=estudiante.id %}" class="button small ver">Ver</a>
                 </td>
             </tr>
         {% endfor %}
