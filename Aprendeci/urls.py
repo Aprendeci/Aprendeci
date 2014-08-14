@@ -12,6 +12,8 @@ urlpatterns = [
     # Profesor
     url(r'^perfilProfesor/$', views.PerfilProfesorView.as_view(), name='perfilProfesor'),
     url(r'^cursosProfesor/$', views.CursosProfesorView.as_view(), name='cursos'),
+    url(r'^estudiantes/(?P<id>[0-9]+)/$', views.EstudiantesView.as_view(), name='estudiantes'),
+    url(r'^estudiante/(?P<cursoId>[0-9]+)/(?P<pk>[0-9]+)/$', views.EstudianteView.as_view(), name='estudiante'),
     url(r'^grafos/$', views.GrafosView.as_view(), name='grafos'),
     url(r'^grafos/(?P<id>[0-9]+)/$', views.GrafoView.as_view(), name='grafo'),
     url(r'^grafos/union$', views.UnirGrafosView.as_view(), name='unirgrafos'),

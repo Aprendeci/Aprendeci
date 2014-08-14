@@ -23,7 +23,7 @@
     {% clear_breadcrumbs %}
 
     {{ block.super }}
-    {% breadcrumb "Cursos" "" %}
+    {% breadcrumb "Cursos" "Aprendeci:cursos" %}
 {% endblock %}
 
 {% block content %}
@@ -45,6 +45,7 @@
                 <div class="estudiantes"><span># Estudiantes: </span>{{ curso.numero_de_estudiantes }}</div>
                 <div class="botones">
                     <a href="{% url 'admin:Aprendeci_curso_change' curso.id %}" class="button small modificar">Modificar</a>
+                    <a href="{% url 'Aprendeci:estudiantes' curso.id %}" class="button small ver">Ver estudiantes</a>
                 </div>
             </div>
         </div>

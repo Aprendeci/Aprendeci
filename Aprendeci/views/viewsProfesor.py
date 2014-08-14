@@ -15,12 +15,41 @@ class PerfilProfesorView(LoginRequiredMixin, TemplateView):
     template_name = 'Aprendeci/profesor/perfil.html'
 
 
+# Vista de los cursos
 class CursosProfesorView(LoginRequiredMixin, ListView):
     model = Curso
     template_name = "Aprendeci/profesor/cursos.html"
 
     def get_queryset(self):
         return self.model.objects.filter(profesor=self.request.user)
+
+
+# Vista de los estudiantes de un curso
+class EstudiantesView(LoginRequiredMixin, ListView):
+    model = Estudiante
+    template_name = "Aprendeci/profesor/estudiantes.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(EstudiantesView, self).get_context_data(**kwargs)
+        context['curso_nombre'] = Curso.objects.get(pk=self.kwargs['id']).nombre
+        context['curso_id'] = self.kwargs['id']
+        return context
+
+    def get_queryset(self):
+        return self.model.objects.filter(estudiantes__id=self.kwargs['id'])
+
+
+# Vista de los conceptos de un estudiante
+class EstudianteView(LoginRequiredMixin, DetailView):
+    context_object_name = "estudiante"
+    model = Estudiante
+    template_name = "Aprendeci/profesor/estudiante.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(EstudianteView, self).get_context_data(**kwargs)
+        context['curso_nombre'] = Curso.objects.get(pk=self.kwargs['cursoId']).nombre
+        context['curso_id'] = self.kwargs['cursoId']
+        return context
 
 
 # Vista de la lista de grafos

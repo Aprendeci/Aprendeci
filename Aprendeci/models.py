@@ -24,6 +24,16 @@ class Grafo(models.Model):
 
         return conceptos
 
+    def pertenece_al_curso(self, cursoId):
+        curso = Curso.objects.get(pk=cursoId)
+        if self == curso.grafo:
+            return True
+        else:
+            if not self.grafoPadre is None:
+                return self.grafoPadre.pertenece_al_curso(cursoId)
+            else:
+                return False
+
     def __str__(self):
         return self.nombre
 
@@ -38,6 +48,9 @@ class Concepto(models.Model):
     x = models.IntegerField(default=0)
     y = models.IntegerField(default=0)
     grafo = models.ForeignKey(Grafo, blank=True)
+
+    def pertenece_al_curso(self, cursoId):
+        return self.grafo.pertenece_al_curso(cursoId)
 
     def __str__(self):
         return self.nombre
@@ -92,7 +105,7 @@ class Curso(models.Model):
     clave = models.CharField(max_length=100)
     imagen = models.ImageField(upload_to="img/cursos", default="img/cursos/Defecto.jpg")
     grafo = models.ForeignKey(Grafo)
-    profesor = models.ForeignKey(Estudiante, related_name='profesor')
+    profesor = models.ForeignKey(Profesor, related_name='profesor')
     estudiantes = models.ManyToManyField(Estudiante, related_name='estudiantes')
 
     def numero_de_estudiantes(self):
