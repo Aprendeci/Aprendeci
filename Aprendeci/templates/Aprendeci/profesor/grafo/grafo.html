@@ -13,6 +13,8 @@
 
     <script>
         var conceptos = JSON.parse("{{ concepto_list|escapejs }}");
+        var grafoId = {{ grafo_id }};
+        var mediaURL = "{{ MEDIA_URL }}";
 
         $.each(conceptos, function(index, value) {
             value.fields.imagen = "{{ MEDIA_URL }}" + value.fields.imagen;
@@ -61,5 +63,12 @@
         <div class="small-12 columns centrar">
             <a href="{{ MEDIA_URL }}txt/grafo.txt" class="button">Lista en Mathematica</a>
         </div>
+    </div>
+    <div id="conceptoDialog" title="Nuevo concepto">
+        <form id="formularioConcepto" action="{% url 'Aprendeci:agregarConcepto' %}" method="post">
+            {% csrf_token %}
+            {{ concepto_form }}
+            <input type="submit" value="Crear concepto" class="small button conectar" />
+        </form>
     </div>
 {% endblock %}

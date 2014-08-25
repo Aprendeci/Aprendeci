@@ -1,7 +1,8 @@
 from django.core import serializers
 from django.core.files import File
 from django.db.models import Q
-from django.http import HttpResponse
+from django.forms import HiddenInput
+from django.http import HttpResponse, JsonResponse
 from django.views.generic import ListView, DetailView, TemplateView
 from Aprendeci.models import *
 from .viewsGeneral import *
@@ -76,11 +77,40 @@ class GrafosView(LoginRequiredMixin, ListView):
     template_name = "Aprendeci/profesor/grafo/grafos.html"
 
 
+# Formulario del concepto
+class ConceptoForm(ModelForm):
+    class Meta:
+        model = Concepto
+        exclude = ['requisitos', 'fecha_creacion', 'porcentajeBase']
+        widgets = {
+            'color': HiddenInput(),
+            'grafo': HiddenInput(),
+            'x': HiddenInput(),
+            'y': HiddenInput()
+        }
+
+
+def agregar_concepto(request):
+    if request.is_ajax() and request.method == "POST":
+        form = ConceptoForm(request.POST)
+        if form.is_valid():
+            concepto = form.save()
+            return HttpResponse(serializers.serialize("json", Concepto.objects.filter(pk=concepto.pk)), content_type="application/json")
+        else:
+            return JsonResponse(form.errors, status=400)
+
+
 # Vista del grafo
 class GrafoView(LoginRequiredMixin, ListView):
     context_object_name = "concepto_list"
     model = Concepto
     template_name = "Aprendeci/profesor/grafo/grafo.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(GrafoView, self).get_context_data(**kwargs)
+        context['concepto_form'] = ConceptoForm()
+        context['grafo_id'] = self.kwargs['id']
+        return context
 
     def get_queryset(self):
         grafo_id = self.kwargs['id']

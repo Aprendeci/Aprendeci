@@ -1,8 +1,8 @@
 from django import forms
 from django.core import serializers
-from django.http import HttpResponse
+from django.http import JsonResponse, HttpResponse
 from django.views.generic import DetailView, ListView, TemplateView, FormView
-from Aprendeci.models import Concepto, Curso, Grafo, Calificaciones
+from Aprendeci.models import Concepto, Curso, Calificaciones
 from .viewsGeneral import *
 import json
 
@@ -54,7 +54,7 @@ class UnirseAlCursoEstudianteView(LoginRequiredMixin, FormView):
     def form_valid(self, form):
         if self.request.is_ajax():
             if not form.unirEstudiante(self.kwargs['id'], self.request.user.estudiante):
-                return JsonResponse({'error': 'La clave es incorrecta' }, status=400)
+                return JsonResponse({'error': 'La clave es incorrecta'}, status=400)
             else:
                 return HttpResponse("Se ha inscrito correctamente al curso")
         else:
@@ -75,7 +75,7 @@ class CursoEstudianteView(LoginRequiredMixin, TemplateView):
 
         for c in conceptos:
             calificacion = Calificaciones.objects.filter(estudiante__usuario=self.request.user).filter(concepto=c)
-            if calificacion[0].calificacion > 65:
+            if calificacion[0].calificacion >= c.porcentajeBase:
                 estados.append(True)
             else:
                 estados.append(False)

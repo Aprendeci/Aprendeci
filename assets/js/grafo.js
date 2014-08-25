@@ -1,24 +1,38 @@
 $(document).ready(function() {
     var objConceptos = [];
 
-    // Conexiones
-    jsPlumb.ready(function() {
-        var zoom = 100;
+    // Soporte para tooltip
+    $(document).tooltip({
+        position: {
+            my: "bottom",
+            at: "bottom+35" }
+    });
 
-        // Establecer el contenedor
-        jsPlumb.Defaults.Container = "conceptos";
-        jsPlumb.setContainer("conceptos");
+    // Funcion para obtener un color aleatorio
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF'.split('');
+        var color = '';
 
-        // Crear los conceptos
-        $.each(conceptos, function(idx, obj) {
-            var concepto  = $("<div>").attr("id", "concepto" + obj.pk).addClass("concepto");
+        for (var i = 0; i < 6; i++ ) {
+            color += letters[Math.round(Math.random() * 15)];
+        }
+
+        return color;
+    }
+
+    // Function para agregar un concepto desde un objeto JSON
+    function agregarConcepto(objetoJson) {
+        var concepto  = $("<div>").attr("id", "concepto" + objetoJson.pk).addClass("concepto");
             var drag = $("<div>").addClass("drag");
 
             concepto.css({
-                "background-image": "url(" + obj.fields.imagen + ")",
-                "left": obj.fields.x,
-                "top": obj.fields.y
+                "background-color": "#" + objetoJson.fields.color,
+                "background-image": "url(" + objetoJson.fields.imagen + ")",
+                "left": objetoJson.fields.x,
+                "top": objetoJson.fields.y
             });
+
+            concepto.attr("title", objetoJson.fields.nombre);
 
             concepto.append(drag);
             $("#conceptos").append(concepto);
@@ -32,17 +46,30 @@ $(document).ready(function() {
                 anchor: [ "Perimeter", { shape:"Circle" } ],
                 connector: ["Flowchart", { cornerRadius: "25" } ],
                 connectorOverlays: [ [ "Arrow", { location:1 } ] ],
-                connectorStyle : { lineWidth:5, strokeStyle:"#690F16" },
+                connectorStyle : { lineWidth:5, strokeStyle:"#" + objetoJson.fields.color },
                 deleteEndpointsOnDetach : false,
-                paintStyle: { radius:5, fillStyle:"#690F16" }
+                paintStyle: { radius:5, fillStyle:"#" + objetoJson.fields.color }
             });
 
             jsPlumb.makeTarget(concepto, {
                 anchor: [ "Perimeter", { shape:"Circle" } ],
-                paintStyle: { fillStyle: "#690F16", radius:5 }
+                paintStyle: { fillStyle: "#" + objetoJson.fields.color, radius:5 }
             });
 
             objConceptos.push(concepto);
+    }
+
+    // Conexiones
+    jsPlumb.ready(function() {
+        var zoom = 100;
+
+        // Establecer el contenedor
+        jsPlumb.Defaults.Container = "conceptos";
+        jsPlumb.setContainer("conceptos");
+
+        // Crear los conceptos
+        $.each(conceptos, function(idx, obj) {
+            agregarConcepto(obj);
         });
 
         // Hacer las conexiones
@@ -139,6 +166,55 @@ $(document).ready(function() {
         $(".zoom span").text(zoom + "%");
     };
 
+    // Dialogo para crear concepto
+    $("#conceptoDialog").dialog({
+        autoOpen: false,
+        modal: true,
+        resizable: false,
+        width: 400
+    });
+
+    // Agregar concepto directamente
+    $("#conceptos").dblclick(function(e) {
+        var posX = $(this).offset().left, posY = $(this).offset().top;
+
+        // Completar los datos del concepto
+        $("#id_color").val(getRandomColor());
+        $("#id_x").val(Math.round(e.pageX - posX));
+        $("#id_y").val(Math.round(e.pageY - posY));
+        $("#id_grafo").val(grafoId);
+
+        $("#conceptoDialog").dialog("open");
+    });
+
+    // Guardar el concepto
+    $("#formularioConcepto").submit(function(event) {
+        event.preventDefault();
+
+        $.post($(this).attr("action"), $(this).serialize())
+            .done(function (data) {
+                $("p.error").remove();
+                $("input[type='submit']").prop("disabled", true);
+
+                // Cerrar el dialogo
+                $("#conceptoDialog").dialog("close");
+
+                // Agregar concepto al canvas
+                data[0].fields.imagen = mediaURL + data[0].fields.imagen;
+                agregarConcepto(data[0]);
+            })
+            .fail(function(jqXHR, textStatus, errorThrown) {
+                var contenido = "<p class='error'>Error al agregar el concepto</p>";
+
+                $("p.error").remove();
+                $("form#formularioConcepto").prepend(contenido);
+
+                console.log("jqXHR : " + jqXHR);
+                console.log("textStatus : " + textStatus);
+                console.log("errorThrown : " + errorThrown);
+            });
+    });
+
     // Proteccion CSRF
     function csrfSafeMethod(method) {
         return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
@@ -182,14 +258,14 @@ $(document).ready(function() {
 
         // Envio al backend de los datos
         $.post("", { "dependencias[]" : dependencias, "posiciones[]" : posiciones })
-        .done(function (data) {
-            $.growl.notice({ title: "Éxito", message: data });
-        })
-        .fail(function(jqXHR, textStatus, errorThrown) {
+            .done(function (data) {
+                $.growl.notice({ title: "Éxito", message: data });
+            })
+            .fail(function(jqXHR, textStatus, errorThrown) {
                 $.growl.error({ title:"Error", message: "No se ha podido guardar el grafo"});
                 console.log("jqXHR : " + jqXHR);
                 console.log("textStatus : " + textStatus);
                 console.log("errorThrown : " + errorThrown);
-        });
+            });
     });
 });

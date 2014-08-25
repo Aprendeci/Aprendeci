@@ -19,4 +19,5 @@ urlpatterns = [
     url(r'^grafos/union$', views.UnirGrafosView.as_view(), name='unirgrafos'),
     url(r'^conceptos/(?P<id>[0-9]+)/$', views.ConceptosGrafoView.as_view(), name='conceptos'),
     url(r'^concepto/(?P<pk>[0-9]+)/$', views.ConceptoView.as_view(), name='concepto'),
+    url(r'^concepto/agregar/$', "Aprendeci.views.agregar_concepto", name='agregarConcepto'),
 ]

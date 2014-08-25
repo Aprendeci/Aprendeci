@@ -1,5 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django.forms.models import ModelForm
+
 
 class Grafo(models.Model):
     nombre = models.CharField(max_length=100)
@@ -42,9 +44,10 @@ class Concepto(models.Model):
     nombre = models.CharField(max_length=100)
     descripcion = models.CharField(max_length=500)
     fecha_creacion = models.DateTimeField(auto_now_add=True, editable=False)
-    imagen = models.ImageField(upload_to="img/icons/conceptos")
+    imagen = models.ImageField(upload_to="img/icons/conceptos", default="img/icons/conceptos/defecto.png")
     requisitos = models.ManyToManyField("self", symmetrical=False, blank=True)
     porcentajeBase = models.IntegerField(default=60)
+    color = models.CharField(max_length=6)
     x = models.IntegerField(default=0)
     y = models.IntegerField(default=0)
     grafo = models.ForeignKey(Grafo, blank=True)
