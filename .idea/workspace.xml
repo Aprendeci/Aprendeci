@@ -1,41 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a0090422-e86b-4f77-aa46-55222ee4e0ab" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/img/icons/conceptos/defecto.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/css/dependencies/images/ui-bg_flat_25_ffffff_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/css/dependencies/images/ui-bg_flat_30_cccccc_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/css/dependencies/images/ui-bg_flat_33_000000_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/css/dependencies/images/ui-bg_flat_35_A22F38_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/css/dependencies/images/ui-bg_glass_40_ffc73d_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/css/dependencies/images/ui-bg_highlight-hard_20_ffffff_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/css/dependencies/images/ui-bg_highlight-soft_80_eeeeee_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/css/dependencies/images/ui-icons_222222_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/css/dependencies/images/ui-icons_4b8e0b_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/css/dependencies/images/ui-icons_a83300_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/css/dependencies/images/ui-icons_cccccc_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/css/dependencies/images/ui-icons_ffffff_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Aprendeci/migrations/0015_auto_20140824_1650.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Aprendeci/migrations/0016_auto_20140824_1930.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Aprendeci/migrations/0017_auto_20140824_2136.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Aprendeci/migrations/0018_auto_20140824_2138.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/css/dependencies/jquery-ui.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AprendeciDjango/templates/_layouts/base.html" afterPath="$PROJECT_DIR$/AprendeciDjango/templates/_layouts/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aprendeci/templates/admin/base_site.html" afterPath="$PROJECT_DIR$/Aprendeci/templates/admin/base_site.html" />
-      <change type="MODIFICATION" beforePath="D:\Desarrollo\Proyectos\Universidad\Aprendeci\Aprendeci\Aprendeci\templates\aprendeci\profesor\grafo\grafo.html" afterPath="$PROJECT_DIR$/Aprendeci/templates/aprendeci/profesor/grafo/grafo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/grafo.js" afterPath="$PROJECT_DIR$/assets/js/grafo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uploads/txt/grafo.txt" afterPath="$PROJECT_DIR$/uploads/txt/grafo.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/logs.log" afterPath="$PROJECT_DIR$/logs/logs.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aprendeci/models.py" afterPath="$PROJECT_DIR$/Aprendeci/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/style.css" afterPath="$PROJECT_DIR$/assets/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aprendeci/urls.py" afterPath="$PROJECT_DIR$/Aprendeci/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aprendeci/views/viewsEstudiante.py" afterPath="$PROJECT_DIR$/Aprendeci/views/viewsEstudiante.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aprendeci/views/viewsGeneral.py" afterPath="$PROJECT_DIR$/Aprendeci/views/viewsGeneral.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aprendeci/views/viewsProfesor.py" afterPath="$PROJECT_DIR$/Aprendeci/views/viewsProfesor.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\Desarrollo\Proyectos\Universidad\Aprendeci\Aprendeci\assets\js\dependencies\jquery-ui-1.10.4.js" afterPath="$PROJECT_DIR$/assets/js/dependencies/jquery-ui.js" />
-    </list>
+    <list default="true" id="a0090422-e86b-4f77-aa46-55222ee4e0ab" name="Default" comment="" />
     <ignored path="Aprendeci.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -56,84 +22,7 @@
     <favorites_list name="Aprendeci" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Aprendeci/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
-              <caret line="21" column="74" selection-start-line="21" selection-start-column="74" selection-end-line="21" selection-end-column="89" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Aprendeci/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="2108">
-              <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="viewsEstudiante.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Aprendeci/views/viewsEstudiante.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="1768">
-              <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="viewsProfesor.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Aprendeci/views/viewsProfesor.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1443" max-vertical-offset="4658">
-              <caret line="87" column="31" selection-start-line="87" selection-start-column="31" selection-end-line="87" selection-end-column="31" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="grafo.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Aprendeci/templates/aprendeci/profesor/grafo/grafo.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="1343">
-              <caret line="16" column="20" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="grafo.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assets/js/grafo.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.30057803" vertical-offset="2989" max-vertical-offset="4692">
-              <caret line="185" column="0" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="10367" max-vertical-offset="11067">
-              <caret line="644" column="26" selection-start-line="644" selection-start-column="26" selection-end-line="644" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -335,46 +224,6 @@
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Aprendeci" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Aprendeci" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Aprendeci" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Aprendeci" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -387,28 +236,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="AprendeciDjango" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Aprendeci" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Aprendeci" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AprendeciDjango" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="_layouts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -923,14 +750,14 @@
     <frame x="960" y="0" width="960" height="1040" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3270925" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27863437" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3270925" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27863437" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756758" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3264865" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21861471" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24972972" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30555555" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30555555" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3006608" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13006397" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.267316" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
@@ -1306,7 +1133,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="10367" max-vertical-offset="11067">
+        <state vertical-scroll-proportion="0.9462541" vertical-offset="10367" max-vertical-offset="11067">
           <caret line="644" column="26" selection-start-line="644" selection-start-column="26" selection-end-line="644" selection-end-column="26" />
           <folding />
         </state>
@@ -1368,8 +1195,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/grafo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30057803" vertical-offset="2989" max-vertical-offset="4692">
-          <caret line="185" column="0" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
+        <state vertical-scroll-proportion="1.9197953" vertical-offset="2275" max-vertical-offset="4692">
+          <caret line="200" column="0" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
           <folding />
         </state>
       </provider>
