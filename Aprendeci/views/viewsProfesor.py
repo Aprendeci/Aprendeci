@@ -90,6 +90,7 @@ class ConceptoForm(ModelForm):
         }
 
 
+# Funcion para agregar un concepto via AJAX
 def agregar_concepto(request):
     if request.is_ajax() and request.method == "POST":
         form = ConceptoForm(request.POST)
@@ -110,11 +111,13 @@ class GrafoView(LoginRequiredMixin, ListView):
         context = super(GrafoView, self).get_context_data(**kwargs)
         context['concepto_form'] = ConceptoForm()
         context['grafo_id'] = self.kwargs['id']
+        context['grafos_list'] = serializers.serialize("json", Grafo.objects.get(pk=self.kwargs['id']).obtener_grafos())
         return context
 
     def get_queryset(self):
         grafo_id = self.kwargs['id']
-        return serializers.serialize("json", self.model.objects.filter(grafo=grafo_id))
+        #return serializers.serialize("json", self.model.objects.filter(grafo=grafo_id))
+        return serializers.serialize("json", Grafo.objects.get(pk=grafo_id).obtener_conceptos())
 
     def post(self, request, *args, **kwargs):
         dependencias = request.POST.getlist("dependencias[]")

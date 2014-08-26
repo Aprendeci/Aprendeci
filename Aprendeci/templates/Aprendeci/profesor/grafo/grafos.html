@@ -51,7 +51,8 @@
                         <a href="{% url "Aprendeci:grafo" grafo.id %}" class="button small modificar">Modificar</a>
                         <a href="{% url "Aprendeci:conceptos" grafo.id %}" class="button small ver">Ver conceptos</a>
                     {% else %}
-                        <a href="{% url "Aprendeci:unirgrafos" %}?grafo1={{ grafo.grafo_set.all.0.id }}&grafo2={{ grafo.grafo_set.all.1.id }}" class="button small modificar">Modificar</a>
+                        <a href="{% url "Aprendeci:unirgrafos" %}?grafo1={{ grafo.grafo_set.all.0.id }}&grafo2={{ grafo.grafo_set.all.1.id }}" class="button small unir">Modificar unión</a>
+                        <a href="{% url "Aprendeci:grafo" grafo.id %}" class="button small modificar">Modificar</a>
                     {% endif %}
                 </div>
             </div>
@@ -65,7 +66,7 @@
                     <div class="small-4 columns">
                         <div class="grafoItem">
                             <a href="{% url "admin:Aprendeci_grafo_add" %}" class="button small agregar">Agregar</a>
-                            <a href="{% url "Aprendeci:unirgrafos" %}" class="button small unir">Unir</a>
+                            <a id="unirGrafos" href="{% url "Aprendeci:unirgrafos" %}" class="button small unir">Unir</a>
                         </div>
                     </div>
                 </div>
@@ -73,7 +74,7 @@
                 <div class="small-4 columns end">
                     <div class="grafoItem">
                         <a href="{% url "admin:Aprendeci_grafo_add" %}" class="button small agregar">Agregar</a>
-                        <a href="{% url "Aprendeci:unirgrafos" %}" class="button small unir">Unir</a>
+                        <a id="unirGrafos" href="{% url "Aprendeci:unirgrafos" %}" class="button small unir">Unir</a>
                     </div>
                 </div>
                 </div>

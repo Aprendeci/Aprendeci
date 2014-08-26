@@ -1,12 +1,12 @@
 $(document).ready(function() {
     // Habilita el enlace de union
     function habilitarUnion() {
-        $(".unir").removeClass("inactivo");
+        $("#unirGrafos").removeClass("inactivo");
     }
 
     // Deshabilita el enlace de union
     function deshabilitarUnion() {
-        $(".unir").addClass("inactivo");
+        $("#unirGrafos").addClass("inactivo");
     }
 
     deshabilitarUnion();
@@ -21,7 +21,7 @@ $(document).ready(function() {
     });
 
     // Bloquear enlace si esta inactivo
-    $(".unir").click(function(e) {
+    $("#unirGrafos").click(function(e) {
         if ($(this).hasClass("inactivo")) {
             e.preventDefault();
         } else {

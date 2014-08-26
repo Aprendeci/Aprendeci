@@ -164,6 +164,14 @@ ul.breadcrumbs {
     background-image: url("../img/icons/share.png");
 }
 
+.context-menu-item.icon-concepto {
+    background-image: url("../img/icons/conceptoMini.png");
+}
+
+.context-menu-item.icon-grafo {
+    background-image: url("../img/icons/grafoMini.png");
+}
+
 /* SECCION | Tablas */
 table {
     background-color: #A22F38;
@@ -201,6 +209,17 @@ table {
     table tfoot a {
         width: 100%;
     }
+
+/* SECCION | Dialogos */
+.ui-dialog a {
+    color: #FFFFFF !important;
+    margin-top: 10px !important;
+    width: 100%;
+}
+
+.ui-dialog p {
+    line-height: 1;
+}
 
 /* SECCION | Perfil */
 .perfil .infoPerfil {
@@ -414,10 +433,6 @@ table {
         margin-top: 20px;
     }
 
-    .grafoItem .unir {
-        margin-bottom: 20px;
-    }
-
 /* SECCION | Detalle de un concepto */
 .descripcionConcepto {
     height: 350px;
@@ -586,6 +601,10 @@ table {
         .unionGrafos .acciones .unir, .unionGrafos .acciones .guardar {
             width: 100%;
         }
+
+#unirGrafos {
+    margin-bottom: 20px;
+}
 
 /* SECCION | Lista de cursos */
 ul.cursos {

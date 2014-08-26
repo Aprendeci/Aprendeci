@@ -26,6 +26,15 @@ class Grafo(models.Model):
 
         return conceptos
 
+    def obtener_grafos(self):
+        grafos = set()
+
+        for grafo in Grafo.objects.all():
+            if grafo.grafoPadre == self:
+                grafos.add(grafo)
+
+        return grafos
+
     def pertenece_al_curso(self, cursoId):
         curso = Curso.objects.get(pk=cursoId)
         if self == curso.grafo:

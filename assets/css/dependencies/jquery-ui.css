@@ -844,7 +844,7 @@ body .ui-tooltip {
 	font-size: 1em;
 }
 .ui-widget-content {
-	background: #ffffff url("images/ui-bg_flat_25_ffffff_40x100.png") 50% 50% repeat-x;
+	background: #ffffff url("../../img/mazeGray.png") repeat;
 	color: #000000;
 }
 .ui-widget-content a {
