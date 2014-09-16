@@ -629,25 +629,25 @@ ul.cursos {
             width: 100%;
         }
 
-/* SECCION | Unirse al curso y dialogo de nuevo concepto */
-.unirseAlCurso {
+/* SECCION | Unirse al curso y dialogo de nuevo concepto; Agregar usuario */
+.unirseAlCurso, .agregarUsuario {
     background: #D4D4D4 url("../img/mazeGray.png");
     box-shadow: 0 8px 5px -7px #000;
     padding: 10px 50px;
 }
 
-    .unirseAlCurso label, #conceptoDialog label {
+    .unirseAlCurso label, #conceptoDialog label, .agregarUsuario label {
         color: #000;
         display: inline-block;
         font-size: 1rem;
         line-height: 1.6;
     }
 
-    .unirseAlCurso input[type="submit"], #conceptoDialog input[type="submit"] {
+    .unirseAlCurso input[type="submit"], #conceptoDialog input[type="submit"], .agregarUsuario input[type="submit"] {
         width: 100%;
     }
 
-    .unirseAlCurso ul.errorlist {
+    .unirseAlCurso ul.errorlist, .agregarUsuario ul.errorlist {
         background: #A22F38 url("../img/mazeRed.png");
         color: #FFF;
         float: right;

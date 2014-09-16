@@ -24,12 +24,15 @@ class LoginRequiredMixin(object):
 
 @login_required
 def acceder(request):
-    if request.user.groups.filter(name="Profesores").exists():
+    if request.user.is_superuser:
+        return redirect("Aprendeci:perfilAdmin")
+    elif request.user.groups.filter(name="Profesores").exists():
         return redirect("Aprendeci:perfilProfesor")
     elif request.user.groups.filter(name="Estudiantes").exists():
         return redirect("Aprendeci:perfilEstudiante")
     else:
         return redirect("admin:index")
+
 
 # Desloguearse
 def logoutView(request):

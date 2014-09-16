@@ -27,7 +27,7 @@ def crear_estudiante(sender, instance, **kwargs):
 post_save.connect(crear_estudiante, sender=User, dispatch_uid="crear_estudiante")
 
 
-# Registro de modelos
+# Registro de Estudiante
 admin.autodiscover()
 admin.site.register(Concepto, ConceptoAdmin)
 admin.site.register(Grafo)

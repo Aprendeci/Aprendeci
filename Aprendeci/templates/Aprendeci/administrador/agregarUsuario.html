@@ -1,0 +1,37 @@
+{% extends "Aprendeci/administrador/perfil.html" %}
+{% load staticfiles %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block title %}Agregar usuario{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static "css/style.css" %}" />
+{% endblock %}
+
+{% block preheader %}
+    {% include "Aprendeci/administrador/topbar.html" %}
+{% endblock %}
+
+{% block header %}
+    <div class="encabezado">
+        <img class="icon" alt="cursos" src="{% static "img/icons/perfil.png" %}" />
+        <h1>Nuevo usuario</h1>
+    </div>
+{% endblock %}
+
+{% block breadcrumbs %}
+    {% clear_breadcrumbs %}
+
+    {{ block.super }}
+    {% breadcrumb "Agregar usuario" "" %}
+{% endblock %}
+
+{% block content %}
+    <div class="agregarUsuario">
+        <form id="formularioUsuario" action="" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Agregar" class="small button agregar" />
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "_layouts/base.html" %}
+{% load staticfiles %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block title %}Perfil del administrador{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static "css/style.css" %}" />
+{% endblock %}
+
+{% block preheader %}
+    {% include "Aprendeci/administrador/topbar.html" with active_tab="miPerfil" %}
+{% endblock %}
+
+{% block header %}
+    <div class="encabezado">
+        <img class="icon" alt="grafo" src="{% static "img/icons/perfil.png" %}" />
+        <h1>Perfil del administrador</h1>
+    </div>
+{% endblock %}
+
+{% block breadcrumbs %}
+    {{ block.super }}
+    {% breadcrumb "Perfil" "Aprendeci:perfilAdmin" %}
+{% endblock %}
+
+{% block content %}
+    <div class="perfil">
+        <div class="infoPerfil">
+            <div class="row">
+                <div class="small-5 columns">
+                    <h4>@{{ user.username }}</h4>
+                    <br />
+                    <p>{{ user.first_name }} {{ user.last_name }}</p>
+                </div>
+                <div class="small-5 columns">
+                    <h4>Fecha de la última conexión: </h4>
+                    <br />
+                    <p>{{ user.last_login }}</p>
+                </div>
+                <div class="small-2 columns">
+                    <a href="#" class="small button modificar">Modificar</a>
+                </div>
+            </div>
+        </div>
+        <div class="acciones">
+            <div class="row">
+                <div class="small-4 columns">
+                    <div class="componente">
+                        <div class="containerImg">
+                            <img alt="usuarios" src="{% static 'img/menu/Usuarios.jpg' %}" />
+                        </div>
+                        <h4>Usuarios</h4>
+                        <a href="{%  url 'Aprendeci:agregarUsuario' %}" class="small button ver">Ir</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -3,7 +3,7 @@
 <nav class="top-bar" data-topbar>
     <ul class="title-area">
         <li class="name">
-            <a href="#"><img class="logo" alt="Aprendeci" src="{% static 'img/miniLogo.png' %}" /></a>
+            <a href="{% url 'Aprendeci:perfilProfesor' %}"><img class="logo" alt="Aprendeci" src="{% static 'img/miniLogo.png' %}" /></a>
         </li>
 
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -17,6 +17,7 @@
 
         <ul class="right">
             <li {% if active_tab == 'miPerfil' %}class="active"{% endif %}><a href="{% url 'Aprendeci:perfilProfesor' %}">Mi perfil</a></li>
+            <li><a href="{% url 'admin:index' %}">Administración</a></li>
             <li><a href="{% url 'logout' %}">Salir</a></li>
         </ul>
     </section>

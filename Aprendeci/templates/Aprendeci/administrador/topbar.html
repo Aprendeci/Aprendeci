@@ -1,0 +1,19 @@
+{% load staticfiles %}
+
+<nav class="top-bar" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <a href="{% url 'Aprendeci:perfilAdmin' %}"><img class="logo" alt="Aprendeci" src="{% static 'img/miniLogo.png' %}" /></a>
+        </li>
+
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+        <ul class="right">
+            <li {% if active_tab == 'miPerfil' %}class="active"{% endif %}><a href="{% url 'Aprendeci:perfilAdmin' %}">Mi perfil</a></li>
+            <li><a href="{% url 'admin:index' %}">Administración</a></li>
+            <li><a href="{% url 'logout' %}">Salir</a></li>
+        </ul>
+    </section>
+</nav>

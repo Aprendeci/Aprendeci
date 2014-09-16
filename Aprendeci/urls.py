@@ -20,4 +20,8 @@ urlpatterns = [
     url(r'^conceptos/(?P<id>[0-9]+)/$', views.ConceptosGrafoView.as_view(), name='conceptos'),
     url(r'^concepto/(?P<pk>[0-9]+)/$', views.ConceptoView.as_view(), name='concepto'),
     url(r'^concepto/agregar/$', "Aprendeci.views.agregar_concepto", name='agregarConcepto'),
+    # Administrador
+    url(r'^perfilAdmin/$', views.PerfilAdminView.as_view(), name='perfilAdmin'),
+    url(r'^usuario/agregar/$', views.AgregarUsuarioView.as_view(), name='agregarUsuario'),
+    url(r'^usuario/agregar/exito/$', views.AgregarUsuarioExitoView.as_view(), name='agregarUsuarioExito'),
 ]
