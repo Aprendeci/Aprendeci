@@ -19,12 +19,12 @@ class CursoAdmin(admin.ModelAdmin):
 
 
 # Signals
-def crear_estudiante(sender, instance, **kwargs):
+'''def crear_estudiante(sender, instance, **kwargs):
     if len(Estudiante.objects.filter(usuario__pk=instance.pk)) == 0:
         nuevoEstudiante = Estudiante(usuario=instance)
         nuevoEstudiante.save()
 
-post_save.connect(crear_estudiante, sender=User, dispatch_uid="crear_estudiante")
+post_save.connect(crear_estudiante, sender=User, dispatch_uid="crear_estudiante")'''
 
 
 # Registro de Estudiante
