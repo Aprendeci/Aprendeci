@@ -70,7 +70,7 @@ class CursoEstudianteView(LoginRequiredMixin, TemplateView):
 
         curso = Curso.objects.get(pk=self.kwargs['id'])
 
-        conceptos = curso.grafo.obtener_conceptos()
+        conceptos = curso.grafo.obtener_conceptos(True)
         estados = list()
 
         for c in conceptos:

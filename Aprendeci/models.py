@@ -6,26 +6,32 @@ from django.forms.models import ModelForm
 class Grafo(models.Model):
     nombre = models.CharField(max_length=100)
     descripcion = models.CharField(max_length=500)
+    x = models.IntegerField(default=0)
+    y = models.IntegerField(default=0)
     grafoPadre = models.ForeignKey("self", blank=True, null=True)
 
+    # Devuelve el numero de conceptos pertenecientes a este grafo
     def numero_de_conceptos(self):
         numConceptos = self.concepto_set.all().count()
         for grafo in self.grafo_set.all():
             numConceptos += grafo.concepto_set.all().count()
         return numConceptos
 
-    def obtener_conceptos(self):
+    # Devuelve la lista de conceptos pertenecientes a este grafo
+    def obtener_conceptos(self, incluir_indirectos):
         conceptos = set()
 
         for concepto in self.concepto_set.all():
             conceptos.add(concepto)
 
-        for grafo in self.grafo_set.all():
-            for concepto in grafo.obtener_conceptos():
-                conceptos.add(concepto)
+        if incluir_indirectos:
+            for grafo in self.grafo_set.all():
+                for concepto in grafo.obtener_conceptos(True):
+                    conceptos.add(concepto)
 
         return conceptos
 
+    # Devuelve la lista de grafos que tienen como padre
     def obtener_grafos(self):
         grafos = set()
 
@@ -35,6 +41,7 @@ class Grafo(models.Model):
 
         return grafos
 
+    # Indica si el grafo pertenece al curso recibido
     def pertenece_al_curso(self, cursoId):
         curso = Curso.objects.get(pk=cursoId)
         if self == curso.grafo:
@@ -44,6 +51,16 @@ class Grafo(models.Model):
                 return self.grafoPadre.pertenece_al_curso(cursoId)
             else:
                 return False
+
+    # Indica si algun concepto del grafo tiene relacion
+    def esta_relacionado_con(self, grafoId):
+        grafo = Grafo.objects.get(pk=grafoId)
+        for concepto in self.concepto_set.all():
+            for conceptoExterno in grafo.concepto_set.all():
+                if conceptoExterno.requisitos.filter(pk=concepto.pk).count() > 0:
+                    return True
+
+        return False
 
     def __str__(self):
         return self.nombre
@@ -99,7 +116,7 @@ class Estudiante(models.Model):
 
     def enrolarse(self, curso):
         curso.estudiantes.add(self)
-        conceptos = curso.grafo.obtener_conceptos()
+        conceptos = curso.grafo.obtener_conceptos(True)
         for c in conceptos:
             calificacion = Calificaciones(estudiante=self, concepto=c, calificacion=0)
             calificacion.save()

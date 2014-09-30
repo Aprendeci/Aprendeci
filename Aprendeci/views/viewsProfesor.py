@@ -109,15 +109,27 @@ class GrafoView(LoginRequiredMixin, ListView):
 
     def get_context_data(self, **kwargs):
         context = super(GrafoView, self).get_context_data(**kwargs)
+
+        grafos = Grafo.objects.get(pk=self.kwargs['id']).obtener_grafos()
+
+        # Obtener relaciones de los grafos
+        relacionesGrafo = []
+        for grafo in grafos:
+            for grafoAux in grafos:
+                if grafo != grafoAux:
+                    if grafo.esta_relacionado_con(grafoAux.pk):
+                        relacionesGrafo.append([grafo.pk, grafoAux.pk])
+
         context['concepto_form'] = ConceptoForm()
         context['grafo_id'] = self.kwargs['id']
-        context['grafos_list'] = serializers.serialize("json", Grafo.objects.get(pk=self.kwargs['id']).obtener_grafos())
+        context['grafos_list'] = serializers.serialize("json", grafos)
+        context['grafos_rel'] = json.dumps(relacionesGrafo)
+
         return context
 
     def get_queryset(self):
         grafo_id = self.kwargs['id']
-        #return serializers.serialize("json", self.model.objects.filter(grafo=grafo_id))
-        return serializers.serialize("json", Grafo.objects.get(pk=grafo_id).obtener_conceptos())
+        return serializers.serialize("json", Grafo.objects.get(pk=grafo_id).obtener_conceptos(False))
 
     def post(self, request, *args, **kwargs):
         dependencias = request.POST.getlist("dependencias[]")
@@ -125,25 +137,35 @@ class GrafoView(LoginRequiredMixin, ListView):
 
         # Limpiar dependencias
         grafo_id = self.kwargs['id']
-        for concepto in self.model.objects.filter(grafo=grafo_id):
+        for concepto in Grafo.objects.get(pk=grafo_id).obtener_conceptos(False):
             concepto.requisitos.clear()
 
         # Crear dependencias
         for dependencia in dependencias:
             tupla = dependencia.partition(",")
-            preRequisito = self.model.objects.get(pk=tupla[0])
-            concepto = self.model.objects.get(pk=tupla[2])
 
-            concepto.requisitos.add(preRequisito)
+            if tupla[0].startswith("concepto"):
+                preRequisito = self.model.objects.get(pk=tupla[0])
+                concepto = self.model.objects.get(pk=tupla[2])
+
+                concepto.requisitos.add(preRequisito)
 
         # Actualizar posiciones
         for posicion in posiciones:
             posicionDict = json.loads(posicion)
-            concepto = self.model.objects.get(pk=posicionDict['concepto'])
-            concepto.x = round(posicionDict['x'])
-            concepto.y = round(posicionDict['y'])
 
-            concepto.save()
+            if posicionDict["nodo"].startswith("concepto"):
+                concepto = self.model.objects.get(pk=posicionDict['nodo'][8:])
+                concepto.x = round(posicionDict['x'])
+                concepto.y = round(posicionDict['y'])
+
+                concepto.save()
+            elif posicionDict["nodo"].startswith("grafo"):
+                grafo = Grafo.objects.get(pk=posicionDict['nodo'][5:])
+                grafo.x = round(posicionDict['x'])
+                grafo.y = round(posicionDict['y'])
+
+                grafo.save()
 
         # Guardar el grafo
         grafoMat = "{{" + "},{".join(dependencias) + "}}"

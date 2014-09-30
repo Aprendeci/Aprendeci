@@ -68,6 +68,8 @@ $(document).ready(function() {
         grafo.css({
             "background-color": "#A22F38",
             "background-image": "url(" + mediaURL + "img/icons/conceptos/defectoGrafo.png)",
+            "left": objetoJson.fields.x,
+            "top": objetoJson.fields.y
         });
 
         // Titulo para el tooltip
@@ -98,31 +100,48 @@ $(document).ready(function() {
         jsPlumb.setContainer("conceptos");
 
         // Crear los conceptos
-        if (grafos.length == 0) {
-            $.each(conceptos, function(idx, obj) {
-                agregarConcepto(obj);
-            });
+        $.each(conceptos, function(idx, obj) {
+            agregarConcepto(obj);
+        });
 
-            // Hacer las conexiones
-            $.each(conceptos, function(idx, obj) {
-                var conexion = {
-                    overlays: [ [ "Arrow", { location:1 } ] ]
-                };
+        // Hacer las conexiones de los conceptos
+        $.each(conceptos, function(idx, obj) {
+            var conexion = {
+                overlays: [ [ "Arrow", { location:1 } ] ]
+            };
 
-                $.each(obj.fields.requisitos, function (idxr, objr) {
-                    conexion["source"] = "concepto" + objr.toString();
-                    conexion["target"] = "concepto" + obj.pk.toString();
+            $.each(obj.fields.requisitos, function (idxr, objr) {
+                conexion["source"] = "concepto" + objr.toString();
+                conexion["target"] = "concepto" + obj.pk.toString();
 
-                    if (document.getElementById(conexion["source"]) != null && document.getElementById(conexion["target"]) != null) {
-                        jsPlumb.connect(conexion);
-                    }
-                });
+                if (document.getElementById(conexion["source"]) != null && document.getElementById(conexion["target"]) != null) {
+                    jsPlumb.connect(conexion);
+                }
             });
-        } else {
-            $.each(grafos, function(idx, obj) {
-                agregarGrafo(obj);
-            });
-        }
+        });
+
+        // Crear los grafos
+        $.each(grafos, function(idx, obj) {
+            agregarGrafo(obj);
+        });
+
+        // Hacer las conexiones de los grafos
+        $.each(grafosRel, function(idx, obj) {
+            var conexion = {
+                anchor: [ "Perimeter", { shape:"Circle" } ],
+                connector: ["Flowchart", { cornerRadius: "25" } ],
+                endpointStyle : { radius:5, strokeStyle:"#A22F38" },
+                overlays: [ [ "Arrow", { location:1 } ] ],
+                paintStyle: { lineWidth:5, strokeStyle:"#A22F38" }
+            };
+
+            conexion["source"] = "grafo" + obj[0];
+            conexion["target"] = "grafo" + obj[1];
+
+            if (document.getElementById(conexion["source"]) != null && document.getElementById(conexion["target"]) != null) {
+                jsPlumb.connect(conexion);
+            }
+        });
 
         // Eliminacion de enlaces
         jsPlumb.bind("click", function(connection, e) {
@@ -223,8 +242,8 @@ $(document).ready(function() {
 
         // Estructura de las dependencias
         $.each(conexiones, function(index, value) {
-            var sourceId = value.sourceId.substr(8);
-            var targetId = value.targetId.substr(8);
+            var sourceId = value.sourceId;
+            var targetId = value.targetId;
 
             dependencias.push([sourceId, targetId]);
         });
@@ -232,7 +251,7 @@ $(document).ready(function() {
         // Estructura de las posiciones
         $.each(objConceptos, function(index, value) {
             var posicion = {
-                concepto: value.attr("id").substr(8),
+                nodo: value.attr("id"),
                 x: value.position().left,
                 y: value.position().top
             };
