@@ -145,8 +145,8 @@ class GrafoView(LoginRequiredMixin, ListView):
             tupla = dependencia.partition(",")
 
             if tupla[0].startswith("concepto"):
-                preRequisito = self.model.objects.get(pk=tupla[0])
-                concepto = self.model.objects.get(pk=tupla[2])
+                preRequisito = self.model.objects.get(pk=tupla[0][8:])
+                concepto = self.model.objects.get(pk=tupla[2][8:])
 
                 concepto.requisitos.add(preRequisito)
 
