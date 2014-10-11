@@ -102,8 +102,48 @@ def agregar_concepto(request):
             return JsonResponse(form.errors, status=400)
 
 
+<<<<<<< HEAD
 class GrafoForm(forms.Form):
     grafosPosibles = forms.ChoiceField(widget=forms.Select, choices=(('1', 'First',), ('2', 'Second',)))
+=======
+# Funcion para eliminar un concepto via AJAX
+def eliminar_concepto(request):
+    if request.is_ajax() and request.method == "POST":
+        idConcepto = request.POST.get('conceptoID')
+
+        concepto = Concepto.objects.get(pk=idConcepto)
+        concepto.delete()
+
+        return HttpResponse("Se ha eliminado el concepto exitosamente.")
+
+
+# Funcion para agregar una relacion via AJAX
+def agregar_relacion(request):
+    if request.is_ajax() and request.method == "POST":
+        source = request.POST.get('sourceId')
+        target = request.POST.get('targetId')
+
+        preRequisito = Concepto.objects.get(pk=source[8:])
+        concepto = Concepto.objects.get(pk=target[8:])
+
+        concepto.requisitos.add(preRequisito)
+
+        return HttpResponse("Se ha agregado la relacion exitosamente.")
+
+
+# Funcion para eliminar una relacion via AJAX
+def eliminar_relacion(request):
+    if request.is_ajax() and request.method == "POST":
+        source = request.POST.get('sourceId')
+        target = request.POST.get('targetId')
+
+        preRequisito = Concepto.objects.get(pk=source[8:])
+        concepto = Concepto.objects.get(pk=target[8:])
+
+        concepto.requisitos.remove(preRequisito)
+
+        return HttpResponse("Se ha eliminado la relacion exitosamente.")
+>>>>>>> 1b4727c221262ce7d087b3f85345e90911454478
 
 
 # Vista del grafo
