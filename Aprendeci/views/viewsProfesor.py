@@ -1,3 +1,4 @@
+from django import forms
 from django.core import serializers
 from django.core.files import File
 from django.db.models import Q
@@ -101,6 +102,10 @@ def agregar_concepto(request):
             return JsonResponse(form.errors, status=400)
 
 
+class GrafoForm(forms.Form):
+    grafosPosibles = forms.ChoiceField(widget=forms.Select, choices=(('1', 'First',), ('2', 'Second',)))
+
+
 # Vista del grafo
 class GrafoView(LoginRequiredMixin, ListView):
     context_object_name = "concepto_list"
@@ -111,6 +116,7 @@ class GrafoView(LoginRequiredMixin, ListView):
         context = super(GrafoView, self).get_context_data(**kwargs)
 
         grafos = Grafo.objects.get(pk=self.kwargs['id']).obtener_grafos()
+        grafosPosibles = Grafo.objects.get(pk=self.kwargs['id']).obtener_grafos_posibles()
 
         # Obtener relaciones de los grafos
         relacionesGrafo = []
@@ -120,10 +126,14 @@ class GrafoView(LoginRequiredMixin, ListView):
                     if grafo.esta_relacionado_con(grafoAux.pk):
                         relacionesGrafo.append([grafo.pk, grafoAux.pk])
 
+        # Variables del contexto
         context['concepto_form'] = ConceptoForm()
+        context['grafo_form'] = GrafoForm()
         context['grafo_id'] = self.kwargs['id']
+        context['grafo_nombre'] = Grafo.objects.get(pk=self.kwargs['id']).nombre
         context['grafos_list'] = serializers.serialize("json", grafos)
         context['grafos_rel'] = json.dumps(relacionesGrafo)
+        context['grafos_posibles'] = serializers.serialize("json", grafosPosibles)
 
         return context
 

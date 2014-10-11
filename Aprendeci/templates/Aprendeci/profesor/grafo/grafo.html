@@ -14,6 +14,7 @@
     <script>
         var conceptos = JSON.parse("{{ concepto_list|escapejs }}");
         var grafos = JSON.parse("{{ grafos_list|escapejs }}");
+        var grafosPosibles = JSON.parse("{{ grafos_posibles|escapejs }}");
         var grafosRel = JSON.parse("{{ grafos_rel|escapejs }}");
         var grafoId = {{ grafo_id }};
         var mediaURL = "{{ MEDIA_URL }}";
@@ -29,7 +30,7 @@
 {% block header %}
     <div class="encabezado">
         <img class="icon" alt="grafo" src="{% static "img/icons/grafo.png" %}" />
-        <h1>Grafo de conocimiento</h1>
+        <h1>{{ grafo_nombre }}</h1>
     </div>
 {% endblock %}
 
@@ -71,6 +72,13 @@
             {% csrf_token %}
             {{ concepto_form }}
             <input type="submit" value="Crear concepto" class="small button conectar" />
+        </form>
+    </div>
+    <div id="grafoDialog" title="Nuevo concepto">
+        <form id="formularioGrafo" action="" method="post">
+            {% csrf_token %}
+            {{ grafo_form }}
+            <input type="submit" value="Agregar grafo" class="small button agregar" />
         </form>
     </div>
 {% endblock %}

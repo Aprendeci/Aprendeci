@@ -229,6 +229,14 @@ $(document).ready(function() {
         width: 400
     });
 
+    // Dialogo para agregar grafo
+    $("#grafoDialog").dialog({
+        autoOpen: false,
+        modal: true,
+        resizable: false,
+        width: 400
+    });
+
     // Proteccion CSRF
     function csrfSafeMethod(method) {
         return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
@@ -314,7 +322,8 @@ $(document).ready(function() {
                 name: "Grafo",
                 icon:"grafo",
                 callback: function(key, options) {
-                    alert("x: " + posX + " y: " + posY);
+                    // Mostrar dialogo
+                    $("#grafoDialog").dialog("open");
                 }
             }
         }

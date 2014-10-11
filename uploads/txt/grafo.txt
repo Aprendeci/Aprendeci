@@ -1,1 +1,1 @@
-{{concepto12,concepto1},{concepto3,concepto2},{concepto1,concepto3},{concepto12,concepto3},{concepto3,concepto4},{concepto2,concepto5},{concepto4,concepto5},{concepto5,concepto6},{concepto14,concepto6},{concepto4,concepto13},{concepto13,concepto14}}
+{{}}
