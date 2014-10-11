@@ -38,6 +38,66 @@ $(document).ready(function() {
         // Agregar al contenedor de conceptos
         $("#conceptos").append(concepto);
 
+        // Mostrar informacion del concepto
+        concepto.click(function() {
+            var id = $(this).attr("id").substring(8);
+            var concepto = null;
+            var indice;
+
+            for (var i = 0; i < conceptos.length; i++) {
+                if (conceptos[i].pk == id) {
+                    concepto = conceptos[i];
+                    indice = i;
+                }
+            }
+
+            if (concepto != null) {
+                var url = "/aprendeci/concepto/" + concepto.pk + "/";
+                var contenido = "<p>" + concepto.fields.descripcion + "</p><br />";
+                contenido += "<a href='" + url + "' class='button small ver'>Ver más</a>";
+                contenido += "<a id='botonDelConcepto' class='button small eliminar'>Eliminar</a>";
+
+                $("<div id='dialogoConcepto'></div>").attr("title", concepto.fields.nombre).html(contenido).dialog({
+                    resizable: false,
+                    width: 250
+                });
+
+                $("#botonDelConcepto").click(function (){
+                    var idConcepto = concepto.pk;
+
+                    // Seguridad de CSRF
+                    var csrftoken = $.cookie('csrftoken');
+                    $.ajaxSetup({
+                        crossDomain: false,
+                        beforeSend: function(xhr, settings) {
+                            if (!csrfSafeMethod(settings.type)) {
+                                xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                            }
+                        }
+                    });
+
+                    $.post("/aprendeci/concepto/eliminar/", {"conceptoID": idConcepto})
+                        .done(function (data) {
+                            jsPlumb.detachAllConnections(objConceptos[indice]);
+                            jsPlumb.removeAllEndpoints(objConceptos[indice]);
+                            jsPlumb.detach(objConceptos[indice]);
+                            objConceptos[indice].remove();
+                            objConceptos.splice(indice, 1);
+                            conceptos.splice(indice, 1);
+
+                            $("#dialogoConcepto").dialog("close");
+                            $.growl.notice({ title: "Éxito", message: data });
+                        })
+                        .fail(function(jqXHR, textStatus, errorThrown) {
+                            $.growl.error({ title:"Error", message: "No se ha podido eliminar el concepto."});
+                            console.log("jqXHR : " + jqXHR);
+                            console.log("textStatus : " + textStatus);
+                            console.log("errorThrown : " + errorThrown);
+                        });
+                });
+            }
+        });
+
         // Hacer el elemento draggable
         jsPlumb.draggable(concepto, {
             containment: "parent"
@@ -143,9 +203,56 @@ $(document).ready(function() {
             }
         });
 
+        //Adicion de enlaces
+        jsPlumb.bind("connection", function (info) {
+            // Seguridad de CSRF
+            var csrftoken = $.cookie('csrftoken');
+            $.ajaxSetup({
+                crossDomain: false,
+                beforeSend: function(xhr, settings) {
+                    if (!csrfSafeMethod(settings.type)) {
+                        xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                    }
+                }
+            });
+
+            $.post("/aprendeci/relacion/agregar/", {"sourceId": info.sourceId, "targetId": info.targetId})
+                .done(function (data) {
+                    $.growl.notice({ title: "Éxito", message: data });
+                })
+                .fail(function(jqXHR, textStatus, errorThrown) {
+                    $.growl.error({ title:"Error", message: "No se ha podido agregar la relación"});
+                    console.log("jqXHR : " + jqXHR);
+                    console.log("textStatus : " + textStatus);
+                    console.log("errorThrown : " + errorThrown);
+                });
+        });
+
         // Eliminacion de enlaces
         jsPlumb.bind("click", function(connection, e) {
             jsPlumb.detach(connection);
+
+            // Seguridad de CSRF
+            var csrftoken = $.cookie('csrftoken');
+            $.ajaxSetup({
+                crossDomain: false,
+                beforeSend: function(xhr, settings) {
+                    if (!csrfSafeMethod(settings.type)) {
+                        xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                    }
+                }
+            });
+
+            $.post("/aprendeci/relacion/eliminar/", {"sourceId": connection.sourceId, "targetId": connection.targetId})
+                .done(function (data) {
+                    $.growl.notice({ title: "Éxito", message: data });
+                })
+                .fail(function(jqXHR, textStatus, errorThrown) {
+                    $.growl.error({ title:"Error", message: "No se ha podido eliminar la relación"});
+                    console.log("jqXHR : " + jqXHR);
+                    console.log("textStatus : " + textStatus);
+                    console.log("errorThrown : " + errorThrown);
+                });
         });
 
         // Evitar auto-conexiones
@@ -307,6 +414,8 @@ $(document).ready(function() {
                     $("#id_grafo").val(grafoId);
 
                     // Mostrar dialogo
+                    $("#formularioConcepto input[type='text']").val("");
+                    $("#formularioConcepto input[type='submit']").prop("disabled", false);
                     $("#conceptoDialog").dialog("open");
                 }
             },
@@ -323,7 +432,6 @@ $(document).ready(function() {
     // Guardar el concepto
     $("#formularioConcepto").submit(function(event) {
         event.preventDefault();
-
         $.post($(this).attr("action"), $(this).serialize())
             .done(function (data) {
                 $("p.error").remove();
@@ -335,6 +443,9 @@ $(document).ready(function() {
                 // Agregar concepto al canvas
                 data[0].fields.imagen = mediaURL + data[0].fields.imagen;
                 agregarConcepto(data[0]);
+                conceptos.push(data[0]);
+
+                $.growl.notice({ title: "Éxito", message: "Se ha agregado el concepto exitosamente." });
             })
             .fail(function(jqXHR, textStatus, errorThrown) {
                 var contenido = "<p class='error'>Error al agregar el concepto</p>";
@@ -346,28 +457,5 @@ $(document).ready(function() {
                 console.log("textStatus : " + textStatus);
                 console.log("errorThrown : " + errorThrown);
             });
-    });
-
-    // Mostrar informacion del concepto
-    $(".concepto").click(function() {
-        var id = $(this).attr("id").substring(8);
-        var concepto = null;
-
-        for (var i = 0; i < conceptos.length; i++) {
-            if (conceptos[i].pk == id) {
-                concepto = conceptos[i];
-            }
-        }
-
-        if (concepto != null) {
-            var url = "/aprendeci/concepto/" + concepto.pk + "/";
-            var contenido = "<p>" + concepto.fields.descripcion + "</p><br />";
-            contenido += "<a href='" + url + "' class='button small ver'>Ver más</a>";
-
-            $("<div></div>").attr("title", concepto.fields.nombre).html(contenido).dialog({
-                resizable: false,
-                width: 250
-            });
-        }
     });
 });

@@ -156,6 +156,10 @@ ul.breadcrumbs {
     background-image: url("../img/icons/eye.png");
 }
 
+.eliminar {
+    background-image: url("../img/icons/delete.png");
+}
+
 .guardar {
     background-image: url("../img/icons/save.png");
 }

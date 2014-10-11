@@ -101,6 +101,45 @@ def agregar_concepto(request):
             return JsonResponse(form.errors, status=400)
 
 
+# Funcion para eliminar un concepto via AJAX
+def eliminar_concepto(request):
+    if request.is_ajax() and request.method == "POST":
+        idConcepto = request.POST.get('conceptoID')
+
+        concepto = Concepto.objects.get(pk=idConcepto)
+        concepto.delete()
+
+        return HttpResponse("Se ha eliminado el concepto exitosamente.")
+
+
+# Funcion para agregar una relacion via AJAX
+def agregar_relacion(request):
+    if request.is_ajax() and request.method == "POST":
+        source = request.POST.get('sourceId')
+        target = request.POST.get('targetId')
+
+        preRequisito = Concepto.objects.get(pk=source[8:])
+        concepto = Concepto.objects.get(pk=target[8:])
+
+        concepto.requisitos.add(preRequisito)
+
+        return HttpResponse("Se ha agregado la relacion exitosamente.")
+
+
+# Funcion para eliminar una relacion via AJAX
+def eliminar_relacion(request):
+    if request.is_ajax() and request.method == "POST":
+        source = request.POST.get('sourceId')
+        target = request.POST.get('targetId')
+
+        preRequisito = Concepto.objects.get(pk=source[8:])
+        concepto = Concepto.objects.get(pk=target[8:])
+
+        concepto.requisitos.remove(preRequisito)
+
+        return HttpResponse("Se ha eliminado la relacion exitosamente.")
+
+
 # Vista del grafo
 class GrafoView(LoginRequiredMixin, ListView):
     context_object_name = "concepto_list"
