@@ -102,10 +102,6 @@ def agregar_concepto(request):
             return JsonResponse(form.errors, status=400)
 
 
-<<<<<<< HEAD
-class GrafoForm(forms.Form):
-    grafosPosibles = forms.ChoiceField(widget=forms.Select, choices=(('1', 'First',), ('2', 'Second',)))
-=======
 # Funcion para eliminar un concepto via AJAX
 def eliminar_concepto(request):
     if request.is_ajax() and request.method == "POST":
@@ -143,7 +139,11 @@ def eliminar_relacion(request):
         concepto.requisitos.remove(preRequisito)
 
         return HttpResponse("Se ha eliminado la relacion exitosamente.")
->>>>>>> 1b4727c221262ce7d087b3f85345e90911454478
+
+
+# Formulario del grafo
+class GrafoForm(forms.Form):
+    grafosPosibles = forms.ChoiceField(widget=forms.Select, choices=(('1', 'First',), ('2', 'Second',)))
 
 
 # Vista del grafo
