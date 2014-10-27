@@ -13,12 +13,12 @@ import json
 # Class based views
 
 # Vista principal
-class PerfilProfesorView(LoginRequiredMixin, TemplateView):
+class PerfilProfesorView(LoginRequiredMixin, ProfesorRequiredMixin, TemplateView):
     template_name = 'Aprendeci/profesor/perfil.html'
 
 
 # Vista de los cursos
-class CursosProfesorView(LoginRequiredMixin, ListView):
+class CursosProfesorView(LoginRequiredMixin, ProfesorRequiredMixin, ListView):
     model = Curso
     template_name = "Aprendeci/profesor/cursos.html"
 
@@ -27,7 +27,7 @@ class CursosProfesorView(LoginRequiredMixin, ListView):
 
 
 # Vista de los estudiantes de un curso
-class EstudiantesView(LoginRequiredMixin, ListView):
+class EstudiantesView(LoginRequiredMixin, ProfesorRequiredMixin, ListView):
     model = Estudiante
     template_name = "Aprendeci/profesor/estudiantes.html"
 
@@ -42,7 +42,7 @@ class EstudiantesView(LoginRequiredMixin, ListView):
 
 
 # Vista de los conceptos de un estudiante
-class EstudianteView(LoginRequiredMixin, ListView):
+class EstudianteView(LoginRequiredMixin, ProfesorRequiredMixin, ListView):
     context_object_name = "calificaciones_set"
     model = Calificaciones
     template_name = "Aprendeci/profesor/estudiante.html"
@@ -73,7 +73,7 @@ class EstudianteView(LoginRequiredMixin, ListView):
 
 
 # Vista de la lista de grafos
-class GrafosView(LoginRequiredMixin, ListView):
+class GrafosView(LoginRequiredMixin, ProfesorRequiredMixin, ListView):
     model = Grafo
     template_name = "Aprendeci/profesor/grafo/grafos.html"
 
@@ -147,7 +147,7 @@ class GrafoForm(forms.Form):
 
 
 # Vista del grafo
-class GrafoView(LoginRequiredMixin, ListView):
+class GrafoView(LoginRequiredMixin, ProfesorRequiredMixin, ListView):
     context_object_name = "concepto_list"
     model = Concepto
     template_name = "Aprendeci/profesor/grafo/grafo.html"
@@ -227,7 +227,7 @@ class GrafoView(LoginRequiredMixin, ListView):
 
 
 # Vista de la lista de conceptos de un grafo
-class ConceptosGrafoView(LoginRequiredMixin, ListView):
+class ConceptosGrafoView(LoginRequiredMixin, ProfesorRequiredMixin, ListView):
     context_object_name = "concepto_list"
     model = Concepto
     template_name = "Aprendeci/profesor/grafo/conceptos.html"
@@ -244,7 +244,7 @@ class ConceptosGrafoView(LoginRequiredMixin, ListView):
 
 
 # Vista en detalle de un concepto
-class ConceptoView(LoginRequiredMixin, DetailView):
+class ConceptoView(LoginRequiredMixin, ProfesorRequiredMixin, DetailView):
     context_object_name = "concepto"
     model = Concepto
     template_name = "Aprendeci/profesor/grafo/concepto.html"
@@ -255,7 +255,7 @@ class ConceptoView(LoginRequiredMixin, DetailView):
         return context
 
 
-class UnirGrafosView(LoginRequiredMixin, ListView):
+class UnirGrafosView(LoginRequiredMixin, ProfesorRequiredMixin, ListView):
     conexiones = []
     context_object_name = "grafo_list"
     model = Grafo
