@@ -143,7 +143,9 @@ def eliminar_relacion(request):
 
 # Formulario del grafo
 class GrafoForm(forms.Form):
-    grafosPosibles = forms.ChoiceField(widget=forms.Select, choices=(('1', 'First',), ('2', 'Second',)))
+    def __init__(self, grafo, *args, **kwargs):
+        super(GrafoForm, self).__init__(*args, **kwargs)
+        self.fields['grafos'] = forms.ChoiceField(widget=forms.Select, label="Grafos", choices=[(str(g.id), g.nombre) for g in grafo.obtener_grafos_posibles()])
 
 
 # Vista del grafo
@@ -168,7 +170,7 @@ class GrafoView(LoginRequiredMixin, ProfesorRequiredMixin, ListView):
 
         # Variables del contexto
         context['concepto_form'] = ConceptoForm()
-        context['grafo_form'] = GrafoForm()
+        context['grafo_form'] = GrafoForm(Grafo.objects.get(pk=self.kwargs['id']))
         context['grafo_id'] = self.kwargs['id']
         context['grafo_nombre'] = Grafo.objects.get(pk=self.kwargs['id']).nombre
         context['grafos_list'] = serializers.serialize("json", grafos)
