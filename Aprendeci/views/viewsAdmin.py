@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 from django.views.generic import TemplateView, FormView
 from Aprendeci.models import Estudiante, Profesor
 from .viewsGeneral import *
@@ -8,7 +8,7 @@ from .viewsGeneral import *
 
 
 # Vista principal
-class PerfilAdminView(LoginRequiredMixin, TemplateView):
+class PerfilAdminView(LoginRequiredMixin, SuperuserRequiredMixin, TemplateView):
     template_name = 'Aprendeci/administrador/perfil.html'
 
 
@@ -48,18 +48,23 @@ class AgregarUsuarioForm(forms.Form):
         usuario = User.objects.create_user(username=nombreUsuario, email=correo, password=clave)
         usuario.first_name = nombre
         usuario.last_name = apellido
-        usuario.save()
 
         # Crear el perfil
         if tipo == self.ESTUDIANTE:
             estudiante = Estudiante(usuario=usuario)
             estudiante.save()
+
+            usuario.groups.add(Group.objects.get(name="Estudiantes"))
         elif tipo == self.PROFESOR:
             profesor = Profesor(usuario=usuario)
             profesor.save()
 
+            usuario.groups.add(Group.objects.get(name="Profesores"))
 
-class AgregarUsuarioView(LoginRequiredMixin, FormView):
+        usuario.save()
+
+
+class AgregarUsuarioView(LoginRequiredMixin, SuperuserRequiredMixin, FormView):
     form_class = AgregarUsuarioForm
     template_name = "Aprendeci/administrador/agregarUsuario.html"
     success_url = "/aprendeci/usuario/agregar/exito/"
@@ -72,5 +77,5 @@ class AgregarUsuarioView(LoginRequiredMixin, FormView):
         return super(AgregarUsuarioView, self).form_valid(form)
 
 
-class AgregarUsuarioExitoView(LoginRequiredMixin, TemplateView):
+class AgregarUsuarioExitoView(LoginRequiredMixin, SuperuserRequiredMixin, TemplateView):
     template_name = "Aprendeci/administrador/agregarUsuarioExito.html"

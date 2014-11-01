@@ -27,4 +27,6 @@ urlpatterns = [
     url(r'^perfilAdmin/$', views.PerfilAdminView.as_view(), name='perfilAdmin'),
     url(r'^usuario/agregar/$', views.AgregarUsuarioView.as_view(), name='agregarUsuario'),
     url(r'^usuario/agregar/exito/$', views.AgregarUsuarioExitoView.as_view(), name='agregarUsuarioExito'),
+    # Generales
+    url(r'^denegado/', views.PermisosInsuficientesView.as_view(), name='permisosInsuficientes'),
 ]

@@ -10,7 +10,7 @@ import json
 # Class based views
 
 # Vista principal
-class PerfilEstudianteView(LoginRequiredMixin, ListView):
+class PerfilEstudianteView(LoginRequiredMixin, EstudianteRequiredMixin, ListView):
     model = Curso
     template_name = 'Aprendeci/estudiante/perfil.html'
 
@@ -19,7 +19,7 @@ class PerfilEstudianteView(LoginRequiredMixin, ListView):
 
 
 # Vista con el listado de cursos
-class CursosEstudianteView(LoginRequiredMixin, ListView):
+class CursosEstudianteView(LoginRequiredMixin, EstudianteRequiredMixin, ListView):
     model = Curso
     template_name = "Aprendeci/estudiante/cursos.html"
 
@@ -36,7 +36,7 @@ class UnirseAlCursoForm(forms.Form):
         return False
 
 
-class UnirseAlCursoEstudianteView(LoginRequiredMixin, FormView):
+class UnirseAlCursoEstudianteView(LoginRequiredMixin, EstudianteRequiredMixin, FormView):
     form_class = UnirseAlCursoForm
     template_name = "Aprendeci/estudiante/unirseAlCurso.html"
 
@@ -62,7 +62,7 @@ class UnirseAlCursoEstudianteView(LoginRequiredMixin, FormView):
 
 
 # Vista de un curso del estudiante
-class CursoEstudianteView(LoginRequiredMixin, TemplateView):
+class CursoEstudianteView(LoginRequiredMixin, EstudianteRequiredMixin, TemplateView):
     template_name = "Aprendeci/estudiante/curso.html"
 
     def get_context_data(self, **kwargs):
@@ -88,7 +88,7 @@ class CursoEstudianteView(LoginRequiredMixin, TemplateView):
 
 
 # Vista en detalle de un concepto
-class ConceptoEstudianteView(LoginRequiredMixin, DetailView):
+class ConceptoEstudianteView(LoginRequiredMixin, EstudianteRequiredMixin, DetailView):
     context_object_name = "concepto"
     model = Concepto
     template_name = "Aprendeci/estudiante/concepto.html"

@@ -1,0 +1,24 @@
+{% extends "_layouts/base.html" %}
+{% load staticfiles %}
+
+{% block title %}Página no encontrada{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static "css/style.css" %}" />
+{% endblock %}
+
+{% block header %}
+    <div class="encabezado">
+        <img class="icon" alt="permisos" src="{% static "img/icons/permisos.png" %}" />
+        <h1>Página no encontrada</h1>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="title">
+        <h2 class="alerta">Atención</h2>
+        <p>La página que buscas no existe</p>
+
+        <a class="button small atras botonAmplio" href="/">Regresar</a>
+    </div>
+{% endblock %}

@@ -168,6 +168,10 @@ ul.breadcrumbs {
     background-image: url("../img/icons/share.png");
 }
 
+.atras {
+    background-image: url("../img/icons/arrowBack.png");
+}
+
 .context-menu-item.icon-concepto {
     background-image: url("../img/icons/conceptoMini.png");
 }
@@ -667,3 +671,14 @@ ul.cursos {
         margin: 0px;
         padding: 3px 10px;
     }
+
+/* SECCION | Permisos insuficientes */
+a.botonAmplio {
+    display: block;
+    margin-top: 20px !important;
+}
+
+h2.alerta {
+    color: #A22F38;
+    display: block;
+}

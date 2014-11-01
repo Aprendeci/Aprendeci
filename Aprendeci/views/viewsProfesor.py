@@ -1,3 +1,4 @@
+from django import forms
 from django.core import serializers
 from django.core.files import File
 from django.db.models import Q
@@ -12,12 +13,12 @@ import json
 # Class based views
 
 # Vista principal
-class PerfilProfesorView(LoginRequiredMixin, TemplateView):
+class PerfilProfesorView(LoginRequiredMixin, ProfesorRequiredMixin, TemplateView):
     template_name = 'Aprendeci/profesor/perfil.html'
 
 
 # Vista de los cursos
-class CursosProfesorView(LoginRequiredMixin, ListView):
+class CursosProfesorView(LoginRequiredMixin, ProfesorRequiredMixin, ListView):
     model = Curso
     template_name = "Aprendeci/profesor/cursos.html"
 
@@ -26,7 +27,7 @@ class CursosProfesorView(LoginRequiredMixin, ListView):
 
 
 # Vista de los estudiantes de un curso
-class EstudiantesView(LoginRequiredMixin, ListView):
+class EstudiantesView(LoginRequiredMixin, ProfesorRequiredMixin, ListView):
     model = Estudiante
     template_name = "Aprendeci/profesor/estudiantes.html"
 
@@ -41,7 +42,7 @@ class EstudiantesView(LoginRequiredMixin, ListView):
 
 
 # Vista de los conceptos de un estudiante
-class EstudianteView(LoginRequiredMixin, ListView):
+class EstudianteView(LoginRequiredMixin, ProfesorRequiredMixin, ListView):
     context_object_name = "calificaciones_set"
     model = Calificaciones
     template_name = "Aprendeci/profesor/estudiante.html"
@@ -72,7 +73,7 @@ class EstudianteView(LoginRequiredMixin, ListView):
 
 
 # Vista de la lista de grafos
-class GrafosView(LoginRequiredMixin, ListView):
+class GrafosView(LoginRequiredMixin, ProfesorRequiredMixin, ListView):
     model = Grafo
     template_name = "Aprendeci/profesor/grafo/grafos.html"
 
@@ -140,8 +141,15 @@ def eliminar_relacion(request):
         return HttpResponse("Se ha eliminado la relacion exitosamente.")
 
 
+# Formulario del grafo
+class GrafoForm(forms.Form):
+    def __init__(self, grafo, *args, **kwargs):
+        super(GrafoForm, self).__init__(*args, **kwargs)
+        self.fields['grafos'] = forms.ChoiceField(widget=forms.Select, label="Grafos", choices=[(str(g.id), g.nombre) for g in grafo.obtener_grafos_posibles()])
+
+
 # Vista del grafo
-class GrafoView(LoginRequiredMixin, ListView):
+class GrafoView(LoginRequiredMixin, ProfesorRequiredMixin, ListView):
     context_object_name = "concepto_list"
     model = Concepto
     template_name = "Aprendeci/profesor/grafo/grafo.html"
@@ -150,6 +158,7 @@ class GrafoView(LoginRequiredMixin, ListView):
         context = super(GrafoView, self).get_context_data(**kwargs)
 
         grafos = Grafo.objects.get(pk=self.kwargs['id']).obtener_grafos()
+        grafosPosibles = Grafo.objects.get(pk=self.kwargs['id']).obtener_grafos_posibles()
 
         # Obtener relaciones de los grafos
         relacionesGrafo = []
@@ -159,10 +168,14 @@ class GrafoView(LoginRequiredMixin, ListView):
                     if grafo.esta_relacionado_con(grafoAux.pk):
                         relacionesGrafo.append([grafo.pk, grafoAux.pk])
 
+        # Variables del contexto
         context['concepto_form'] = ConceptoForm()
+        context['grafo_form'] = GrafoForm(Grafo.objects.get(pk=self.kwargs['id']))
         context['grafo_id'] = self.kwargs['id']
+        context['grafo_nombre'] = Grafo.objects.get(pk=self.kwargs['id']).nombre
         context['grafos_list'] = serializers.serialize("json", grafos)
         context['grafos_rel'] = json.dumps(relacionesGrafo)
+        context['grafos_posibles'] = serializers.serialize("json", grafosPosibles)
 
         return context
 
@@ -216,7 +229,7 @@ class GrafoView(LoginRequiredMixin, ListView):
 
 
 # Vista de la lista de conceptos de un grafo
-class ConceptosGrafoView(LoginRequiredMixin, ListView):
+class ConceptosGrafoView(LoginRequiredMixin, ProfesorRequiredMixin, ListView):
     context_object_name = "concepto_list"
     model = Concepto
     template_name = "Aprendeci/profesor/grafo/conceptos.html"
@@ -233,7 +246,7 @@ class ConceptosGrafoView(LoginRequiredMixin, ListView):
 
 
 # Vista en detalle de un concepto
-class ConceptoView(LoginRequiredMixin, DetailView):
+class ConceptoView(LoginRequiredMixin, ProfesorRequiredMixin, DetailView):
     context_object_name = "concepto"
     model = Concepto
     template_name = "Aprendeci/profesor/grafo/concepto.html"
@@ -244,7 +257,7 @@ class ConceptoView(LoginRequiredMixin, DetailView):
         return context
 
 
-class UnirGrafosView(LoginRequiredMixin, ListView):
+class UnirGrafosView(LoginRequiredMixin, ProfesorRequiredMixin, ListView):
     conexiones = []
     context_object_name = "grafo_list"
     model = Grafo

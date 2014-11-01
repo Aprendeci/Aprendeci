@@ -41,6 +41,16 @@ class Grafo(models.Model):
 
         return grafos
 
+    # Devuelve la lista de grafos que podrian incluirse en este
+    def obtener_grafos_posibles(self):
+        grafos = set()
+
+        for grafo in Grafo.objects.all():
+            if grafo != self and grafo.grafoPadre != self and grafo.grafoPadre != self.grafoPadre and grafo !=  self.grafoPadre:
+                grafos.add(grafo)
+
+        return grafos
+
     # Indica si el grafo pertenece al curso recibido
     def pertenece_al_curso(self, cursoId):
         curso = Curso.objects.get(pk=cursoId)
