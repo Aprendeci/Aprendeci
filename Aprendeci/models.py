@@ -1,6 +1,5 @@
 from django.contrib.auth.models import User
 from django.db import models
-from django.forms.models import ModelForm
 
 
 class Grafo(models.Model):
@@ -152,6 +151,29 @@ class Curso(models.Model):
 
     def numero_de_estudiantes(self):
         return self.estudiantes.count()
+
+    def estudiantes_aprobados(self, conceptos, aprobados):
+        for con in self.grafo.concepto_set.all():
+            numEst = 0
+
+            for est in self.estudiantes.all():
+                calificacion = Calificaciones.objects.filter(estudiante=est, concepto=con).first()
+
+                if calificacion is None:
+                    calificacion = Calificaciones(estudiante=est, concepto=con, calificacion=0)
+                    calificacion.save()
+                else:
+                    if calificacion.calificacion >= con.porcentajeBase:
+                        numEst += 1
+
+            conceptos.append(con.nombre)
+            aprobados.append(numEst)
+
+    def tiene_estudiante(self, estudiante):
+        if estudiante.estudiante in self.estudiantes.all():
+            return True
+
+        return False
 
     def __str__(self):
         return self.nombre

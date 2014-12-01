@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^concepto/eliminar/$', "Aprendeci.views.eliminar_concepto", name='eliminarConcepto'),
     url(r'^relacion/agregar/$', "Aprendeci.views.agregar_relacion", name='agregarRelacion'),
     url(r'^relacion/eliminar/$', "Aprendeci.views.eliminar_relacion", name='eliminarRelacion'),
+    url(r'^estadoCursos/$', views.EstadoCursoView.as_view(), name='estadoCursos'),
     # Administrador
     url(r'^perfilAdmin/$', views.PerfilAdminView.as_view(), name='perfilAdmin'),
     url(r'^usuario/agregar/$', views.AgregarUsuarioView.as_view(), name='agregarUsuario'),

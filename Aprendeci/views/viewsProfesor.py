@@ -2,7 +2,7 @@ from django import forms
 from django.core import serializers
 from django.core.files import File
 from django.db.models import Q
-from django.forms import HiddenInput
+from django.forms import HiddenInput, ModelForm
 from django.http import HttpResponse, JsonResponse
 from django.views.generic import ListView, DetailView, TemplateView
 from Aprendeci.models import *
@@ -57,7 +57,7 @@ class EstudianteView(LoginRequiredMixin, ProfesorRequiredMixin, ListView):
         calificaciones = list()
         calEstudiante = self.model.objects.filter(estudiante__pk=self.kwargs['estudianteId'])
         for cal in calEstudiante.all():
-            if (cal.concepto.pertenece_al_curso(self.kwargs['cursoId'])):
+            if cal.concepto.pertenece_al_curso(self.kwargs['cursoId']):
                 calificaciones.append(cal)
         return calificaciones
 
@@ -96,8 +96,14 @@ def agregar_concepto(request):
     if request.is_ajax() and request.method == "POST":
         form = ConceptoForm(request.POST)
         if form.is_valid():
-            concepto = form.save()
-            return HttpResponse(serializers.serialize("json", Concepto.objects.filter(pk=concepto.pk)), content_type="application/json")
+            con = form.save()
+
+            for cur in con.grafo.curso_set.all():
+                for est in cur.estudiantes.all():
+                    calificacion = Calificaciones(estudiante=est, concepto=con, calificacion=0)
+                    calificacion.save()
+
+            return HttpResponse(serializers.serialize("json", Concepto.objects.filter(pk=con.pk)), content_type="application/json")
         else:
             return JsonResponse(form.errors, status=400)
 
@@ -344,3 +350,29 @@ class UnirGrafosView(LoginRequiredMixin, ProfesorRequiredMixin, ListView):
             grafoPadre.delete()
 
         return HttpResponse("Se ha guardado exitosamente")
+
+
+class EstadoCursoView(ListView):
+    model = Curso
+    template_name = "Aprendeci/profesor/estadoCursos.html"
+
+    def get_queryset(self):
+        return self.model.objects.filter(profesor=self.request.user.profesor)
+
+    def get_context_data(self, **kwargs):
+        context = super(EstadoCursoView, self).get_context_data(**kwargs)
+
+        estudiantes_aprobados = []
+
+        for curso in self.get_queryset():
+            conceptos = []
+            aprobados = []
+            curso.estudiantes_aprobados(conceptos, aprobados)
+
+            estudiantes_aprobados.append(curso.pk)
+            estudiantes_aprobados.append(conceptos)
+            estudiantes_aprobados.append(aprobados)
+
+        context['estudiantes_aprobados'] = json.dumps(estudiantes_aprobados)
+
+        return context

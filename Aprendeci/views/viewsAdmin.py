@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User, Group
-from django.views.generic import TemplateView, FormView
+from django.views.generic import FormView
 from Aprendeci.models import Estudiante, Profesor
 from .viewsGeneral import *
 

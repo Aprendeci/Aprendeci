@@ -80,20 +80,26 @@
             <div class="subtitle">
                 <h3>Mis cursos</h3>
             </div>
-            <table>
-                <tbody>
-                {% for curso in curso_list %}
-                    <tr>
-                        <td class="principal">
-                            <h4>{{ curso.nombre }}</h4>
-                        </td>
-                        <td class="acciones">
-                            <a href="{% url 'Aprendeci:cursoEstudiante' curso.id %}" class="button small ver">Ver</a>
-                        </td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
+            {% if curso_list %}
+                <table>
+                    <tbody>
+                    {% for curso in curso_list %}
+                        <tr>
+                            <td class="principal">
+                                <h4>{{ curso.nombre }}</h4>
+                            </td>
+                            <td class="acciones">
+                                <a href="{% url 'Aprendeci:cursoEstudiante' curso.id %}" class="button small ver">Ver</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <div class="title">
+                    <p>No estás inscrito en ningún curso</p>
+                </div>
+            {% endif %}
         </div>
     </div>
 {% endblock %}

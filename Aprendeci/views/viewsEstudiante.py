@@ -23,6 +23,9 @@ class CursosEstudianteView(LoginRequiredMixin, EstudianteRequiredMixin, ListView
     model = Curso
     template_name = "Aprendeci/estudiante/cursos.html"
 
+    def get_queryset(self):
+        return Curso.objects.exclude(estudiantes__id__exact=self.request.user.estudiante.id)
+
 
 # Vista para unirse a un curso
 class UnirseAlCursoForm(forms.Form):

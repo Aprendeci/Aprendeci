@@ -27,13 +27,19 @@
 {% endblock %}
 
 {% block content %}
-    <ul class="cursos">
-    {% for curso in curso_list %}
-        <li>
-            <img alt="{{ curso.nombre }}" src="{{ MEDIA_URL }}/{{ curso.imagen }}" />
-            <h3>{{ curso.nombre }}</h3>
-            <a href="{% url 'Aprendeci:unirseCurso' curso.id %}" class="small button conectar">Unirse</a>
-        </li>
-    {% endfor %}
-    </ul>
+    {% if curso_list %}
+        <ul class="cursos">
+            {% for curso in curso_list %}
+                <li>
+                    <img alt="{{ curso.nombre }}" src="{{ MEDIA_URL }}/{{ curso.imagen }}" />
+                    <h3>{{ curso.nombre }}</h3>
+                    <a href="{% url 'Aprendeci:unirseCurso' curso.id %}" class="small button conectar">Unirse</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <div class="title">
+            <h3>No hay cursos disponibles actualmente</h3>
+        </div>
+    {% endif %}
 {% endblock %}
