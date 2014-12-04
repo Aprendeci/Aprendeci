@@ -61,6 +61,8 @@ class AgregarUsuarioForm(forms.Form):
 
             usuario.groups.add(Group.objects.get(name="Profesores"))
 
+            usuario.is_staff = True
+
         usuario.save()
 
 
