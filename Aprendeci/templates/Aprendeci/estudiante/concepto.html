@@ -40,10 +40,12 @@
                             <img alt="{{ concepto.nombre }}" src="{{ MEDIA_URL }}{{ concepto.imagen }}" />
                         </div>
                     </div>
-                    <div class="acciones">
-                        <a href="{% url 'admin:Aprendeci_concepto_change' concepto.id %}" class="small button modificar">Modificar</a>
-                        <a href="{% url 'admin:Aprendeci_recurso_add' %}" class="small button agregar">Agregar recurso</a>
-                    </div>
+                    {% if request.user.is_staff %}
+                        <div class="acciones">
+                            <a href="{% url 'admin:Aprendeci_concepto_change' concepto.id %}" class="small button modificar">Modificar</a>
+                            <a href="{% url 'admin:Aprendeci_recurso_add' %}" class="small button agregar">Agregar recurso</a>
+                        </div>
+                    {% endif %}
                 </div>
             </div>
             <div class="small-9 columns">
